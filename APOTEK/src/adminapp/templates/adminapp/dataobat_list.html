@@ -1,0 +1,22 @@
+{% extends "warisan.html" %}
+{% block content %}
+
+<h1> Data Obat list</h1>
+<small><a href="{% url 'adminapp:create' %}"> tambahkan obat </a></small>
+
+{% for obj in object_list %}
+  <li> 
+    <a href="/adminapp/{{ obj.slug }}/">{{ obj.nama_obat }}</a> <br>
+    {% if obj.foto %}  <!-- Cek apakah foto ada -->
+      <img src="{{ obj.foto.url }}" alt="{{ obj.nama_obat }}" width="200">
+    {% else %}
+      <p>Tidak ada foto</p>  
+    {% endif %}
+  </li>
+  <p>Jenis: {{ obj.jenis_obat }}</p>
+  <p>Stok: {{ obj.stok }}</p>
+  <p>Harga: {{ obj.harga }}</p>
+  <p>Dosis: {{ obj.dosis_aturan_pakai }}</p>
+{% endfor %}
+
+{% endblock %}
