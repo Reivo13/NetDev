@@ -4,11 +4,18 @@ from .models import DataObat
 from .forms import DataObatCreateForm  
 
 class DataObatListView(LoginRequiredMixin, ListView):
-    def get_queryset(self):
+     model = DataObat
+     template_name = 'adminapp/detail.html'
+     login_url = "/login/"
+     def get_queryset(self):
         return DataObat.objects.filter(owner=self.request.user)
 
 class DataObatDetailView(LoginRequiredMixin, DetailView):
-    def get_queryset(self):
+     model = DataObat
+     template_name = 'adminapp/detail.html'
+     login_url = "/login/"
+     
+     def get_queryset(self):
         return DataObat.objects.filter(owner=self.request.user)
 
 class DataObatCreateView(LoginRequiredMixin, CreateView):
@@ -28,6 +35,7 @@ class DataObatCreateView(LoginRequiredMixin, CreateView):
         return context
 
 class DataObatUpdateView(LoginRequiredMixin, UpdateView):
+    model = DataObat
     form_class = DataObatCreateForm
     template_name = 'adminapp/detail-update.html'
     login_url = "/login/"
