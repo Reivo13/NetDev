@@ -6,7 +6,8 @@
 
 {% for obj in object_list %}
   <li> 
-    <a href="/resepapp/{{ obj.slug }}/">{{ obj.nama_pasien }}</a> <br>
+    <a href="/resepapp/{{ obj.slug }}/">{{ obj.nama_pasien }}</a>
+     <br>
     {% if obj.foto_resep %}  <!-- Cek apakah ada foto resep -->
       <img src="{{ obj.foto_resep.url }}" alt="Foto Resep" width="200">
     {% else %}
