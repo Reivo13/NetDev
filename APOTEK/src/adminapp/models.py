@@ -14,12 +14,12 @@ class DataObat(models.Model):
         ('tablet', 'Tablet'),
     ]
     
-    nama_obat   = models.CharField(max_length=120)
-    foto        = models.ImageField(upload_to='obat_images/', null=True, blank=True)
-    jenis_obat  = models.CharField(max_length=10, choices=JENIS_OBAT_CHOICES)
-    harga       = models.DecimalField(max_digits=12, decimal_places=2) 
+    nama_obat   = models.CharField(max_length=120, null= False , blank=False)
+    foto        = models.ImageField(upload_to='obat_images/', null= False, blank=False)
+    jenis_obat  = models.CharField(max_length=10, choices=JENIS_OBAT_CHOICES,null= False, blank=False)
+    harga       = models.PositiveIntegerField() 
     stok        = models.PositiveIntegerField() 
-    dosis_aturan_pakai = models.TextField()  
+    dosis_aturan_pakai = models.TextField(null= False , blank=False)  
     owner       = models.ForeignKey(User,on_delete=models.CASCADE,null=True)  
     slug        = models.SlugField(null=True,blank= True, unique=True)
     
