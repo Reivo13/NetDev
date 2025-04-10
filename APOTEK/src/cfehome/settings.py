@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     
     'adminapp',
     'resepapp',
+    'akun',
 ]
 
 MIDDLEWARE = [
@@ -70,7 +71,7 @@ import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'src', 'akun', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
