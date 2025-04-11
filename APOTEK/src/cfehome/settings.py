@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     
     'adminapp',
     'resepapp',
+    'homeuserapp',
 ]
 
 MIDDLEWARE = [
