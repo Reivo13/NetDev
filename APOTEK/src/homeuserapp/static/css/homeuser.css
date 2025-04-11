@@ -79,7 +79,6 @@ header {
     transition: all 0.3s ease;
 }
 
-  
 .sidebar a {
     text-decoration: none;
     color: #333;
@@ -103,7 +102,6 @@ header {
 .sidebar.hide a {
     display: none;
   }
-  
   
 .hamburger-container {
     position: fixed;
@@ -186,8 +184,6 @@ header {
   margin: 0.5rem 0 1rem;
 }
 
-
-  
 .obat-card img {
     width: 100%;
     height: 150px;
@@ -208,7 +204,6 @@ header {
     margin-top: auto; /* agar selalu di bawah */
 }
   
-
 .btn-detail:hover {
     background-color: #2980b9;
 }
@@ -254,7 +249,6 @@ header {
   opacity: 1;
 }
 
-
 .promo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -274,6 +268,6 @@ header {
     transform: scale(1.02);
 }
   
-  
+
   
   
