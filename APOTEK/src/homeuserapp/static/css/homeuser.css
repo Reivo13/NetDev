@@ -8,7 +8,7 @@
 body {
     background-color: #ffffff;
     color: #1a1a1a;
-    padding-top: 60px; /* sesuai tinggi header */
+    padding-top: 60px;
   }
   
 header {
@@ -66,10 +66,10 @@ header {
 
 .sidebar {
     position: fixed;
-    top: 60px; /* sesuai tinggi header */
+    top: 60px;
     left: 0;
     width: 200px;
-    height: calc(100vh - 60px); /* agar pas di bawah header */
+    height: calc(100vh - 60px);
     background-color: #b8cbe7;
     padding: 20px;
     display: flex;
@@ -114,7 +114,7 @@ header {
     align-items: center;
     padding: 0 1.25rem;
     border-bottom: 1px solid #d1d5db;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* tambahan agar terlihat rapi */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
   
 .hamburger {
@@ -141,13 +141,13 @@ header {
 
 .main-content {
     flex: 1;
-    padding: 2rem; /* sama dengan lebar sidebar */
-    padding-left: 220px; /* Tambahan untuk beri ruang sidebar */
+    padding: 2rem;
+    padding-left: 220px;
     transition: padding-left 0.3s ease;
 }
 
 .sidebar.hide ~ .main-content {
-    padding-left: 2rem; /* Kembali normal saat sidebar disembunyikan */
+    padding-left: 2rem;
 }
   
 .main-content h1 {
@@ -201,7 +201,7 @@ header {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: auto; /* agar selalu di bawah */
+    margin-top: auto;
 }
   
 .btn-detail:hover {
