@@ -13,7 +13,9 @@ urlpatterns = [
     path('adminapp/', include('adminapp.urls', namespace="adminapp")),
     path('resepapp/', include('resepapp.urls', namespace="resepapp")),
     path('obat/', include('daftarobat.urls')),
+    path('history/', include('history.urls', namespace='history')),
 ]
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

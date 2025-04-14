@@ -1,3 +1,5 @@
+/* ====== Global & Daftar Obat ====== */
+
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f6f8;
@@ -37,7 +39,6 @@ body {
     font-size: 1.2em;
 }
 
-/* Search bar & filter */
 .search-box {
     display: flex;
     flex-wrap: wrap;
@@ -76,7 +77,6 @@ body {
     background-color: #2980b9;
 }
 
-/* Container dan Card Layout */
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
