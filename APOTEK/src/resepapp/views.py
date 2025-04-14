@@ -1,6 +1,10 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import ResepDokter
 from django.urls import reverse_lazy
+from django.shortcuts import render
+
+def homeuser_view(request):
+    return render(request, 'resepapp/homeuser.html')
 
 class ResepListView(ListView):
     model = ResepDokter
