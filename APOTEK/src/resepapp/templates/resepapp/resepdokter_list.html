@@ -1,0 +1,23 @@
+{% extends "warisan.html" %}
+{% block content %}
+
+<h1>Data Resep List</h1>
+<small><a href="{% url 'resepapp:create' %}">Tambah Resep</a></small>
+
+{% for obj in object_list %}
+  <li> 
+    <a href="/resepapp/{{ obj.slug }}/">{{ obj.nama_pasien }}</a>
+     <br>
+    {% if obj.foto_resep %}  <!-- Cek apakah ada foto resep -->
+      <img src="{{ obj.foto_resep.url }}" alt="Foto Resep" width="200">
+    {% else %}
+      <p>Tidak ada foto resep</p>  
+    {% endif %}
+  </li>
+  <p>Dokter: {{ obj.dokter }}</p>
+  <p>Tanggal Resep: {{ obj.tanggal }}</p>
+  <p>Obat: {{ obj.obat }}</p>
+  <p>Catatan: {{ obj.catatan }}</p>
+{% endfor %}
+
+{% endblock %}

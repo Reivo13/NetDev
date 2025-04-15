@@ -1,0 +1,15 @@
+{% extends "warisan.html" %}
+{% block content %}
+
+    <p>{{ object.nama_pasien }}</p>
+    {% if object.foto_resep %}
+      <img src="{{ object.foto_resep.url }}" alt="Foto Resep" width="200">
+    {% else %}
+      <p>Tidak ada foto resep</p>
+    {% endif %}
+    <p>Dokter: {{ object.dokter }}</p>
+    <p>Tanggal Resep: {{ object.tanggal }}</p>
+    <p>Obat yang Diberikan: {{ object.obat }}</p>
+    <p>Catatan: {{ object.catatan }}</p>
+
+{% endblock %}
