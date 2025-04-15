@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apotek Jaya</title>
+  <link rel="stylesheet" href="{% static 'css/homeuser.css' %}">
+</head>
+<body>
+  <header>
+    <div class="left-header">
+      <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
+      <div class="logo">💊 Apotek Jaya</div>
+    </div>
+    <div class="header-buttons">
+      <a href="/profil">Hallo, {{username}}</a>
+      <a href="#" class="login-button">Login</a>
+    </div>
+  </header>
+  
+  <div class="container">
+    <aside id="sidebar" class="sidebar">
+      <a href="/home">Home</a>
+      <a href="#">Lihat Obat</a>
+      <a href="#">Resep Obat</a>
+      <a href="#">Riwayat Obat</a>
+    </aside>
+
+    <main id="mainContent" class="main-content">
+      <h1>Selamat Datang di Apotek Jaya</h1>
+      <p>Pilih menu disamping untuk mengakses</p>
+
+      <div class="card-container">
+        <div class="content">
+          <h2>Daftar Obat</h2>
+          <div class="obat-container">
+            <div class="obat-card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAePRK4k6zrBbEtoTzp1xkofUb9LRqXad1rw&s" alt="Obat 1">
+              <h3>Paracetamol</h3>
+              <p>obat untuk meredakan demam dan nyeri.</p>
+              <div class="tooltip-container">
+                <button class="btn-detail">Detail</button>
+                <div class="tooltip">
+                  <strong>Nama:</strong> Paracetamol<br>
+                  <strong>Jenis:</strong> Tablet<br>
+                  <strong>Dosis:</strong> 3x sehari<br>
+                  <strong>Harga:</strong> Rp 5.000
+                </div>
+              </div>
+            </div>
+
+            <div class="obat-card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJJ_MQnpHCpyrpm_ktUtnqRDnpAPYNG1xHjw&s" alt="Obat 2">
+              <h3>Ibuprofen</h3>
+              <p>Obat penurun demam dan pereda nyeri.</p>
+              <div class="tooltip-container">
+                <button class="btn-detail">Detail</button>
+                <div class="tooltip">
+                  <strong>Nama:</strong> Ibuprofen<br>
+                  <strong>Jenis:</strong> Tablet<br>
+                  <strong>Dosis:</strong> 3x sehari<br>
+                  <strong>Harga:</strong> Rp 3.940 / strip
+                </div>
+              </div>
+            </div>
+
+            <div class="obat-card">
+              <img src="https://bidanclub.com/web/image/product.template/315/image_1024?unique=c54c08f" alt="Obat 3">
+              <h3>Demacolin</h3>
+              <p>Obat untuk meringankan gejala flu.</p>
+              <div class="tooltip-container">
+                <button class="btn-detail">Detail</button>
+                <div class="tooltip">
+                  <strong>Nama:</strong> Demacolin<br>
+                  <strong>Jenis:</strong> Tablet<br>
+                  <strong>Dosis:</strong> 3x sehari<br>
+                  <strong>Harga:</strong> Rp 9.300 / strip 
+                </div>
+              </div>
+            </div>
+
+            <div class="obat-card">
+              <img src="https://image.popmama.com/content-images/post/20210911/apotek-online-farmaku-com-dextral-kaplet-2bd14d1b8a9ff599cebb681afdd5e8ba.jpg?tr=w-1200,h-800&width=1200&height=800" alt="Obat 4">
+              <h3>Dextral</h3>
+              <p>Obat untuk mengatasi batuk dan pilek.</p>
+              <div class="tooltip-container">
+                <button class="btn-detail">Detail</button>
+                <div class="tooltip">
+                  <strong>Nama:</strong> Dextral<br>
+                  <strong>Jenis:</strong> Tablet<br>
+                  <strong>Dosis:</strong> 3x sehari (Sesuai anjuran dokter)<br>
+                  <strong>Harga:</strong> Rp 7.700 / strip
+                </div>
+              </div>
+            </div>
+
+            <div class="obat-card">
+              <img src="https://res-2.cloudinary.com/dk0z4ums3/image/upload/c_scale,h_500,w_500/v1/production/pharmacy/products/1660062558_5fb3755241ab59059e8673d9" alt="Obat 5">
+              <h3>Panadol</h3>
+              <p>Obat untuk meringankan sakit kepala dan sakit gigi.</p>
+              <div class="tooltip-container">
+                <button class="btn-detail">Detail</button>
+                <div class="tooltip">
+                  <strong>Nama:</strong> Panadol<br>
+                  <strong>Jenis:</strong> Tablet<br>
+                  <strong>Dosis:</strong> 3–4x sehari<br>
+                  <strong>Harga:</strong> Rp 12.700 / strip
+                </div>
+              </div>
+            </div>
+
+            <div class="obat-card">
+              <img src="https://kalbemed.com/storage/images/products/8910f73d34b80beca9eabe859d327483.jpg" alt="Obat 6">
+              <h3>Ketoconazole</h3>
+              <p>Obat untuk mengatasi berbagai infeksi jamur di kulit.</p>
+              <div class="tooltip-container">
+                <button class="btn-detail">Detail</button>
+                <div class="tooltip">
+                  <strong>Nama:</strong> Ketoconazole<br>
+                  <strong>Jenis:</strong> Salep<br>
+                  <strong>Dosis:</strong> Oles 1–2x sehari<br>
+                  <strong>Harga:</strong> Rp 10.000 / tube 
+                </div>
+              </div>
+            </div>
+
+            <div class="obat-card">
+              <img src="https://d2qjkwm11akmwu.cloudfront.net/products/399539_10-6-2022_11-22-38-1665770686.png" alt="Obat 7">
+              <h3>Imboost Kids</h3>
+              <p>Obat untuk membantu memelihara daya tahan tubuh</p>
+              <div class="tooltip-container">
+                <button class="btn-detail">Detail</button>
+                <div class="tooltip">
+                  <strong>Nama:</strong> Imboost Kids<br>
+                  <strong>Jenis:</strong> Sirup<br>
+                  <strong>Dosis:</strong> 1–3x sehari<br>
+                  <strong>Harga:</strong> Rp 38.000 / botol 
+                </div>
+              </div>
+            </div>
+
+            <div class="obat-card">
+              <img src="https://res-4.cloudinary.com/dk0z4ums3/image/upload/c_scale,h_500,w_500/v1/production/pharmacy/products/1699237695_ottogenta-removebg-preview" alt="Obat 8">
+              <h3>Gentamicin</h3>
+              <p>Obat untuk mengobati infeksi kulit yang disebabkan oleh bakteri.</p>
+              <div class="tooltip-container">
+                <button class="btn-detail">Detail</button>
+                <div class="tooltip">
+                  <strong>Nama:</strong> Gentamicin<br>
+                  <strong>Jenis:</strong> Salep<br>
+                  <strong>Dosis:</strong> Sesuai resep dokter<br>
+                  <strong>Harga:</strong> Rp4.539 / tube (5g)
+                </div>
+              </div>
+            </div>
+
+            <div class="obat-card">
+              <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1696421081/attached_image/bioplacenton.jpg" alt="Obat 9">
+              <h3>Bioplacenton</h3>
+              <p>Obat untuk mengobati luka bakar dan luka dengan infeksi.</p>
+              <div class="tooltip-container">
+                <button class="btn-detail">Detail</button>
+                <div class="tooltip">
+                  <strong>Nama:</strong> Bioplacenton<br>
+                  <strong>Jenis:</strong> Salep<br>
+                  <strong>Dosis:</strong> 2–4x sehari<br>
+                  <strong>Harga:</strong> Rp 15.000 / tube (15g)
+                </div>
+              </div>
+            </div>
+
+            <div class="obat-card">
+              <img src="https://d3bbrrd0qs69m4.cloudfront.net/images/product/apotek_online_k24klik_2021110510291023085_20b26181-5d60-4b74-ba7b-25ea0482da28.jpg" alt="Obat 10">
+              <h3>Anakonidin Sirup</h3>
+              <p>Obat untuk mengatasi gejala pilek seperti bersin-bersin disertai batuk</p>
+              <div class="tooltip-container">
+                <button class="btn-detail">Detail</button>
+                <div class="tooltip">
+                  <strong>Nama:</strong> Anakonidin Sirup<br>
+                  <strong>Jenis:</strong> Sirup<br>
+                  <strong>Dosis:</strong> Anak 6–12 tahun: 3x sehari<br>
+                  <strong>Harga:</strong> Rp 7.000 / botol (30ml)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+              
+        <h2>Penawaran Menarik</h2>
+          <div class="promo-grid">
+            <img src="https://d2qjkwm11akmwu.cloudfront.net/banners/458466_29-3-2025_0-5-25.webp" alt="Promo 1">
+            <img src="https://d2qjkwm11akmwu.cloudfront.net/banners/458466_29-3-2025_0-5-25.webp" alt="Promo 2">
+            <img src="https://d2qjkwm11akmwu.cloudfront.net/banners/458466_29-3-2025_0-5-25.webp" alt="Promo 3">
+          </div>
+
+  <script src="{% static 'js/homeuser.js' %}"></script>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('hide');
+    }
+  </script>
+</body>
+</html>
