@@ -52,11 +52,7 @@ INSTALLED_APPS = [
     'adminapp',
     'daftarobat',
     'resepapp',
-<<<<<<< HEAD
-    'akun',
-=======
     'homeuserapp',
->>>>>>> devops
 ]
 
 MIDDLEWARE = [

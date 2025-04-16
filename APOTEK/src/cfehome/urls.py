@@ -6,13 +6,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
-    path('akun/', include('akun.urls')),
-    path('admin/', admin.site.urls),
-    path('adminapp/',include('adminapp.urls',namespace= "adminapp")),
-    path('resepapp/',include('resepapp.urls',namespace= "resepapp")),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-=======
     path('homeuser/', include('homeuserapp.urls')),  # Mengarahkan ke app homeuser
     path('adminapp/', include('adminapp.urls', namespace="adminapp")),
     path('resepapp/', include('resepapp.urls', namespace="resepapp")),
@@ -24,4 +17,3 @@ urlpatterns = [
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
->>>>>>> devops
