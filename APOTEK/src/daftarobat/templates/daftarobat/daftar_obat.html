@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Obat</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Panah di kiri -->
+    <a href="/" class="back-button">&#8592;</a>
+
+    <!-- Judul di tengah -->
+    <h1 class="page-title">Katalog Obat</h1>
+
+    <!-- Form filter -->
+    <form method="GET" class="search-box">
+        <input type="text" name="search" placeholder="Cari obat..." value="{{ query }}">
+        <select name="kategori">
+            <option value="">Semua Jenis Obat</option>
+            <option value="Kapsul" {% if filter_kategori == "Kapsul" %}selected{% endif %}>Kapsul</option>
+            <option value="Salep" {% if filter_kategori == "Salep" %}selected{% endif %}>Salep</option>
+            <option value="Sirup" {% if filter_kategori == "Sirup" %}selected{% endif %}>Sirup</option>
+            <option value="Tablet" {% if filter_kategori == "Tablet" %}selected{% endif %}>Tablet</option>
+        </select>
+        <button type="submit">Cari</button>
+    </form>
+
+    <!-- Grid card -->
+    <div class="container">
+        {% for obat in obat_list %}
+        <div class="card">
+            <img src="{{ obat.gambar.url }}" alt="{{ obat.nama }}">
+            <h3>{{ obat.nama }}</h3>
+            <p><strong>Jenis Obat:</strong> {{ obat.kategori }}</p>
+            <p><strong>Stok:</strong> {{ obat.stok }}</p>
+            <p><strong>Cara pakai:</strong> {{ obat.cara_pemakaian }}</p>
+            <p class="price">Rp{{ obat.harga|floatformat:0 }}</p>
+            <button class="btn-beli">Beli</button>
+        </div>
+        {% empty %}
+        <div class="no-obat-msg">Obat Tidak Tersedia.</div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
