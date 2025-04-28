@@ -1,5 +1,8 @@
 from django.urls import path
 from . import views
+from .views import homeuser_view
+
+
 
 app_name = 'resepapp'
 
@@ -10,4 +13,5 @@ urlpatterns = [
     path('<slug:slug>/edit/', views.ResepUpdateView.as_view(), name='update'),
     path('<slug:slug>/delete/', views.ResepDeleteView.as_view(), name='resep_delete'),
 
+    path('', homeuser_view, name='homeuser'),
 ]

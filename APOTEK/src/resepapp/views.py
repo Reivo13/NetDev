@@ -5,6 +5,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib import messages
 from .models import ResepDokter
+from django.shortcuts import render
+
+def homeuser_view(request):
+    return render(request, 'resepapp/homeuser.html')
 
 class ResepListView(ListView):
     model = ResepDokter
