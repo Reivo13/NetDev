@@ -1,0 +1,12 @@
+{% extends "warisan.html" %}
+{% block content %}
+
+<h1>Edit Resep</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+</form>
+
+{% endblock %}

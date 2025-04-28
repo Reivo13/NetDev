@@ -58,7 +58,10 @@ ROOT_URLCONF = 'cfehome.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'src', 'akun', 'templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'src', 'akun', 'templates'),
+            os.path.join(BASE_DIR, 'src', 'admin_resep', 'templates'),  # Tambahkan ini
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,7 +73,6 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = 'cfehome.wsgi.application'
 
 # Database

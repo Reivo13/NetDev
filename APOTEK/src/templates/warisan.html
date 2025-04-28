@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard admin</title>
+    {% include 'snippets/css.html' %}
+    {% include 'snippets/desain.html' %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <!-- pop up update dan tambah obat-->
+        {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      
+        {% block content %}
+        {% endblock content %}
+    </div>
+    {% include 'snippets/js.html' %}
+</body>
+</html>

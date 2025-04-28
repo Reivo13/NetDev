@@ -1,0 +1,10 @@
+{% extends "warisan.html" %}
+{% block content %}
+  <h2>Hapus Obat</h2>
+  <p>Apakah kamu yakin ingin menghapus <strong>{{ object.nama_obat }}</strong>?</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Ya, hapus</button>
+    
+{% endblock %}
