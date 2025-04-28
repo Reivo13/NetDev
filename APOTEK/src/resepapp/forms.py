@@ -6,8 +6,7 @@ class ResepDokterCreateForm(forms.ModelForm):
         model =ResepDokter
         fields = ['user',
                   'foto_resep',
-                  'nama_pasien',
-                  'tanggal_upload', 
+                  'nama_pasien', 
                   'dokter', 
                   'tanggal', 
                   'obat',

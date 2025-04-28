@@ -1,22 +1,28 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import TemplateView,ListView, DetailView, CreateView, UpdateView,DeleteView
 from .models import DataObat
-from .forms import DataObatCreateForm  
+from resepapp.models import ResepDokter
+from .forms import DataObatCreateForm 
+from django.urls import reverse_lazy, reverse
+from django.shortcuts import redirect 
+from django.contrib import messages 
+
 
 class DataObatListView(LoginRequiredMixin, ListView):
-     model = DataObat
-     template_name = 'adminapp/detail.html'
-     login_url = "/login/"
-     def get_queryset(self):
-        return DataObat.objects.filter(owner=self.request.user)
+    model = DataObat
+    template_name = 'adminapp/admin_dashboard.html'
+    login_url = "/login/"
+
 
 class DataObatDetailView(LoginRequiredMixin, DetailView):
-     model = DataObat
-     template_name = 'adminapp/detail.html'
-     login_url = "/login/"
-     
-     def get_queryset(self):
-        return DataObat.objects.filter(owner=self.request.user)
+    model = DataObat
+    template_name = 'adminapp/admin_dashboard.html'
+    login_url = "/login/"
+
+    def form_valid(self, form):
+        self.object = form.save()
+        messages.success(self.request, f"Obat '{self.object.nama_obat}' berhasil diupdate.")
+        return redirect('adminapp:list')
 
 class DataObatCreateView(LoginRequiredMixin, CreateView):
     form_class = DataObatCreateForm
@@ -27,12 +33,21 @@ class DataObatCreateView(LoginRequiredMixin, CreateView):
         instance = form.save(commit=False)
         instance.owner = self.request.user
         instance.save()
-        return super(DataObatCreateView, self).form_valid(form)
+        return super().form_valid(form)
+    
+    def get_success_url(self):
+        return reverse('adminapp:list') 
+    
+    def form_valid(self, form):
+        self.object = form.save()
+        messages.success(self.request, f"Obat '{self.object.nama_obat}' berhasil ditambahkan.")
+        return redirect('adminapp:list')
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['title'] = "Tambah Data Obat"
         return context
+    
 
 class DataObatUpdateView(LoginRequiredMixin, UpdateView):
     model = DataObat
@@ -46,5 +61,33 @@ class DataObatUpdateView(LoginRequiredMixin, UpdateView):
         context['title'] = f"Update Obat: {name}"
         return context
 
-    def get_queryset(self):
-        return DataObat.objects.filter(owner=self.request.user)
+    def form_valid(self, form):
+        self.object = form.save()
+        messages.success(self.request, f"Obat '{self.object.nama_obat}' berhasil diupdate.")
+        return redirect('adminapp:list')
+
+
+class DataObatDeleteView(LoginRequiredMixin, DeleteView):
+    model = DataObat
+    template_name = 'adminapp/obat_delete.html'
+    success_url = reverse_lazy('adminapp:list')
+    login_url = "/login/"
+
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        nama_obat = self.object.nama_obat 
+        messages.success(request, f"Obat '{nama_obat}' berhasil dihapus.")
+        print(f"Obat '{nama_obat}' berhasil dihapus.") 
+        return super().delete(request, *args, **kwargs)
+    
+
+class DashboardView(LoginRequiredMixin, TemplateView):
+    template_name = 'adminapp/admin_dashboard.html'
+    login_url = "/login/"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['obat_list'] = DataObat.objects.all()
+        context['resep_list'] = ResepDokter.objects.all()
+        return context
