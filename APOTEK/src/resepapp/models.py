@@ -16,6 +16,8 @@ class ResepDokter(models.Model):
     tanggal     = models.DateField(null=True,blank= True)  
     obat        = models.CharField(max_length=255,null=True,blank= True)  
     catatan     = models.TextField(null=True,blank= True) 
+    slug        = models.SlugField(unique=True, blank=True)
+
 
 
     def __str__(self):
@@ -23,7 +25,7 @@ class ResepDokter(models.Model):
     
     @property
     def title(self):
-        return self.nama_pasien
+        return f"Resep oleh {self.user.username}"
     
     def get_absolute_url(self):
         return reverse('resep:detail', kwargs={'slug': self.slug})
@@ -33,9 +35,5 @@ def rl_pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = unique_slug_generator(instance)
 
-    #def rl_post_save_receiver(sender, instance, created, *args, **kwargs):
-        #print('saved')
-        #print(instance.timestamp)
-
 pre_save.connect(rl_pre_save_receiver, sender=ResepDokter)
-        #post_save.connect(rl_post_save_receiver, sender=DataObat)
+      
