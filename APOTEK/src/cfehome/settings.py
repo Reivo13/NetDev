@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'resepapp',
     'homeuserapp',
     'history',
+    'admin_daftarobat',
+    'invoice',
 ]
 
 MIDDLEWARE = [
