@@ -41,3 +41,4 @@ class ResepDeleteView(LoginRequiredMixin, DeleteView):
         nama_pasien = self.object.nama_pasien
         messages.success(request, f"Resep untuk pasien '{nama_pasien}' berhasil dihapus.")
         return super().delete(request, *args, **kwargs)
+    
