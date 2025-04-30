@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'resepapp',
     'homeuserapp',
     'history',
+    'admin_daftarobat',
+    'invoice',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +63,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'src', 'akun', 'templates'),
             os.path.join(BASE_DIR, 'src', 'admin_resep', 'templates'),  # Tambahkan ini
+            os.path.join(BASE_DIR,'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -123,3 +126,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGOUT_REDIRECT_URL = '/login/'
