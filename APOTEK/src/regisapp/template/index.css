@@ -1,0 +1,355 @@
+.registration-page-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+ 
+.registration-page-registration-page {
+  gap: 10px;
+  width: 100%;
+  height: 1388px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  background-size: cover;
+  background-image: url("public/external/tq_6crso-q-z1-yljj-1400h.png");
+}
+ 
+.registration-page-group8 {
+  top: 235px;
+  left: 574px;
+  width: 807px;
+  height: 834px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+ 
+.registration-page-group1 {
+  top: 0px;
+  left: 0px;
+  width: 807px;
+  height: 834px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 15px; 
+}
+ 
+.registration-page-text10 {
+  top: 27px;
+  left: 285px;
+  color: rgb(0, 0, 0);
+  width: 250px;
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: "Inter";
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.registration-page-group2 {
+  top: 103px;
+  left: 117px;
+  width: 570px;
+  height: 113px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+ 
+.registration-page-rectangle2 {
+  top: 39px;
+  left: 6px;
+  width: 564px;
+  height: 74px;
+  position: absolute;
+  border-radius: 15px;
+}
+ 
+.registration-page-text11 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.registration-page-text12 {
+  top: 67px;
+  left: 22px;
+  color: rgba(51, 51, 51, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.registration-page-group3 {
+  top: 243px;
+  left: 122px;
+  width: 564px;
+  height: 113px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+ 
+.registration-page-rectangle31 {
+  top: 39px;
+  left: 0px;
+  width: 564px;
+  height: 74px;
+  position: absolute;
+  border-radius: 15px;
+}
+ 
+.registration-page-text13 {
+  top: 67px;
+  left: 15px;
+  color: rgba(51, 51, 51, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.registration-page-text14 {
+  left: 1px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.registration-page-group6 {
+  top: 382px;
+  left: 122px;
+  width: 564px;
+  height: 112px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+ 
+.registration-page-rectangle32 {
+  top: 38px;
+  left: 0px;
+  width: 564px;
+  height: 74px;
+  position: absolute;
+  border-radius: 15px;
+}
+ 
+.registration-page-text15 {
+  top: 66px;
+  left: 15px;
+  color: rgba(51, 51, 51, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.registration-page-text16 {
+  left: 1px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.registration-page-group7 {
+  top: 521px;
+  left: 122px;
+  width: 564px;
+  height: 113px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+ 
+.registration-page-rectangle33 {
+  top: 39px;
+  left: 0px;
+  width: 564px;
+  height: 74px;
+  position: absolute;
+  border-radius: 15px;
+}
+ 
+.registration-page-text17 {
+  top: 67px;
+  left: 15px;
+  color: rgba(51, 51, 51, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.registration-page-text18 {
+  left: 1px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.registration-page-frame41 {
+  gap: 11px;
+  top: 700px;
+  left: 122px;
+  width: 565px;
+  height: 78px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+}
+ 
+.registration-page-frame42 {
+  gap: 10px;
+  width: 280px;
+  height: 71.06631469726562px;
+  display: flex;
+  padding: 22px 10px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 13px;
+  justify-content: center;
+  background-color: #A4D5F4;
+}
+
+.registration-page-frame43 {
+  gap: 10px;
+  width: 280px;
+  height: 71.06631469726562px;
+  display: flex;
+  padding: 22px 10px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 13px;
+  justify-content: center;
+  background-color: var(--dl-color-colors-yellow);
+}
+ 
+.registration-page-text19 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 27px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.registration-page-frame5 {
+  gap: 10px;
+  width: 277px;
+  display: flex;
+  padding: 7px 0;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  background-color: var(--dl-color-colors-yellow);
+}
+ 
+.registration-page-rectangle4 {
+  align-self: stretch;
+  background-color: #FFD700 !important; /* Warna kuning */
+  width: 277px; /* Sesuaikan dengan ukuran yang dibutuhkan */
+  height: 71px;
+  border: none;
+  border-radius: 13px; /* Sesuaikan dengan tombol Daftar */
+}
+
+.registration-page-rectangle4 img {
+  display: none;
+}
+ 
+.registration-page-text20 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 27px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+

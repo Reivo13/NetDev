@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('homeuser/', include('homeuserapp.urls')),
@@ -17,6 +18,12 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('', lambda request: redirect('homeuser/')),
     path('invoice/', include('invoice.urls')),
+    path('login/', include('loginapp.urls', namespace='loginapp')),
+    path('register/', include('regisapp.urls', namespace='regisapp')),
+
+
+    # Redirect dari URL utama (/) ke /homeuser/
+    path('', lambda request: redirect('homeuser/')),  # Pengalihan ke halaman homeuser
 ]
 
 if settings.DEBUG:
