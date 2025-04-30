@@ -4,7 +4,6 @@
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  height: 100vh;
   overflow: auto;
   zoom: 90%;
 }
@@ -20,10 +19,10 @@
   .resep-admin .nav {
     display: flex;
     width: 1453px;
-    height: 70px; /* Mengurangi tinggi navbar */
+    height: 70px; /* Ensuring navbar height matches */
     align-items: center;
     gap: 540px;
-    padding: 10px 50px; /* Mengurangi padding agar navbar tidak terlalu tinggi */
+    padding: 10px 50px;
     position: absolute;
     top: 0;
     left: -7px;
@@ -43,25 +42,25 @@
   
   .resep-admin .logo {
     position: relative;
-    width: 303px;
-    height: 40px;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-start; /* Menyesuaikan posisi logo */
+  width: 303px;
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start; /* Keeping the logo aligned properly */ /* Menyesuaikan posisi logo */
   }
   
   .resep-admin .text-wrapper {
     position: absolute;
-    width: 295px;
-    height: 32px;
-    top: 10px; /* Menurunkan posisi teks lebih banyak */
-    left: 0;
-    font-family: "Inter-SemiBold", Helvetica;
-    font-weight: 600;
-    color: #000000;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: 20px; /* Menjaga jarak baris tetap rapi */
+  width: 295px;
+  height: 32px;
+  top: 10px; /* Adjusted to align the text properly */
+  left: 0;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: 20px; /* Menjaga jarak baris tetap rapi */
   }
   
   .resep-admin .list {
@@ -104,14 +103,14 @@
   .resep-admin .component-2 {
     height: 32px;
     align-items: center;
-    justify-content: center;
-    padding: 8px 8px 8.05px;
-    margin-right: -49.00px;
+    justify-content: flex-end;
+    padding: 8px 16px;
     background-color: #ff3c5f;
     border-radius: 8px;
-    display: inline-flex;
-    position: relative;
-    flex: 0 0 auto;
+    display: flex;
+    position: absolute;
+    right: 80px;  
+    top: 18px;
   }
   
   .resep-admin .rectangle {
@@ -141,7 +140,6 @@
   
   .resep-admin .text {
     position: relative;
-    width: fit-content;
     margin-top: -1.53px;
     font-family: "Inter-Bold", Helvetica;
     font-weight: 700;
@@ -151,6 +149,9 @@
     letter-spacing: 0;
     line-height: 16.1px;
     white-space: nowrap;
+    display: flex;
+    justify-content: flex-end; /* Menggeser ke kanan */
+    width: 100%;
   }
   
   .resep-admin .text-wrapper-3 {
@@ -334,3 +335,73 @@
     height: 20px;
     cursor: pointer;
   }
+
+ 
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+  .modal img {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 80vh;
+  }
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content-box {
+    background: #fff;
+    padding: 20px;
+    max-width: 400px;
+    margin: 100px auto;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  
