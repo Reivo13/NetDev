@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AdminResepConfig(AppConfig):
+class AdminDaftarobatConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'admin_resep'
+    name = 'admin_daftarobat'
