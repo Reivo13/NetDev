@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+  }
+  
+  .top-header {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-left: 10px;
+  }
+  
+  .logo .pill {
+    font-size: 24px;
+    margin-right: 6px;
+  }
+  
+  .hamburger {
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  .wrapper {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 180px;
+    background-color: #cdddf2;
+    height: 100vh;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar a {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .sidebar a:hover {
+    background-color: #e0e7ff;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .top-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #ccc;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .btn.blue {
+    background-color: #007bff;
+  }
+  
+  .filter-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .resep-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .resep-table th, .resep-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+  
+  .status.sukses {
+    color: green;
+    font-weight: bold;
+  }
+  
+  /* Modal Upload */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+  }
+  
+  .close {
+    color: #aaa;
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #000;
+  }
+  

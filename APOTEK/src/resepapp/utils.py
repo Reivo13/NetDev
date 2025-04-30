@@ -10,7 +10,7 @@ http://joincfe.com/blog/random-string-generator-in-python/
 def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
-from adminapp.utils import random_string_generator
+from resepapp.utils import random_string_generator
 
 def unique_slug_generator(instance, new_slug=None):
     """

@@ -1,5 +1,46 @@
-<form method="POST" class="form" enctype="multipart/form-data"> 
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn">Simpan</button>
-</form>
+
+<div class="container">
+
+    <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+        
+            <div class="form-group">
+                <label for="{{ form.nama_obat.id_for_label }}">Nama Obat</label>
+                {{ form.nama_obat }}
+            </div>
+        
+            <div class="form-group">
+                <label for="{{ form.foto.id_for_label }}">Foto</label>
+                {{ form.foto }}
+            </div>
+        
+            <div class="form-group">
+                <label for="{{ form.jenis_obat.id_for_label }}">Jenis Obat</label>
+                {{ form.jenis_obat }}
+            </div>
+        
+            <div class="form-group">
+                <label for="{{ form.harga.id_for_label }}">Harga</label>
+                {{ form.harga }}
+            </div>
+        
+            <div class="form-group">
+                <label for="{{ form.stok.id_for_label }}">Stok</label>
+                {{ form.stok }}
+            </div>
+        
+            <div class="form-group">
+                <label for="{{ form.dosis_aturan_pakai.id_for_label }}">Dosis / Aturan Pakai</label>
+                {{ form.dosis_aturan_pakai }}
+            </div>
+        
+            <div class="d-flex">
+                <button type="submit" class="btn btn-primary mr-2">Simpan</button>
+                <a href="{% url 'adminapp:list' %}" class="btn btn-secondary">Data Obat</a>
+            </div>
+        </form>
+        
+    <div class="footer-text">
+        <p>© 2025 Data Obat. <a href="#">Terms and Conditions</a> | <a href="#">Privacy Policy</a></p>
+    </div>
+</div>

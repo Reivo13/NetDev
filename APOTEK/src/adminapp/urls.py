@@ -3,14 +3,16 @@ from .views import (
     DataObatListView,
     DataObatDetailView,
     DataObatCreateView,
-    DataObatUpdateView
+    DataObatUpdateView,
+    DataObatDeleteView,
+    DashboardView,
 )
-
 app_name = 'adminapp'
 
 urlpatterns = [
-    path('', DataObatListView.as_view(), name='list'),
+    path('', DashboardView.as_view(), name='list'),
     path('create/', DataObatCreateView.as_view(), name='create'),
-    path('<slug:slug>/', DataObatUpdateView.as_view(), name='detail'),
-    #path('<slug:slug>/edit/', DataObatUpdateView.as_view(), name='update'),
+    path('<slug:slug>/', DataObatDetailView.as_view(), name='detail'),  # untuk halaman detail (opsional)
+    path('<slug:slug>/update/', DataObatUpdateView.as_view(), name='obat_update'),  # ✅ ini penting untuk update
+    path('<slug:slug>/delete/', DataObatDeleteView.as_view(), name='obat_delete'),
 ]
