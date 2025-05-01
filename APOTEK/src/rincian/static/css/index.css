@@ -1,0 +1,762 @@
+.rincianobatuser-container1 {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+ 
+.rincianobatuser-rincianobatuser {
+  width: 100vw; /* Full width of the viewport */
+  height: 1440px; /* Full height of the viewport */
+  display: flex;
+  overflow-x: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-image: url("/static/public/external/tq_ejmrgrz208-chlt-2000w.png");
+  background-size: cover; /* Ensure the background covers the area */
+  background-position: center ; /* Center the background image */
+  padding-bottom: 100px; /* Prevent content overlap by adding padding */
+ 
+}
+
+
+
+
+
+
+.rincianobatuser-pembeli {
+  top: 174px;
+  left: 384px;
+  width: 1152px;
+  height: 967px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 23px;
+  justify-content: center;
+  background-color: rgba(132, 132, 132, 0.23000000417232513);
+}
+ 
+.rincianobatuser-rectangle6 {
+  top: 119px;
+  left: 98px;
+  width: 468px;
+  height: 420px;
+  position: absolute;
+}
+ 
+.rincianobatuser-frame91 {
+  gap: 60px;
+  top: 119px;
+  left: 684px;
+  width: 410px;
+  height: 420px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.rincianobatuser-text10 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 39px;
+  align-self: stretch;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-text11 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 30px;
+  align-self: stretch;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-text12 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 30px;
+  align-self: stretch;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-frame92 {
+  gap: 38px;
+  top: 741px;
+  left: 98px;
+  width: 528px;
+  height: 140px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.rincianobatuser-frame1175 {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+ 
+.rincianobatuser-text13 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 39px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-text14 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 39px;
+  align-self: stretch;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-component8 {
+  top: 806px;
+  left: 781px;
+  width: 273px;
+  height: 75px;
+  display: flex;
+  padding: 6.949999809265137px 8px 8.050000190734863px;
+  position: absolute;
+  box-shadow: 0px 2px 4px 0px rgba(12, 12, 12, 0.10000000149011612) ;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 4px;
+  justify-content: center;
+  background-color: rgba(224, 0, 77, 1);
+}
+ 
+.rincianobatuser-background1 {
+  top: 0px;
+  left: 0px;
+  width: 61px;
+  height: 75px;
+  opacity: 0.04;
+  position: absolute;
+  border-radius: 4px;
+}
+ 
+.rincianobatuser-rectangle1 {
+  top: 0px;
+  left: 0px;
+  width: 273px;
+  height: 75px;
+  z-index: 1;
+  position: absolute;
+}
+ 
+.rincianobatuser-rectangle2 {
+  top: 14px;
+  left: 0px;
+  width: 273px;
+  height: 48px;
+  z-index: 2;
+  position: absolute;
+}
+ 
+.rincianobatuser-text15 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  z-index: 3;
+  font-size: 35px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 16.100000381469727px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-pasted-image {
+  width: 221px;
+  height: 60px;
+  margin-top: 530px;
+}
+ 
+.rincianobatuser-nav {
+  gap: 98px;
+  top: 0px; /* Remove negative top margin */
+  left: 0px; /* Remove negative left margin */
+  width: 100%; /* Set the width to 100% to ensure it spans the entire page */
+  height: 94px; 
+  display: flex;
+  padding: 23px 142px 23px 151px;
+  overflow: hidden;
+  position: fixed; /* Ensure it remains at the top */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  justify-content: center;
+  background-color: rgba(248, 248, 248, 1);
+  z-index: 100; /* Ensures the header stays on top */
+}
+
+.rincianobatuser-magnetonavbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.rincianobatuser-logo {
+  width: 303px;
+  height: 40px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+ 
+.rincianobatuser-text16 {
+  top: 4px;
+  left: -0.1650390625px;
+  color: rgba(51, 51, 51, 1);
+  width: 295px;
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 30px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-list {
+  gap: 32px;
+  display: flex;
+  padding: 8px 32px 8px 40px;
+  align-items: center;
+}
+ 
+.rincianobatuser-component3 {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 200px;
+}
+ 
+.rincianobatuser-text17 {
+  color: rgba(51, 51, 51, 1);
+  height: auto;
+  font-size: 20px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-component6 {
+  gap: -1.4210854715202004e-14px;
+  width: 250.27000427246094px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-align: center;
+}
+ 
+.rincianobatuser-text18 {
+  color: rgba(51, 51, 51, 1);
+  height: auto;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: right;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-searchbar {
+  gap: 4px;
+  width: 350px;
+  height: 40px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 28px;
+}
+ 
+.rincianobatuser-statelayer1 {
+  gap: 4px;
+display: flex;
+padding: 4px;
+align-self: stretch;
+align-items: center;
+flex-shrink: 0;
+}
+ 
+.rincianobatuser-content {
+  gap: 10px;
+display: flex;
+padding: 0 0 0 22px;
+align-self: stretch;
+align-items: center;
+flex-shrink: 0;
+}
+ 
+.rincianobatuser-supportingtext {
+  top: 10.5px;
+  left: 22px;
+  width: 25px;
+  height: 11px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+ 
+.rincianobatuser-text19 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: 10.680000305175781px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-trailing-elements {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: flex-end;
+}
+ 
+.rincianobatuser-frame1sttrailingicon {
+  gap: 10px;
+  top: 0px;
+  left: 0px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.rincianobatuser-container2 {
+  gap: 10px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  border-radius: 100px;
+  justify-content: center;
+}
+ 
+.rincianobatuser-statelayer2 {
+  gap: 10px;
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.rincianobatuser-icon {
+  width: 24px;
+  height: 24px;
+}
+ 
+.rincianobatuser-component5 {
+  height: 32px;
+  display: flex;
+  padding: 8px 8px 8.050000190734863px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  justify-content: center;
+  background-color: rgba(212, 194, 61, 1);
+}
+ 
+.rincianobatuser-rectangle3 {
+  top: 0px;
+  left: 0px;
+  width: 60px;
+  height: 32px;
+  position: absolute;
+  border-radius: 4px;
+}
+ 
+.rincianobatuser-rectangle4 {
+  top: 0px;
+  left: 0px;
+  width: 60px;
+  height: 32px;
+  z-index: 1;
+  position: absolute;
+}
+ 
+.rincianobatuser-rectangle5 {
+  top: -8px;
+  left: 0px;
+  width: 60px;
+  height: 48px;
+  z-index: 2;
+  position: absolute;
+}
+ 
+.rincianobatuser-text20 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  z-index: 3;
+  font-size: 14px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 16.100000381469727px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-hdbasefooter-footer {
+  gap: 0;
+  top: 1218px;
+  left: 0px;
+  width: 100%;
+  height: 271px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  margin: 0;
+  padding: 20px 0; /* Adjust padding */
+
+  box-sizing: border-box; /* Ensure padding doesn't overflow */
+  position: absolute; /* Keeps footer at the bottom */
+  bottom: 0;
+ 
+  background-color: #444; /* Adjust footer background */
+  z-index: 999; /* Ensure it's above other content */
+  padding: 20px 0;
+  text-align: center;
+  /* Adjust this value to bring the footer closer */
+}
+ 
+.rincianobatuser-background2 {
+  width: 0;
+  height: 217px;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(68, 68, 68, 1);
+
+  justify-content:flex-;
+}
+ 
+.rincianobatuser-group12 {
+  top: 49px;
+  left: 188px;
+  width: 127.19656372070312px;
+  height: 110px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+ 
+.rincianobatuser-text21 {
+  color: rgba(255, 255, 255, 1);
+  width: 70px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 18.399999618530273px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-text22 {
+  top: 32.5px;
+  color: rgba(255, 255, 255, 1);
+  width: 27px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 16.100000381469727px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-text23 {
+  top: 63px;
+  color: rgba(255, 255, 255, 1);
+  width: 127px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 16.100000381469727px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-text24 {
+  top: 93px;
+  color: rgba(255, 255, 255, 1);
+  width: 115px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 16.100000381469727px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-group13 {
+  top: 51px;
+  left: 1466px;
+  width: 325px;
+  height: 127px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+ 
+.rincianobatuser-text25 {
+  color: rgba(255, 255, 255, 1);
+  width: 250px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 18.399999618530273px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-text26 {
+  top: 108px;
+  color: rgba(255, 255, 255, 1);
+  width: 242px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 55px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-text27 {
+  top: 37px;
+  color: rgb(255, 255, 255);
+  width: 325px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Bold;
+  text-align: left;
+  font-family: "Inter";
+  font-weight: 700;
+  line-height: 16.1px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-text28 {
+  top: 72px;
+  color: rgb(255, 255, 255);
+  right: -2px;
+  width: 325px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Bold;
+  text-align: left;
+  font-family: "Inter";
+  font-weight: 700;
+  line-height: 16.1px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-frame1 {
+  gap: 20px;
+  top: 57px;
+  left: 879px;
+  width: 155px;
+  height: 102px;
+  display: flex;
+  position: absolute;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+ 
+.rincianobatuser-text29 {
+  color: rgba(255, 255, 255, 1);
+  width: 120px;
+  height: auto;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 18.399999618530273px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.rincianobatuser-twiter {
+  width: 22.65999984741211px;
+  height: 20px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-size: cover;
+  background-image: url("/static/public/external/tq_yl2tuooosy-4m9s-1500w.png");
+}
+ 
+.rincianobatuser-ig {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-size: cover;
+  background-image: url("/static/public/external/tq_qdoqo4vldm-6axq-200h.png");
+}
+ 
+.rincianobatuser-mail {
+  width: 25px;
+  height: 26px;
+}
+ 
+.rincianobatuser-youtube {
+  width: 27.049999237060547px;
+  height: 20px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-size: cover;
+  background-image: url("/static/public/external/tq_ny4nxjz8tl-x35g-1500w.png");
+}
+ 
+.rincianobatuser-background3 {
+  gap: -121px;
+  display: flex;
+  padding: 20px 0;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  background-color: rgba(132, 132, 132, 1);
+  
+}
+ 
+.rincianobatuser-text30 {
+  color: rgba(255, 255, 255, 1);
+  width: 170px;
+  height: auto;
+  font-size: 16px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 18.399999618530273px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
