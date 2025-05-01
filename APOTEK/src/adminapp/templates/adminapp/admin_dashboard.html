@@ -1,0 +1,135 @@
+{% extends "warisan.html" %}
+{% block content %}
+<div class="dashboard">
+    <h1>Dashboard Admin Apotek</h1>
+
+    <div class="section">
+        <h2>Daftar Resep</h2>
+        <div class="recipe-list">
+            {% for obj in resep_list %}
+            <div class="recipe-card">
+                {% if obj.foto_resep %}
+                    <img src="{{ obj.foto_resep.url }}" alt="Foto Resep {{ obj.nama_pasien }}" class="recipe-image">
+                {% else %}
+                    <p>Tidak ada resep</p>
+                {% endif %}
+
+                <div class="recipe-content">
+                    <div class="recipe-desc">
+                        <p><strong>Dokter:</strong> {{ obj.dokter }}</p>
+                        <p><strong>Tanggal Resep:</strong> {{ obj.tanggal }}</p>
+                        <p><strong>Obat:</strong> {{ obj.obat }}</p>
+                        <p><strong>Catatan:</strong> {{ obj.catatan|default:"-" }}</p>
+                    </div>
+                </div>
+
+                <!-- Tombol Modal -->
+                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#resepModal-{{ obj.slug }}">
+                    Lihat Detail
+                </button>
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteResepModal-{{ obj.slug }}">
+                    Hapus
+                </button>
+            </div>
+
+            <!-- Modal Detail Resep -->
+            <div class="modal fade" id="resepModal-{{ obj.slug }}" tabindex="-1" aria-labelledby="resepModalLabel-{{ obj.slug }}" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="resepModalLabel-{{ obj.slug }}">Resep untuk {{ obj.nama_pasien }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    {% if obj.foto_resep %}
+                        <img src="{{ obj.foto_resep.url }}" alt="Foto Resep {{ obj.nama_pasien }}" class="img-fluid rounded shadow w-100">
+                    {% else %}
+                        <p>Tidak ada foto resep</p>
+                    {% endif %}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal Hapus Resep -->
+            <div class="modal fade" id="deleteResepModal-{{ obj.slug }}" tabindex="-1" aria-labelledby="deleteResepLabel-{{ obj.slug }}" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <form method="post" action="{% url 'resepapp:resep_delete' obj.slug %}">
+                    {% csrf_token %}
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteResepLabel-{{ obj.slug }}">Konfirmasi Hapus Resep</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                    </div>
+                    <div class="modal-body">
+                      Apakah kamu yakin ingin menghapus resep milik <strong>{{ obj.nama_pasien }}</strong>?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                      <button type="submit" class="btn btn-danger">Ya, Hapus</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Daftar Obat</h2>
+        <div class="medicine-list">
+            {% for obj in obat_list %}
+            <div class="medicine-card" id="obat-{{ obj.slug }}">
+                <a href="/adminapp/{{ obj.slug }}/" class="medicine-title">{{ obj.nama_obat }}</a>
+
+                {% if obj.foto %}
+                    <img src="{{ obj.foto.url }}" alt="{{ obj.nama_obat }}" class="medicine-image">
+                {% else %}
+                    <p>Tidak ada foto</p>
+                {% endif %}
+
+                <div class="medicine-content">
+                    <p><strong>Jenis:</strong> {{ obj.jenis_obat }}</p>
+                    <p><strong>Stok:</strong> {{ obj.stok }} Pcs</p>
+                    <p><strong>Harga:</strong> Rp{{ obj.harga }}</p>
+                    <p><strong>Dosis:</strong> {{ obj.dosis_aturan_pakai }}</p>
+
+                    <a href="{% url 'adminapp:obat_update' obj.slug %}" class="btn btn-primary">Update</a>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ obj.slug }}">Hapus</button>
+                </div>
+            </div>
+
+            <!-- Modal Delete obat-->
+            <div class="modal fade" id="deleteModal-{{ obj.slug }}" tabindex="-1" aria-labelledby="deleteLabel-{{ obj.slug }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form method="post" action="{% url 'adminapp:obat_delete' obj.slug %}">
+                            {% csrf_token %}
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteLabel-{{ obj.slug }}">Konfirmasi Hapus</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                            </div>
+                            <div class="modal-body">
+                                Apakah kamu yakin ingin menghapus <strong>{{ obj.nama_obat }}</strong>?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-danger">Ya, Hapus</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="add-medicine">
+        <a href="{% url 'adminapp:create' %}" class="add-btn">Tambah Obat</a>
+    </div>
+</div>
+{% endblock %}

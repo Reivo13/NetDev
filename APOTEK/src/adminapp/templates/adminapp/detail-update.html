@@ -1,20 +1,6 @@
 
 {% extends "warisan.html" %}
 {% block content %}
-
-
-    <p>{{ form.instance.title }}</p>
-    {% if form.instance.foto %} 
-      <img src="{{ form.instance.foto.url }}" alt="{{ form.instance.nama_obat }}" width="200">
-    {% else %}
-      <p>Tidak ada foto</p>  
-    {% endif %}
-    <p>Jenis: {{ form.instance.jenis_obat }}</p>
-    <p>Stok: {{ form.instance.stok }}</p>
-    <p>Harga: {{ form.instance.harga }}</p>
-    <p>Dosis: {{ form.instance.dosis_aturan_pakai }}</p>
-
-    <hr>
     <h3> update obat </h3>
     {% include 'snippets/form-snippets.html' with form=form %}
 {% endblock %}
