@@ -78,12 +78,36 @@
               </div>
             
               {% for obj in object_list %}
-                <div class="div-wrapper">
-                  <div class="table-body-2">
-                    <a href="#" class="open-modal" data-img="{{ obj.foto_resep. }}">Lihat</a>
+              <div class="div-wrapper">
+                <div class="table-body-2">
+                  <!-- Tombol untuk membuka modal -->
+                  <button type="button" class="btn btn-primary open-modal" data-img="{{ obj.foto_resep.url }}" data-toggle="modal" data-target="#fotoModal">Lihat</button>
+                </div>
+              </div>
+            {% endfor %}
+            
+            <!-- Modal Template -->
+            <div class="modal fade" id="fotoModal" tabindex="-1" role="dialog" aria-labelledby="fotoModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="fotoModalLabel">Foto Resep</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Menampilkan gambar resep -->
+                    <img id="modalImage" src="" alt="Foto Resep" class="img-fluid">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                   </div>
                 </div>
-              {% endfor %}
+              </div>
+            </div>
+            
+          
             </div>
 
             <div class="frame-10">
@@ -103,5 +127,6 @@
         </div>
       </div>
     </div>
+    {% include 'snippets/js.html' %}
   </body>
 </html>
