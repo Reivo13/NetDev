@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    .back-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 20px;
+        text-decoration: none;
+        color: black;
+    }
+</style>
+        
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            background: url('/static/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            width: 400px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        input[type=text], input[type=password] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .masuk {
+            background-color: #ffc107;
+            color: black;
+        }
+        .daftar {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <a href="/" class="back-button">&#8592;</a>
+    <h1>💊 Apotek Jaya</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="masukkan username" required><br>
+        <input type="password" name="password" placeholder="masukkan password" required><br>
+        <button type="submit" class="masuk">Login</button>
+        <a href="{% url 'register' %}">
+            <button type="button" class="daftar">Belum punya akun?</button>
+        </a>
+    </form>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: red;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+
+</body>
+</html>

@@ -60,8 +60,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'src', 'akun', 'templates'),
-            os.path.join(BASE_DIR, 'src', 'admin_resep', 'templates'),  # Tambahkan ini
+            os.path.join(BASE_DIR, 'akun', 'templates'),
+            os.path.join(BASE_DIR, 'admin_resep', 'templates'),
+            os.path.join(BASE_DIR, 'accounts', 'templates'),
+
         ],
         'APP_DIRS': True,
         'OPTIONS': {

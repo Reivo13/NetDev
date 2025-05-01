@@ -1,0 +1,66 @@
+<!-- templates/accounts/register.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Apotek Jaya</title>
+    <style>
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+    <style>
+        /* Styling sama seperti UI yang kamu kirim */
+        body {
+            background: url('/static/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px;
+            margin-top: 20px;
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-button">&#8592;</a>
+        <h2>💊 Apotek Jaya</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.username.label_tag }}<br>
+            {{ form.username }}<br>
+
+            {{ form.email.label_tag }}<br>
+            {{ form.email }}<br>
+
+            {{ form.password1.label_tag }}<br>
+            {{ form.password1 }}<br>
+
+            {{ form.password2.label_tag }}<br>
+            {{ form.password2 }}<br>
+
+            <button type="submit" style="background-color: yellow;">Daftar</button>
+            <a href="{% url 'login' %}"><button type="button">Sudah punya akun</button></a>
+        </form>
+    </div>
+</body>
+</html>
