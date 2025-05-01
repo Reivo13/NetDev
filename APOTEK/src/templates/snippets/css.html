@@ -13,16 +13,50 @@
 <link href="{% static 'invoice/css/global.css' %}" rel="stylesheet">
 <link href="{% static 'invoice/css/styleguide.css' %}" rel="stylesheet">
 
-<!-- Admin Daftar Obat CSS -->
-<link href="{% static 'admin_daftarobat/css/global.css' %}" rel="stylesheet">
-<link href="{% static 'admin_daftarobat/css/style.css' %}" rel="stylesheet">
-<link href="{% static 'admin_daftarobat/css/styleguide.css' %}" rel="stylesheet">
 
-<!-- Admin Resep CSS -->
-<link href="{% static 'admin_resep/css/global.css' %}" rel="stylesheet">
-<link href="{% static 'admin_resep/css/style.css' %}" rel="stylesheet">
-<link href="{% static 'admin_resep/css/styleguide.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'admin_resep/css/global.css' %}" />
+<link rel="stylesheet" href="{% static 'admin_resep/css/styleguide.css' %}" />
+<link rel="stylesheet" href="{% static 'admin_resep/css/style.css' %}" />
+
+<link rel="stylesheet" href="{% static 'admin_daftarobat/css/global.css' %}" />
+<link rel="stylesheet" href="{% static 'admin_daftarobat/css/styleguide.css' %}" />
+<link rel="stylesheet" href="{% static 'admin_daftarobat/css/style.css' %}" />
+
 
 <style>
- 
+
+input,
+textarea,
+select {
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: #d9d9d9; /* tetap abu-abu saat diketik */
+  outline: none;
+  box-shadow: none;          /* hilangkan garis fokus browser */
+}
+
+input[type="text"],
+    textarea,
+    select,
+    input[type="number"],
+    input[type="file"] {
+      width: 100;
+      max-width: 5000px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 20px;
+      background-color: #ffffff;
+      font-size: 16px;
+      height: 50px;
+    }
+
 </style>
