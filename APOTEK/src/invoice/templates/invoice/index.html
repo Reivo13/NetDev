@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.80">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'invoice/css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'invoice/css/styleguide.css' %}" />
+    <link rel="stylesheet" href="{% static 'invoice/css/style.css' %}" />
+    <title>Invoice</title>
+  </head>
+  <body>
+    <div class="invoice" data-model-id="{{ invoice.id }}">
+      <div class="div">
+        <div class="overlap-group">
+          <div class="text-wrapper">Billed To:</div>
+          <div class="client">
+            <div class="client-name">{{ invoice.client_name }}</div>
+            <div class="address-contact-info">{{ invoice.client_contact_info }}</div>
+          </div>
+          <div class="text-wrapper-2">Invoice</div>
+          <div class="frame">
+            <div class="invoice-number">
+              <div class="text-wrapper-3">Invoice No.</div>
+              <div class="text-wrapper-4">#{{ invoice.number }}</div>
+            </div>
+            <div class="dates">
+              <div class="div-2">
+                <div class="text-wrapper-3">Tanggal Beli</div>
+                <div class="text-wrapper-5">{{ invoice.purchase_date }}</div>
+              </div>
+              <div class="div-2">
+                <div class="text-wrapper-3">Waktu Pembayaran</div>
+                <div class="text-wrapper-5">{{ invoice.payment_date }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overlap">
+          <div class="rectangle"></div>
+          <div class="total">
+            <div class="total-2">
+              <div class="text-wrapper-3">Total</div>
+              <div class="currency">
+                <div class="text-wrapper-3">(</div>
+                <div class="USD-wrapper"><div class="USD">{{ invoice.currency }}</div></div>
+                <div class="text-wrapper-3">)</div>
+              </div>
+            </div>
+            <div class="total-amount">{{ invoice.total_amount }}</div>
+          </div>
+        </div>
+        <div class="text-wrapper-6">Services</div>
+        <div class="text-wrapper-7">Qty.</div>
+        <div class="price">Harga</div>
+        <div class="text-wrapper-8">Total</div>
+        <div class="invoice-items">
+          {% for item in invoice.items %}
+            <div class="navbar">
+              <div class="text-wrapper-9">{{ item.name }}</div>
+              <div class="quantity">{{ item.quantity }}</div>
+              <div class="price-2">{{ item.price }}</div>
+              <div class="total-3">{{ item.total }}</div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="company">
+          <div class="logo"></div>
+          <div class="company-details-wrapper">
+            <div class="company-details">
+              <!-- Nama Apotek Jaya tetap ada -->
+              <div class="company-name-LLC">Apotek Jaya</div>
+              <p class="address-contact-info">
+                Jl. Telekomunikasi No.1, Citeureup, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257
+              </p>
+              <input class="email" placeholder="ApotekJaya@gmail.com" type="email" />
+              <div class="ID">{{ company.id }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

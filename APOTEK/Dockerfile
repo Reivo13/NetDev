@@ -1,21 +1,17 @@
-FROM python:3.11.1-slim as builder
+FROM python:3.11.1-slim
 
-# copy project
+# Set workdir
+WORKDIR /app
+
+# Copy source code
 COPY ./src /app
-WORKDIR  /app
 
-# Update system environment
-ENV PYTHON_VERSION=3.10
-ENV DEBIAN_FRONTEND noninteractive
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
-
-# Update system defaults
+# Install system dependencies
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
-    apt-get install -y \ 
+    apt-get install -y \
     locales \
-    libmemcached-dev \ 
+    libmemcached-dev \
     libpq-dev \
     libjpeg-dev \
     zlib1g-dev \
@@ -27,23 +23,26 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Update Locales
+# Setup locale
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
-    && locale-gen &&  dpkg-reconfigure locales
+    && locale-gen && dpkg-reconfigure locales
 
+# Create and activate virtual environment
+RUN python3 -m venv /opt/venv
 
-# Install Python deps
-RUN python3 -m venv /opt/venv && \
-    /opt/venv/bin/python -m pip install pip --upgrade && \
-    /opt/venv/bin/python -m pip install -r /app/requirements.txt
+# Upgrade pip & install dependencies
+RUN /opt/venv/bin/pip install --upgrade pip
+RUN /opt/venv/bin/pip install -r requirements.txt
 
-# Purge unused
-RUN apt-get remove -y --purge make gcc build-essential \
-    && apt-get autoremove -y \
-    && rm -rf /var/lib/apt/lists/*
+# (Optional) Buat script kamu executable, kalau memang ada
+RUN chmod +x config/migrate.sh || true
+RUN chmod +x config/entrypoint.sh || true
 
-# Make local files executable
-RUN chmod +x config/migrate.sh && \
-    chmod +x config/entrypoint.sh
+# Set PATH agar command `python` & `pip` langsung jalan dari venv
+ENV PATH="/opt/venv/bin:$PATH"
 
-CMD [ "./config/entrypoint.sh" ]
+# Run Django server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

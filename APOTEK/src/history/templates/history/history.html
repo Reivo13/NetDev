@@ -1,0 +1,34 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Riwayat Pembelian Obat</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <button onclick="history.back()" class="btn-back">&#8592;</button>
+
+    <h1 class="page-title">🧾 Riwayat Pembelian Obat</h1>
+
+    <div class="history-container">
+        {% for item in pembelian %}
+        <div class="history-card">
+            <img class="history-image" src="{{ item.gambar.url }}" alt="Gambar Obat">
+            <h3>{{ item.nama_obat }}</h3>
+            <p><strong>Nama Pembeli:</strong> {{ item.nama_pembeli }}</p>
+            <p><strong>Tanggal Pembelian:</strong> {{ item.tanggal_pembelian }}</p>
+            <p><strong>Jumlah:</strong> {{ item.jumlah }}</p>
+            <p><strong>Cara Pakai:</strong> {{ item.cara_pakai }}</p>
+            <p><strong>Harga Satuan:</strong> Rp{{ item.harga_satuan|floatformat:0|intcomma }}</p>
+            <p><strong>Total Harga:</strong> Rp{{ item.total_harga|floatformat:0|intcomma }}</p>
+        </div>
+        {% empty %}
+        <p>Tidak ada riwayat pembelian.</p>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

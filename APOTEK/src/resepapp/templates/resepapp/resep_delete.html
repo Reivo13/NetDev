@@ -2,7 +2,7 @@
 {% block content %}
   <div class="container mt-4">
     <h3>Konfirmasi Hapus</h3>
-    <p>Apakah kamu yakin ingin menghapus resep atas nama <strong>{{ object.nama_pasien }}</strong>?</p>
+    <p>Apakah kamu yakin ingin menghapus resep atas nama <strong>{{ object.nama }}</strong>?</p>
 
     <form method="post">
       {% csrf_token %}
