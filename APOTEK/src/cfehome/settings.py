@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'history',
     'admin_daftarobat',
     'invoice',
+    'landing_page',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +64,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'src', 'akun', 'templates'),
             os.path.join(BASE_DIR, 'src', 'admin_resep', 'templates'),  # Tambahkan ini
+            os.path.join(BASE_DIR, 'src', 'landing_page', 'templates'),
             os.path.join(BASE_DIR,'templates'),
         ],
         'APP_DIRS': True,
