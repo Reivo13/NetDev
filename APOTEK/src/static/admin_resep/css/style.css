@@ -104,14 +104,14 @@
   .resep-admin .component-2 {
     height: 32px;
     align-items: center;
-    justify-content: center;
-    padding: 8px 8px 8.05px;
-    margin-right: -49.00px;
+    justify-content: flex-end;
+    padding: 8px 16px;
     background-color: #ff3c5f;
     border-radius: 8px;
-    display: inline-flex;
-    position: relative;
-    flex: 0 0 auto;
+    display: flex;
+    position: absolute;
+    right: 80px;  /* Ubah dari 32px ke 80px agar tidak terlalu mepet */
+    top: 18px;
   }
   
   .resep-admin .rectangle {
@@ -141,7 +141,6 @@
   
   .resep-admin .text {
     position: relative;
-    width: fit-content;
     margin-top: -1.53px;
     font-family: "Inter-Bold", Helvetica;
     font-weight: 700;
@@ -151,6 +150,9 @@
     letter-spacing: 0;
     line-height: 16.1px;
     white-space: nowrap;
+    display: flex;
+    justify-content: flex-end; /* Menggeser ke kanan */
+    width: 100%;
   }
   
   .resep-admin .text-wrapper-3 {

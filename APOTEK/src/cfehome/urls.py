@@ -8,10 +8,12 @@ from django.contrib.auth.views import LoginView
 from accounts import views
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('homeuser/', include('homeuserapp.urls')),
     path('admin_resep/', include('admin_resep.urls')),
+    path('admin_daftarobat/', include('admin_daftarobat.urls')),
     path('adminapp/', include('adminapp.urls', namespace="adminapp")),
     path('resepapp/', include('resepapp.urls', namespace="resepapp")),
     path('obat/', include('daftarobat.urls')),
@@ -20,6 +22,13 @@ urlpatterns = [
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('register/', views.register, name='register'),
     path('', lambda request: redirect('homeuser/')),
+    path('invoice/', include('invoice.urls')),
+    path('login/', include('loginapp.urls', namespace='loginapp')),
+    path('register/', include('regisapp.urls', namespace='regisapp')),
+
+
+    # Redirect dari URL utama (/) ke /homeuser/
+    path('', lambda request: redirect('homeuser/')),  # Pengalihan ke halaman homeuser
 ]
 
 if settings.DEBUG:
