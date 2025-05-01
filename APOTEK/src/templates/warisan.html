@@ -8,8 +8,12 @@
     {% include 'snippets/css.html' %}
     {% include 'snippets/desain.html' %}
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
-</head>
+   
+
+  </head>
 <body>
+
+  {% include 'snippets/navbar.html' %}
     <div>
         <!-- pop up update dan tambah obat-->
         {% if messages %}
