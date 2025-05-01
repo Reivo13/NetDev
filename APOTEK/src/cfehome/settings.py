@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'history',
     'admin_daftarobat',
     'invoice',
+    'admin_tambahobat',
 ]
 
 MIDDLEWARE = [

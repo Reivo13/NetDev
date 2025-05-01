@@ -710,6 +710,7 @@
   left: 4px;
 }
 
+<<<<<<< HEAD
 .row-obat {
   display: flex;
   gap: 16px;
@@ -775,3 +776,11 @@
 .table-body a:hover {
   color: #007bff;
 }
+=======
+.daftar-obat-admin .div-wrapper {
+  display: flex;
+  align-items: center;     /* agar ikon tetap sejajar vertikal */
+  justify-content: center; /* posisikan tombol ke tengah horizontal */
+  height: 100%;            /* sesuaikan tinggi dengan baris lain */
+}
+>>>>>>> ee14cb90be53f3bcf43e4206c1f71edec1f789a5

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'admin_daftarobat/css/style.css' %}" />
   </head>
   <body>
-    <div class="daftar-obat-admin" data-model-id="171:494">
+    <div class="daftar-obat-admin">
       <div class="div">
         <div class="nav">
           <div class="magneto-navbar">
@@ -23,13 +23,9 @@
             <div class="rectangle"></div>
             <div class="rectangle-2"></div>
             <div class="rectangle-3"></div>
-            <div class="text">LOGOUT</div>
-          </div>
-          <div class="component-3">
-            <div class="rectangle"></div>
-            <div class="rectangle-2"></div>
-            <div class="rectangle-3"></div>
-            <div class="text">LOGOUT</div>
+            <div class="text float-right">
+              <a href="{% url 'logout' %}" style="color:rgb(255, 255, 255); font-weight: bold; text-decoration: none;">LOGOUT</a>
+            </div>                       
           </div>
         </div>
         <div class="component-4">
@@ -49,7 +45,7 @@
               <div class="frame-6"><div class="box-unchecked"></div></div>
             </div>
             <div class="frame-29">
-              <div class="frame-30"><div class="table-head">Gambar Obat</div></div>
+              <div class="frame-30"><div class="table-head">Gambar</div></div>
               <img class="img" src="img/frame-1155.svg" />
               <img class="frame-31" src="img/frame-1156.svg" />
               <img class="frame-32" src="img/frame-1157.svg" />
@@ -83,13 +79,54 @@
               <div class="frame-27"><div class="table-body-2">30</div></div>
               <div class="frame-28"><div class="table-body-2">26</div></div>
             </div>
-            <div class="frame-29">
-              <div class="frame-30"><div class="table-head">Action</div></div>
-              <img class="img" src="img/frame-1155.svg" />
-              <img class="frame-31" src="img/frame-1156.svg" />
-              <img class="frame-32" src="img/frame-1157.svg" />
-              <img class="frame-33" src="img/frame-1158.svg" />
-            </div>
+            <!-- Pindahkan bagian Action ke sini -->
+            <div class="frame-34">
+              <div class="frame-4">
+                <div class="table-head">Action</div>
+              </div>
+              <!-- Baris pertama Action -->
+              <div class="div-wrapper row-height" style="display: flex; align-items: center; height: 100%;">
+                <div class="action-buttons" style="display: flex; gap: 10px; align-items: center; height: 100%;">
+                  <a href="#"><img src="{% static 'admin_daftarobat/img/edit.png' %}" alt="Edit" style="width: 20px; height: 20px;" /></a>
+                  <a href="#"><img src="{% static 'admin_daftarobat/img/trash.png' %}" alt="Delete" style="width: 20px; height: 20px;" /></a>
+                </div>
+              </div>
+            
+              <!-- Baris kedua Action -->
+              <div class="div-wrapper row-height" style="display: flex; align-items: center; height: 100%;">
+                <div class="action-buttons" style="display: flex; gap: 10px; align-items: center; height: 100%;">
+                  <a href="#"><img src="{% static 'admin_daftarobat/img/edit.png' %}" alt="Edit" style="width: 20px; height: 20px;" /></a>
+                  <a href="#"><img src="{% static 'admin_daftarobat/img/trash.png' %}" alt="Delete" style="width: 20px; height: 20px;" /></a>
+                </div>
+              </div>
+            
+              <!-- Baris ketiga Action -->
+              <div class="div-wrapper row-height" style="display: flex; align-items: center; height: 100%;">
+                <div class="action-buttons" style="display: flex; gap: 10px; align-items: center; height: 100%;">
+                  <a href="#"><img src="{% static 'admin_daftarobat/img/edit.png' %}" alt="Edit" style="width: 20px; height: 20px;" /></a>
+                  <a href="#"><img src="{% static 'admin_daftarobat/img/trash.png' %}" alt="Delete" style="width: 20px; height: 20px;" /></a>
+                </div>
+              </div>
+            
+              <!-- Baris keempat Action -->
+              <div class="div-wrapper row-height" style="display: flex; align-items: center; height: 100%;">
+                <div class="action-buttons" style="display: flex; gap: 10px; align-items: center; height: 100%;">
+                  <a href="#"><img src="{% static 'admin_daftarobat/img/edit.png' %}" alt="Edit" style="width: 20px; height: 20px;" /></a>
+                  <a href="#"><img src="{% static 'admin_daftarobat/img/trash.png' %}" alt="Delete" style="width: 20px; height: 20px;" /></a>
+                </div>
+              </div>
+            
+              <!-- Baris kelima Action -->
+              <div class="div-wrapper row-height" style="display: flex; align-items: center; height: 100%;">
+                <div class="action-buttons" style="display: flex; gap: 10px; align-items: center; height: 100%;">
+                  <a href="#"><img src="{% static 'admin_daftarobat/img/edit.png' %}" alt="Edit" style="width: 20px; height: 20px;" /></a>
+                  <a href="#"><img src="{% static 'admin_daftarobat/img/trash.png' %}" alt="Delete" style="width: 20px; height: 20px;" /></a>
+                </div>
+              </div>
+            </div>            
+            
+            <!-- Akhir Action -->
+             
           </div>
         </div>
       </div>
