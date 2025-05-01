@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'admin_tambahobat/css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'admin_tambahobat/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'admin_tambahobat/css/styleguide.css' %}" />
+
+    <title>Tambah Obat</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      .form-box {
+        width: 700px;
+        background: white;
+        border: 1px solid #000;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+
+      .form-box h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 32px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input, textarea, select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #e0004d;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      a.btn-secondary {
+        padding: 10px 20px;
+        background-color: #6c757d;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="resep-admin">
+      <div class="nav">
+        <div class="magneto-navbar">
+          <div class="logo">
+            <a href="{% url 'homeuserapp:homeuser' %}">
+                <div class="text-wrapper">💊 Apotek Jaya</div>
+            </a>
+        </div>
+        
+          <div class="list">
+            <div class="component">
+              <a href="{% url 'resepapp:list' %}">
+                  <div class="text-wrapper-2">Resep Obat</div>
+              </a>
+          </div>
+          <div class="component-false">
+              <a href="{% url 'adminapp:list' %}">
+                  <div class="text-wrapper-2">Daftar Obat</div>
+              </a>
+          </div>
+          </div>
+        </div>
+        <div class="component-2">
+          <a href="{% url 'logout' %}">
+              <div class="text">LOGOUT</div>
+          </a>
+      </div>
+
+    <div class="wrapper">
+      <div class="form-box">
+        <h2>Update Obat</h2>
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+
+          <div class="form-group">
+            <label for="{{ form.nama_obat.id_for_label }}">Nama Obat</label>
+            {{ form.nama_obat }}
+          </div>
+
+          <div class="form-group">
+            <label for="{{ form.foto.id_for_label }}">Upload Foto</label>
+            {{ form.foto }}
+          </div>
+
+          <div class="form-group">
+            <label for="{{ form.jenis_obat.id_for_label }}">Jenis Obat</label>
+            {{ form.jenis_obat }}
+          </div>
+
+          <div class="form-group">
+            <label for="{{ form.harga.id_for_label }}">Harga Satuan</label>
+            {{ form.harga }}
+          </div>
+
+          <div class="form-group">
+            <label for="{{ form.stok.id_for_label }}">Stok</label>
+            {{ form.stok }}
+          </div>
+
+          <div class="form-group">
+            <label for="{{ form.dosis_aturan_pakai.id_for_label }}">Dosis / Aturan Pakai</label>
+            {{ form.dosis_aturan_pakai }}
+          </div>
+
+          <div class="btn-group">
+            <button type="submit">Simpan</button>
+            <a href="{% url 'adminapp:list' %}" class="btn-secondary">Data Obat</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

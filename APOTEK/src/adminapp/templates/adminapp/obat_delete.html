@@ -1,10 +1,16 @@
 {% extends "warisan.html" %}
 {% block content %}
+<div class="container mt-4">
   <h2>Hapus Obat</h2>
   <p>Apakah kamu yakin ingin menghapus <strong>{{ object.nama_obat }}</strong>?</p>
 
   <form method="post">
     {% csrf_token %}
-    <button type="submit">Ya, hapus</button>
-    
+    <a href="{% url 'adminapp:list' %}" class="btn btn-secondary">Batal</a>
+      <button type="submit" class="btn btn-danger">Ya, Hapus</button>
+    </form>
+</div>
 {% endblock %}
+
+
+git branch
