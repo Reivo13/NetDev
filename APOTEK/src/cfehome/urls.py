@@ -10,6 +10,7 @@ urlpatterns = [
     path('homeuser/', include('homeuserapp.urls')),
     path('admin_resep/', include('admin_resep.urls')),
     path('admin_daftarobat/', include('admin_daftarobat.urls')),
+    path('admin_tambahobat/', include('admin_tambahobat.urls')),
     path('adminapp/', include('adminapp.urls', namespace="adminapp")),
     path('resepapp/', include('resepapp.urls', namespace="resepapp")),
     path('obat/', include('daftarobat.urls')),

@@ -700,3 +700,10 @@
   top: 609px;
   left: 4px;
 }
+
+.daftar-obat-admin .div-wrapper {
+  display: flex;
+  align-items: center;     /* agar ikon tetap sejajar vertikal */
+  justify-content: center; /* posisikan tombol ke tengah horizontal */
+  height: 100%;            /* sesuaikan tinggi dengan baris lain */
+}
