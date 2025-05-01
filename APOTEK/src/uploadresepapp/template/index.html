@@ -1,0 +1,125 @@
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Upload Resep - Apotek Jaya</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <span class="logo-icon">💊</span>
+                    <span class="logo-text">Apotek Jaya</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="#" class="nav-link active">Resep Obat</a>
+                    <a href="#" class="nav-link">Riwayat Pembelian</a>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="Cari" class="search-input">
+                    <button class="search-button">
+                        <img src="img/search.png" alt="Search" class="search-icon">
+                    </button>
+                </div>
+                <button class="login-button">LOGIN</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="upload-section">
+                <h1 class="section-title">Upload Resep</h1>
+                
+                <div class="form-container">
+                    <h2 class="form-section-title-judul">Silahkan masukan data diri anda</h2>
+                    
+                    <form class="user-form">
+                        <div class="form-group">
+                            <label for="fullname" class="form-label">Nama Lengkap</label>
+                            <input type="text" id="fullname" class="form-input" placeholder="Nama Lengkap">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="Email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Nomor Telepon</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="Nomor Telepon">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="complaint" class="form-label">Keluhan</label>
+                            <textarea id="complaint" class="form-textarea" placeholder="Keluhan Anda ..."></textarea>
+                        </div>
+                        
+                        <div class="divider"></div>
+                        
+                        <h2 class="form-section-title-resep">Upload Resep*</h2>
+                        
+                        <!-- <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Search Title">
+                            <p class="form-note">No Me Chopin</p>
+                        </div> -->
+                        
+                        <div class="file-upload-container">
+                            <div class="file-input-wrapper">
+                                <label for="prescription" class="file-upload-label">Pilih File Resep</label>
+                                <input type="file" id="prescription" class="file-upload-input" accept="image/*,.pdf">
+                                <span class="file-name">Belum ada file dipilih</span>
+                            </div>
+                            <button type="button" class="upload-button">Insert</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Site Map</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                        <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Follow kami di:</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><img src="img/twitter.png" alt="Twitter"></a>
+                        <a href="#" class="social-icon"><img src="img/instagram.png" alt="Instagram"></a>
+                        <a href="#" class="social-icon"><img src="img/mail.png" alt="Email"></a>
+                        <a href="#" class="social-icon"><img src="img/youtube.png" alt="YouTube"></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Layanan Pengaduan Konsumen</h3>
+                    <p class="footer-text">
+                        <strong>PT Apotek Jaya Kurniawan</strong><br>
+                        Jl. Telekomunikasi No.1, Citeureup, Kec. Dayeuhkolot,<br>
+                        Kabupaten Bandung, Jawa Barat 40257
+                    </p>
+                    <p class="footer-text">CS : 08123456789</p>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>© Apotek Jaya, 2025.</p>
+            </div>
+        </footer>
+
+        <script>
+            document.getElementById('prescription').addEventListener('change', function(e) {
+                const fileName = e.target.files[0] ? e.target.files[0].name : 'Belum ada file dipilih';
+                document.querySelector('.file-name').textContent = fileName;
+            });
+        </script>
+    </body>
+    </html>
