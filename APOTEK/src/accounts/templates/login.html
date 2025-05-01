@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<style>
+    .back-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 20px;
+        text-decoration: none;
+        color: black;
+    }
+</style>
+        
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
@@ -46,6 +58,7 @@
 <body>
 
 <div class="form-container">
+    <a href="/" class="back-button">&#8592;</a>
     <h1>💊 Apotek Jaya</h1>
     <form method="POST">
         {% csrf_token %}

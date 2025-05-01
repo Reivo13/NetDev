@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <title>Register - Apotek Jaya</title>
     <style>
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+    <style>
         /* Styling sama seperti UI yang kamu kirim */
         body {
             background: url('/static/background.jpg') no-repeat center center fixed;
@@ -32,6 +42,7 @@
 </head>
 <body>
     <div class="container">
+        <a href="/" class="back-button">&#8592;</a>
         <h2>💊 Apotek Jaya</h2>
         <form method="POST">
             {% csrf_token %}
