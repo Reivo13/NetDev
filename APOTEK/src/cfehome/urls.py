@@ -19,12 +19,12 @@ urlpatterns = [
     path('obat/', include('daftarobat.urls')),
     path('history/', include('history.urls', namespace='history')),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('login/', LoginView.as_view(template_name='login.html'), name='login'),
+    path('logindjanggo/', LoginView.as_view(template_name='login.html'), name='login'),
     path('register/', views.register, name='register'),
     path('', lambda request: redirect('homeuser/')),
     path('invoice/', include('invoice.urls')),
     path('login/', include('loginapp.urls', namespace='loginapp')),
-    path('register/', include('regisapp.urls', namespace='regisapp')),
+    path('regist/', include('regisapp.urls', namespace='regisapp')),
 
 
     # Redirect dari URL utama (/) ke /homeuser/

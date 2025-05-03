@@ -11,4 +11,4 @@ def register_view(request):
             return redirect('loginapp:login')  # arahkan ke halaman login
     else:
         form = RegisterForm()
-    return render(request, 'regisapp/register.html', {'form': form})
+    return render(request, 'regisapp/regi.html', {'form': form})

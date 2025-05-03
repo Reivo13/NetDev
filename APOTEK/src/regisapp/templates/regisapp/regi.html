@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrasi</title>
+</head>
+<body>
+    <h2>Form Registrasi</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Daftar</button>
+    </form>
+    <p>Sudah punya akun? <a href="{% url 'loginapp:login' %}">Login</a></p>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: green;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

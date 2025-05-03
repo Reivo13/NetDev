@@ -66,8 +66,8 @@
     [type="button"],
     [type="reset"],
     [type="submit"] {
-      -webkit-appearance: button;
-      color: inherit;
+    -webkit-appearance: button;
+    color: inherit;
     }
 
     button::-moz-focus-inner,
@@ -291,24 +291,27 @@
               <div class="login-page-frame15"><span class="login-page-text1">💊 Apotek Jaya</span></div>
             </div>
           </div>
-          {% csrf_token %}
-          <div class="login-page-frame2">
-            <span class="login-page-text2">Email</span>
-            <div class="login-page-input-container">
-              <span class="login-page-text3">masukkan email</span>
-              <input type="text" name="username" placeholder="masukkan username" required><br>
+
+          <form method="POST">
+            {% csrf_token %}
+            <div class="login-page-frame2">
+              <span class="login-page-text2">Email</span>
+              <div class="login-page-input-container">
+                <span class="login-page-text3">masukkan email</span>
+                <input type="text" name="username" placeholder="masukkan username" required><br>
+              </div>
             </div>
-          </div>
-          <div class="login-page-frame3">
-            <span class="login-page-text4">Password</span>
-            <div class="login-page-input-container">
-              <span class="login-page-text5">masukkan password</span>
-              <input type="password" name="password" placeholder="masukkan password" required><br>
+            <div class="login-page-frame3">
+              <span class="login-page-text4">Password</span>
+              <div class="login-page-input-container">
+                <span class="login-page-text5">masukkan password</span>
+                <input type="password" name="password" placeholder="masukkan password" required><br>
+              </div>
             </div>
-          </div>
-          <div class="login-page-frame4"><span class="login-page-text6">Login</span>
-            <button type="submit" class="masuk">Login</button>
-          </div>
+            <div class="login-page-frame4">
+              <button type="submit" class="masuk">Login</button>
+            </div>
+          </form>
           <div class="login-page-frame5"><span class="login-page-text7">Register</span>
             <a href="{% url 'register' %}"></a>
             <button type="button" class="daftar">Belum punya akun?</button>
