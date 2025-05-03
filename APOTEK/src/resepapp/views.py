@@ -39,7 +39,7 @@ class ResepUpdateView( LoginRequiredMixin,UpdateView):
 class ResepDeleteView(LoginRequiredMixin, DeleteView):
     model = ResepDokter
     template_name = 'resepapp/resep_delete.html'  # Buat template ini
-    success_url = reverse_lazy('adminapp:list')   # Redirect ke daftar resep
+    success_url = reverse_lazy('resepapp:list')   # Redirect ke daftar resep
     login_url = "/login/"
 
     def delete(self, request, *args, **kwargs):

@@ -10,7 +10,7 @@
             zoom: 90%;
             color: #333;
             line-height: 1.6;
-            background-image: url('img/Untitled\ design_20250501_171011_0000.png');
+            background-image: url('../img/background.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -28,9 +28,6 @@
             bottom: 0;
             z-index: -1;
         }
-
-
-
 
         /* Header/Navbar Styles */
         .navbar {
@@ -412,59 +409,4 @@
         }
 
 
-        <style>
-            .user-form {
-                max-width: 600px;
-                margin: auto;
-                background: #f0f0f0;
-                padding: 30px;
-                border-radius: 16px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            .form-group {
-                margin-bottom: 20px;
-            }
-            
-            .form-label {
-                display: block;
-                font-weight: bold;
-                margin-bottom: 8px;
-            }
-            
-            .form-group input,
-            .form-group textarea,
-            .form-group select {
-                width: 100%;
-                padding: 12px;
-                border: 1px solid #ccc;
-                border-radius: 8px;
-                font-size: 16px;
-                box-sizing: border-box;
-            }
-            input[type="file"] {
-    background-color: #ffffff;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-            
-            .upload-button {
-                background-color: #e91e63;
-                color: white;
-                padding: 12px 24px;
-                font-size: 16px;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                width: 100%;
-            }
-            
-            .upload-button:hover {
-                background-color: #d81b60;
-            }
-            </style>
+        
