@@ -1,81 +1,117 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<style>
-    .back-button {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        font-size: 20px;
-        text-decoration: none;
-        color: black;
-    }
-</style>
-        
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
     <style>
         body {
-            background: url('/static/background.jpg') no-repeat center center fixed;
-            background-size: cover;
+            margin: 0;
             font-family: Arial, sans-serif;
+            background: url("{% static 'assets/public/external/tq_4xwmdcvtdd-o2h-2000w1.png' %}") no-repeat center center fixed;
+            background-size: cover;
         }
-        .form-container {
-            background: rgba(255, 255, 255, 0.8);
+
+        .login-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            background: rgba(255, 255, 255, 0.85);
             padding: 40px;
-            border-radius: 10px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             width: 400px;
-            margin: 100px auto;
+            max-width: 90%;
+        }
+
+        .login-box h1 {
             text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
         }
-        input[type=text], input[type=password] {
-            width: 90%;
+
+        .login-box h1::before {
+            content: "💊 ";
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
             padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
+            margin-bottom: 20px;
+            border-radius: 8px;
             border: 1px solid #ccc;
+            font-size: 14px;
         }
-        button {
-            padding: 10px 20px;
-            margin: 10px;
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .login-btn,
+        .register-btn {
+            width: 48%;
+            padding: 10px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 16px;
             cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
         }
-        .masuk {
+
+        .login-btn {
             background-color: #ffc107;
             color: black;
+            font-weight: bold;
         }
-        .daftar {
-            background-color: white;
-            color: black;
-            border: 1px solid black;
+
+        .register-btn {
+            background-color: #b2e0f7;
+            color: #002a4d;
+            font-weight: bold;
+        }
+
+        .login-btn:hover {
+            background-color: #e0a800;
+        }
+
+        .register-btn:hover {
+            background-color: #8ecae6;
         }
     </style>
 </head>
 <body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Apotek Jaya</h1>
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="masukkan email" required />
 
-<div class="form-container">
-    <a href="/" class="back-button">&#8592;</a>
-    <h1>💊 Apotek Jaya</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="masukkan username" required><br>
-        <input type="password" name="password" placeholder="masukkan password" required><br>
-        <button type="submit" class="masuk">Login</button>
-        <a href="{% url 'register' %}">
-            <button type="button" class="daftar">Belum punya akun?</button>
-        </a>
-    </form>
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="masukkan password" required />
 
-    {% if messages %}
-        {% for message in messages %}
-            <p style="color: red;">{{ message }}</p>
-        {% endfor %}
-    {% endif %}
-</div>
-
+                <div class="button-group">
+                    <button type="submit" class="login-btn">Login</button>
+                    <a href="{% url 'register' %}" class="register-btn">Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

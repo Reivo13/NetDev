@@ -1,66 +1,124 @@
-<!-- templates/accounts/register.html -->
+{% load static %}
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Register - Apotek Jaya</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halaman Registrasi</title>
     <style>
-        .back-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 20px;
-            text-decoration: none;
-            color: black;
-        }
-    </style>
-    <style>
-        /* Styling sama seperti UI yang kamu kirim */
         body {
-            background: url('/static/background.jpg') no-repeat center center fixed;
-            background-size: cover;
+            margin: 0;
             font-family: Arial, sans-serif;
+            background: url("{% static 'assets/public/external/tq_4xwmdcvtdd-o2h-2000w1.png' %}") no-repeat center center fixed;
+            background-size: cover;
         }
-        .container {
-            background: rgba(255, 255, 255, 0.8);
+
+        .register-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .register-box {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             width: 400px;
-            margin: 100px auto;
-            padding: 30px;
-            border-radius: 10px;
+            max-width: 90%;
         }
-        input {
+
+        .register-box h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .register-box h1::before {
+            content: "💊 ";
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
             width: 100%;
             padding: 10px;
-            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
         }
-        button {
-            padding: 10px;
-            margin-top: 20px;
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .register-btn,
+        .login-btn {
             width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .register-btn {
+            background-color: #b2e0f7;
+            color: #002a4d;
+            font-weight: bold;
+        }
+
+        .login-btn {
+            background-color: #ffc107;
+            color: black;
+            font-weight: bold;
+        }
+
+        .register-btn:hover {
+            background-color: #8ecae6;
+        }
+
+        .login-btn:hover {
+            background-color: #e0a800;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="/" class="back-button">&#8592;</a>
-        <h2>💊 Apotek Jaya</h2>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.username.label_tag }}<br>
-            {{ form.username }}<br>
+    <div class="register-container">
+        <div class="register-box">
+            <h1>Apotek Jaya</h1>
+            <form method="POST" action="{% url 'register' %}">
+                {% csrf_token %}
+                <label for="username">Username</label>
+                <input type="text" name="username" placeholder="masukkan username" required />
 
-            {{ form.email.label_tag }}<br>
-            {{ form.email }}<br>
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="masukkan email" required />
 
-            {{ form.password1.label_tag }}<br>
-            {{ form.password1 }}<br>
+                <label for="password1">Password</label>
+                <input type="password" name="password1" placeholder="masukkan password" required />
 
-            {{ form.password2.label_tag }}<br>
-            {{ form.password2 }}<br>
+                <label for="password2">Konfirmasi Password</label>
+                <input type="password" name="password2" placeholder="masukkan password" required />
 
-            <button type="submit" style="background-color: yellow;">Daftar</button>
-            <a href="{% url 'login' %}"><button type="button">Sudah punya akun</button></a>
-        </form>
+                <div class="button-group">
+                    <button type="submit" class="register-btn">Register</button>
+                    <a href="{% url 'login' %}" class="login-btn">Login</a>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

@@ -18,7 +18,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY', default='django-insecure-sad9nbu^y)_=vv
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG', cast=bool, default=True)
-
+DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 # Setup ALLOWED_HOSTS from environment variable if available
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'resepapp',
     'homeuserapp',
     'loginapp',
-        'regisapp',
+    'regisapp',
+    'history',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,8 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'akun', 'templates'),
             os.path.join(BASE_DIR, 'admin_resep', 'templates'),
             os.path.join(BASE_DIR, 'accounts', 'templates'),
-
+            os.path.join(BASE_DIR, 'loginapp', 'template', 'public'),
+            os.path.join(BASE_DIR, 'static', 'login'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -115,7 +117,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'accounts','static'),
+    os.path.join(BASE_DIR, 'loginapp', 'template', 'public'),
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
