@@ -16,6 +16,7 @@ urlpatterns = [
     path('obat/', include('daftarobat.urls')),
     path('history/', include('history.urls', namespace='history')),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('uploadresep/',include('uploadresepapp.urls'), name='uploadresepapp'),
     path('', lambda request: redirect('homeuser/')),
     path('invoice/', include('invoice.urls')),
 ]

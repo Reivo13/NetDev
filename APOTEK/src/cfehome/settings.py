@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'admin_daftarobat',
     'invoice',
     'admin_tambahobat',
+    'uploadresepapp',
 ]
 
 MIDDLEWARE = [

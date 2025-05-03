@@ -11,7 +11,7 @@ User = get_user_model()
 class ResepDokter(models.Model):
     user        = models.ForeignKey(User, on_delete=models.CASCADE)
     nama        = models.CharField(max_length=100,null=True)
-    telepon     = models.CharField(max_length=100,null=True)
+    telepon = models.PositiveIntegerField(null=True)
     email       = models.EmailField(max_length=100,null=True)
     foto_resep  = models.ImageField(upload_to='resep_images/')
     catatan     = models.TextField(null=True,blank= True) 

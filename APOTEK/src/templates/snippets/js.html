@@ -163,4 +163,8 @@
   });
   </script>
   
-  
+  <script>
+  document.getElementById('id_foto_resep').addEventListener('change', function(e) {
+    const fileName = e.target.files[0]?.name || 'Belum ada file dipilih';
+    document.querySelector('.file-name').textContent = fileName;
+});</script>
