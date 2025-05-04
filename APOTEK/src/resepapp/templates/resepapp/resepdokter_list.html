@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.90">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'admin_resep/css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'admin_resep/css/styleguide.css' %}" />
+    <link rel="stylesheet" href="{% static 'admin_resep/css/style.css' %}" />
+  </head>
+
+  <body>
+    <div class="resep-admin">
+      <div class="nav">
+        <div class="magneto-navbar">
+          <div class="logo">
+            <a href="{% url 'homeuserapp:homeuser' %}">
+                <div class="text-wrapper">💊 Apotek Jaya</div>
+            </a>
+        </div>
+        
+          <div class="list">
+            <div class="component">
+              <a href="{% url 'resepapp:list' %}">
+                  <div class="text-wrapper-2">Resep Obat</div>
+              </a>
+          </div>
+          <div class="component-false">
+              <a href="{% url 'adminapp:list' %}">
+                  <div class="text-wrapper-2">Daftar Obat</div>
+              </a>
+          </div>
+          </div>
+        </div>
+        <div class="component-2">
+          <a href="{% url 'logout' %}">
+              <div class="text">LOGOUT</div>
+          </a>
+      </div>
+
+        <div class="text-wrapper-3">Resep Obat</div>
+        <div class="frame">
+          <div class="frame-2">
+        
+
+            <div class="frame-5">
+              <div class="frame-4"><div class="table-head">Nama Lengkap</div></div>
+              {% for obj in object_list  %}
+              <div class="div-wrapper"><div class="table-body">{{ obj.nama }}</div></div>
+              {% endfor %}
+            </div>
+
+            <div class="frame-6">
+              <div class="frame-4"><div class="table-head">Email Address</div></div>
+              {% for obj in object_list %}
+              <div class="div-wrapper"><div class="table-body">{{ obj.email }}</div></div>
+              {% endfor %}
+            </div>
+
+            <div class="frame-7">
+              <div class="frame-4"><div class="table-head">No Telepon</div></div>
+              {% for obj in object_list %}
+              <div class="div-wrapper"><div class="table-body">{{ obj.telepon }}</div></div>
+              {% endfor %}
+            </div>
+
+            <div class="frame-8">
+              <div class="frame-4"><div class="table-head">Keluhan</div></div>
+              {% for obj in object_list %}
+              <div class="div-wrapper"><div class="table-body">{{ obj.catatan }}</div></div>
+              {% endfor %}
+            </div>
+
+            <div class="frame-9">
+              <div class="frame-4">
+                <div class="table-head">File Resep</div>
+              </div>
+            
+              {% for obj in object_list %}
+                <div class="div-wrapper">
+                  <div class="table-body-2">
+                    <a href="#" class="open-modal" data-img="{{ obj.foto_resep. }}">Lihat</a>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+
+            <div class="frame-10">
+              <div class="frame-4"><div class="table-head">Action</div></div>
+              {% for obj in object_list %}
+              <div class="div-wrapper">
+                <div class="action-buttons">
+                  <a href="{% url 'resepapp:resep_delete' obj.slug %}" title="Delete">
+                    🗑️
+                  </a>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
