@@ -1,0 +1,5 @@
+Django>=4.1.0,<4.2.0
+python-decouple
+psycopg2
+gunicorn
+pillow-11.2.1

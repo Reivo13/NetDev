@@ -1,0 +1,21 @@
+
+{% extends "warisan.html" %}
+{% block content %}
+
+
+    <p>{{ object.title }}</p>
+    {% if object.foto %} 
+      <img src="{{ object.foto.url }}" alt="{{ object.nama_obat }}" width="200">
+    {% else %}
+      <p>Tidak ada foto</p>  
+    {% endif %}
+    <p>Jenis: {{ object.jenis_obat }}</p>
+    <p>Stok: {{ object.stok }}</p>
+    <p>Harga: {{ object.harga }}</p>
+    <p>Dosis: {{ object.dosis_aturan_pakai }}</p>
+
+{% endblock %}
+
+
+
+
