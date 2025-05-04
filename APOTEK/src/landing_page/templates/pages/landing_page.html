@@ -64,344 +64,141 @@
 
     <!-- Main CSS -->
     <style>
-          /* Background utama */
-    body {
-        background-image: url('https://i.imgur.com/i9npULc.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-    }
+        /* Background utama */
+        body {
+            background-image: url('https://i.imgur.com/i9npULc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
 
-    /* Tambahkan overlay untuk meningkatkan keterbacaan */
-    .main-container {
-        background: rgba(255, 255, 255, 0.95);
-    }
+        /* Header Section */
+        .header-section {
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    /* Sesuaikan warna card agar kontras dengan background */
-    .medicine-box,
-    .filter-box,
-    .doctor-box {
-        background: #f5f5f5 !important; /* Changed to solid gray */
-        backdrop-filter: none !important; /* Removed blur effect */
-    }
-
-    /* Perbaikan transisi hover */
-    .obat-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-        /* Layout Structure */
-        .main-container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-        
-        /* New Layout for Medicine and Sidebar */
-        .main-content {
-            display: flex;
-            gap: 20px;
-            padding: 20px;
-        }
-        
-        /* Medicine Box */
-        .medicine-box {
-            flex: 2;
-            background: #f5f5f5; /* Gray background */
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .medicine-box h2 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #333;
-            border-bottom: 2px solid #ff3c5f;
-            padding-bottom: 10px;
-        }
-        
-        .medicine-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .obat-card {
-            flex: 0 0 calc(33.333% - 20px);
-            min-width: 250px;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            margin-bottom: 20px;
-        }
-        
-        /* Sidebar Box */
-        .sidebar-box {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            min-width: 300px;
-        }
-        
-        /* Filter Box */
-        .filter-box {
-            background: #f5f5f5; /* Gray background */
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .filter-box h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: #333;
-            border-bottom: 2px solid #ff3c5f;
-            padding-bottom: 10px;
-        }
-        
-        .filter-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-            padding: 10px;
-            background: white;
-            border-radius: 6px;
-            transition: background-color 0.3s;
-        }
-        
-        .filter-option:hover {
-            background-color: #eee;
-        }
-        
-        /* Doctor Contact Box */
-        .doctor-box {
-            background: #f5f5f5; /* Gray background */
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .doctor-box h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: #333;
-            border-bottom: 2px solid #ff3c5f;
-            padding-bottom: 10px;
-        }
-        
-        .doctor-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .doctor-item {
-            background: white;
-            border-radius: 8px;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .doctor-item img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
-        .doctor-info {
-            flex: 1;
-        }
-        
-        .doctor-name {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .doctor-detail {
-            font-size: 0.85rem;
-            color: #666;
-        }
-        
-        /* Common Styles */
-        .obat-image-container {
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f5f5f5;
-        }
-        
-        .obat-image {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit: contain;
-        }
-        
-        .obat-info {
-            padding: 15px;
-        }
-        
-        .obat-nama {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .obat-kategori {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-        
-        .obat-harga {
-            font-weight: bold;
-            color: #ff3c5f;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-        
-        .stok-info {
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .stok-banyak {
-            color: #ff3c5f;
-            font-weight: bold;
-        }
-        
-        .stok-sedikit {
-            color: #c62828;
-            font-weight: bold;
-        }
-        
-        .action-btn {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #f348f3 !important; /* Changed to pink */
-            color: white !important;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: background-color 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .action-btn:hover {
-            background-color: #d13fd3 !important; /* Darker pink on hover */
-        }
-        
-        /* Quantity Selector Styles */
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-        }
-        
-        .quantity-btn {
-            width: 30px;
-            height: 30px;
-            background-color: #f348f3 !important; /* Changed to pink */
-            color: white !important;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .quantity-input {
-            width: 40px;
-            height: 30px;
-            text-align: center;
-            margin: 0 5px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        
-        /* Navbar Styles */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
-            background-color: #ffffff !important; /* Solid white */
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 18px 30px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
         }
         
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
         
         .nav-links a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
+            font-size: 1.05rem;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color:#ff3c5f;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ff3c5f;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
         }
         
         .search-bar {
             display: flex;
             align-items: center;
+            gap: 8px;
         }
         
         .search-input {
-            padding: 8px 15px;
+            padding: 10px 18px;
             border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-right: 5px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            min-width: 250px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            border-color: #ff3c5f;
+            box-shadow: 0 0 0 3px rgba(243, 72, 243, 0.1);
+            outline: none;
         }
         
         .search-button {
             background: none;
             border: none;
             cursor: pointer;
+            transition: transform 0.3s ease;
         }
         
-        /* Promo Section - Horizontal Scroll */
+        .search-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Promo Section */
         .promo-section {
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 1200px;
+            padding: 40px 30px;
+        }
+
+        .promo-container {
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .promo-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
             color: #333;
             text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .promo-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff3c5f;
         }
         
         .promo-scroll-container {
             display: flex;
             overflow-x: auto;
-            gap: 15px;
-            padding: 10px 0;
+            gap: 20px;
+            padding: 15px 0;
             scrollbar-width: thin;
-            scrollbar-color: #f348f3 #f5f5f5;
+            scrollbar-color: #ff3c5f #f5f5f5;
         }
         
         .promo-scroll-container::-webkit-scrollbar {
@@ -414,93 +211,442 @@
         }
         
         .promo-scroll-container::-webkit-scrollbar-thumb {
-            background-color: #f348f3;
+            background-color: #ff3c5f;
             border-radius: 10px;
         }
         
         .promo-item {
             flex: 0 0 auto;
-            width: 300px;
-            border-radius: 8px;
+            width: 320px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .promo-item:hover {
+            transform: translateY(-5px);
         }
         
         .promo-item img {
             width: 100%;
-            height: auto;
+            height: 180px;
+            object-fit: cover;
             display: block;
         }
+
+        /* Main Content Sections */
+        .content-section {
+            padding: 40px 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Medicine List Section */
+        .medicine-section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
         
-        /* Footer Styles */
-        .footer {
-            background-color: #333333 !important; /* Dark gray */
+        .medicine-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            color: #333;
+            border-bottom: 2px solid #ff3c5f;
+            padding-bottom: 12px;
+        }
+        
+        .medicine-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: flex-start;
+        }
+        
+        .medicine-row {
+            display: flex;
+            width: 100%;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .obat-card {
+            flex: 1;
+            min-width: calc(33.333% - 17px); /* Account for gap */
+            max-width: calc(33.333% - 17px);
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .obat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .obat-image-container {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            padding: 15px;
+        }
+        
+        .obat-image {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .obat-card:hover .obat-image {
+            transform: scale(1.05);
+        }
+        
+        .obat-info {
+            padding: 20px;
+        }
+        
+        .obat-nama {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .obat-kategori {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+        
+        .obat-harga {
+            font-weight: bold;
+            color: #ff3c5f;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .stok-info {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .stok-banyak {
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .stok-sedikit {
+            color: #c62828;
+            font-weight: bold;
+        }
+        
+        .action-btn {
+            display: block;
+            width: 100%;
+            padding: 12px 0;
+            background-color: #ff3c5f !important;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .action-btn:hover {
+            background-color: #ff3c5f !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(243, 72, 243, 0.3);
+        }
+        
+        /* Quantity Selector Styles */
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            gap: 8px;
+        }
+        
+        .quantity-btn {
+            width: 35px;
+            height: 35px;
+            background-color: #ff3c5f !important;
+            color: white !important;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        
+        .quantity-btn:hover {
+            background-color: #ff3c5f !important;
+            transform: scale(1.05);
+        }
+        
+        .quantity-input {
+            width: 50px;
+            height: 35px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        /* Form Beli Container */
+        .form-beli {
+            margin-top: 15px;
+        }
+
+        /* Sidebar Sections */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .filter-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #333;
+            border-bottom: 2px solid #ff3c5f;
+            padding-bottom: 12px;
+        }
+        
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            padding: 12px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .filter-option:hover {
+            background-color: #eee;
+            transform: translateX(5px);
+        }
+
+        /* Doctor Section */
+        .doctor-section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .doctor-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #333;
+            border-bottom: 2px solid #ff3c5f;
+            padding-bottom: 12px;
+        }
+        
+        .doctor-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        
+        .doctor-item {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .doctor-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .doctor-item img {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ff3c5f;
+        }
+        
+        .doctor-info {
+            flex: 1;
+        }
+        
+        .doctor-name {
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+        
+        .doctor-detail {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Footer Section */
+        .footer-section {
+            background-color: #333333;
             color: white;
-            padding: 40px 20px;
-            margin-top: auto;
+            padding: 50px 30px;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .footer-content {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 30px;
         }
         
-        .footer-section {
+        .footer-column {
             flex: 1;
             min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
             margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff3c5f;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #ff3c5f;
+            transform: translateX(5px);
+        }
+        
+        .footer-column p {
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 30px;
+            margin-top: 30px;
             border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
         }
         
         /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .main-content {
-                flex-direction: column;
+        @media (max-width: 1200px) {
+            .content-section {
+                grid-template-columns: 1fr;
             }
             
             .obat-card {
-                flex: 0 0 calc(50% - 20px);
-            }
-            
-            .sidebar-box {
-                flex-direction: row;
-            }
-            
-            .filter-box, .doctor-box {
-                flex: 1;
+                flex: 0 0 calc(50% - 25px);
             }
         }
         
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
+                padding: 20px;
             }
             
             .nav-links {
                 flex-direction: column;
                 align-items: center;
-                gap: 10px;
+                gap: 15px;
+            }
+            
+            .search-bar {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .search-input {
+                min-width: 200px;
             }
             
             .obat-card {
                 flex: 0 0 100%;
+                max-width: 350px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .promo-section, .content-section {
+                padding: 30px 15px;
             }
             
-            .sidebar-box {
-                flex-direction: column;
-            }
-            
-            .promo-item {
-                width: 250px;
+            .footer-column {
+                min-width: 100%;
             }
         }
     </style>
@@ -508,36 +654,12 @@
     <!-- Font dan library lainnya -->
     <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-
-<style>
-body {
-  background-image: url('https://i.imgur.com/i9npULc.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-</style>
-
-
-<style>
-.container, .content, .obat-list {
-  background-color: transparent !important;
-}
-</style>
-
-
-<style>
-* {
-  background-color: transparent !important;
-}
-</style>
-
 </head>
 
 <body>
-    <div class="main-container">
-        <!-- Header/Navbar -->
-        <header class="navbar">
+    <!-- Header Section -->
+    <header class="header-section">
+        <nav class="navbar">
             <div class="logo">
                 <a href="#" style="text-decoration: none; color: inherit;">💊 <strong>Apotek Jaya</strong></a>
             </div>
@@ -557,10 +679,12 @@ body {
             <a href="/login" class="landingpage-text15">
                 <button class="action-btn">LOGOUT</button>
             </a>
-        </header>
+        </nav>
+    </header>
 
-        <!-- Promo Section - Horizontal Scroll -->
-        <section class="promo-section">
+    <!-- Promo Section -->
+    <section class="promo-section">
+        <div class="promo-container">
             <h2 class="promo-title">Promo Menarik</h2>
             <div class="promo-scroll-container">
                 <div class="promo-item">
@@ -582,125 +706,125 @@ body {
                     <img src="static/public/external/download.jpeg" alt="Promo 6">
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="content-section">
+        <!-- Medicine List Section -->
+        <section class="medicine-section">
+            <h2>Daftar Obat</h2>
+            <div class="medicine-list">
+                {% for obat in obat_list %}
+                <div class="obat-card" data-id="{{ obat.id }}">
+                    <div class="obat-image-container">
+                        {% if obat.foto %}
+                        <img src="{{ obat.foto.url }}" alt="{{ obat.nama_obat }}" class="obat-image">
+                        {% else %}
+                        <img src="{% static 'images/default-obat.png' %}" alt="No Image" class="obat-image">
+                        {% endif %}
+                    </div>
+                    <div class="obat-info">
+                        <h3 class="obat-nama">{{ obat.nama_obat }}</h3>
+                        <p class="obat-kategori">{{ obat.get_jenis_obat_display }}</p>
+                        <p class="obat-harga">Rp {{ obat.harga }}</p>
+                        <div class="stok-info">
+                            <span>Stok:</span>
+                            <span id="stok-{{ obat.id }}" class="{% if obat.stok <= 10 %}stok-sedikit{% else %}stok-banyak{% endif %}">
+                                {{ obat.stok }}
+                            </span>
+                        </div>
+                        <div class="form-beli">
+                            {% csrf_token %}
+                            <div class="quantity-selector">
+                                <button type="button" class="quantity-btn minus-btn">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" max="{{ obat.stok }}">
+                                <button type="button" class="quantity-btn plus-btn">+</button>
+                            </div>
+                            <button type="button" class="action-btn btn-beli" data-id="{{ obat.id }}">Beli</button>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p>Tidak ada obat tersedia</p>
+                {% endfor %}
+            </div>
         </section>
 
-        <!-- Main Content -->
-        <div class="content-wrapper">
-            <div class="main-content">
-     <!-- Medicine Box -->
-     <div class="medicine-box">
-        <h2>Daftar Obat</h2>
-        <div class="medicine-list">
-            {% for obat in obat_list %}
-            <div class="obat-card" data-id="{{ obat.id }}">
-                <div class="obat-image-container">
-                    {% if obat.foto %}
-                    <img src="{{ obat.foto.url }}" alt="{{ obat.nama_obat }}" class="obat-image">
-                    {% else %}
-                    <img src="{% static 'images/default-obat.png' %}" alt="No Image" class="obat-image">
-                    {% endif %}
+        <!-- Sidebar Section -->
+        <aside class="sidebar-section">
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <h3>Filter</h3>
+                <div class="filter-option">
+                    <img src="static/public/external/image1652-uyhq-200h.png" alt="Tablet dan Kapsul" width="30">
+                    <span>Obat Tablet dan Kapsul</span>
                 </div>
-                <div class="obat-info">
-                    <h3 class="obat-nama">{{ obat.nama_obat }}</h3>
-                    <p class="obat-kategori">{{ obat.get_jenis_obat_display }}</p>
-                    <p class="obat-harga">Rp {{ obat.harga }}</p>
-                    <div class="stok-info">
-                        <span>Stok:</span>
-                        <span id="stok-{{ obat.id }}" class="{% if obat.stok <= 10 %}stok-sedikit{% else %}stok-banyak{% endif %}">
-                            {{ obat.stok }}
-                        </span>
-                    </div>
-                    <div class="form-beli">
-                        {% csrf_token %}
-                        <div class="quantity-selector">
-                            <button type="button" class="quantity-btn minus-btn">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1" max="{{ obat.stok }}">
-                            <button type="button" class="quantity-btn plus-btn">+</button>
-                        </div>
-                        <button type="button" class="action-btn btn-beli" data-id="{{ obat.id }}">Beli</button>
-                    </div>
+                <div class="filter-option">
+                    <img src="static/public/external/image1662-zzcp-200h.png" alt="Obat Cair" width="30">
+                    <span>Obat Cair</span>
                 </div>
-            </div>
-            {% empty %}
-            <p>Tidak ada obat tersedia</p>
-            {% endfor %}
-        </div>
-    </div>
-                
-                <!-- Sidebar Box -->
-                <div class="sidebar-box">
-                    <!-- Filter Box -->
-                    <div class="filter-box">
-                        <h3>Filter</h3>
-                        <div class="filter-option">
-                            <img src="static/public/external/image1652-uyhq-200h.png" alt="Tablet dan Kapsul" width="30">
-                            <span>Obat Tablet dan Kapsul</span>
-                        </div>
-                        <div class="filter-option">
-                            <img src="static/public/external/image1662-zzcp-200h.png" alt="Obat Cair" width="30">
-                            <span>Obat Cair</span>
-                        </div>
-                        <div class="filter-option">
-                            <img src="static/public/external/image1662-kb9-200h.png" alt="Obat Salep" width="30">
-                            <span>Obat Salep</span>
+                <div class="filter-option">
+                    <img src="static/public/external/image1662-kb9-200h.png" alt="Obat Salep" width="30">
+                    <span>Obat Salep</span>
+                </div>
+            </section>
+            
+            <!-- Doctor Section -->
+            <section class="doctor-section">
+                <h3>Kontak Dokter</h3>
+                <div class="doctor-list">
+                    <div class="doctor-item">
+                        <img src="static/public/external/image5394-97nh-200h.png" alt="DR. Mesty Ariyotedjo">
+                        <div class="doctor-info">
+                            <div class="doctor-name">DR. Mesty Ariyotedjo</div>
+                            <div class="doctor-detail">mestyariyotedjo@gmail.com</div>
+                            <div class="doctor-detail">Rumah Sakit Telkom Medika</div>
                         </div>
                     </div>
-                    
-                    <!-- Doctor Contact Box -->
-                    <div class="doctor-box">
-                        <h3>Kontak Dokter</h3>
-                        <div class="doctor-list">
-                            <div class="doctor-item">
-                                <img src="static/public/external/image5394-97nh-200h.png" alt="DR. Mesty Ariyotedjo">
-                                <div class="doctor-info">
-                                    <div class="doctor-name">DR. Mesty Ariyotedjo</div>
-                                    <div class="doctor-detail">mestyariyotedjo@gmail.com</div>
-                                    <div class="doctor-detail">Rumah Sakit Telkom Medika</div>
-                                </div>
-                            </div>
-                            <div class="doctor-item">
-                                <img src="static/public/external/image5424-uh5-200h.png" alt="DR. Mesty Ariyotedjo">
-                                <div class="doctor-info">
-                                    <div class="doctor-name">DR. Mesty Ariyotedjo</div>
-                                    <div class="doctor-detail">mestyariyotedjo@gmail.com</div>
-                                    <div class="doctor-detail">Rumah Sakit Telkom Medika</div>
-                                </div>
-                            </div>
-                            <div class="doctor-item">
-                                <img src="static/public/external/image5424-0hd-200h.png" alt="DR. Mesty Ariyotedjo">
-                                <div class="doctor-info">
-                                    <div class="doctor-name">DR. Mesty Ariyotedjo</div>
-                                    <div class="doctor-detail">mestyariyotedjo@gmail.com</div>
-                                    <div class="doctor-detail">Rumah Sakit Telkom Medika</div>
-                                </div>
-                            </div>
-                            <div class="doctor-item">
-                                <img src="static/public/external/image5424-hs08-200h.png" alt="DR. Mesty Ariyotedjo">
-                                <div class="doctor-info">
-                                    <div class="doctor-name">DR. Mesty Ariyotedjo</div>
-                                    <div class="doctor-detail">mestyariyotedjo@gmail.com</div>
-                                    <div class="doctor-detail">Rumah Sakit Telkom Medika</div>
-                                </div>
-                            </div>
+                    <div class="doctor-item">
+                        <img src="static/public/external/image5424-uh5-200h.png" alt="DR. Mesty Ariyotedjo">
+                        <div class="doctor-info">
+                            <div class="doctor-name">DR. Mesty Ariyotedjo</div>
+                            <div class="doctor-detail">mestyariyotedjo@gmail.com</div>
+                            <div class="doctor-detail">Rumah Sakit Telkom Medika</div>
+                        </div>
+                    </div>
+                    <div class="doctor-item">
+                        <img src="static/public/external/image5424-0hd-200h.png" alt="DR. Mesty Ariyotedjo">
+                        <div class="doctor-info">
+                            <div class="doctor-name">DR. Mesty Ariyotedjo</div>
+                            <div class="doctor-detail">mestyariyotedjo@gmail.com</div>
+                            <div class="doctor-detail">Rumah Sakit Telkom Medika</div>
+                        </div>
+                    </div>
+                    <div class="doctor-item">
+                        <img src="static/public/external/image5424-hs08-200h.png" alt="DR. Mesty Ariyotedjo">
+                        <div class="doctor-info">
+                            <div class="doctor-name">DR. Mesty Ariyotedjo</div>
+                            <div class="doctor-detail">mestyariyotedjo@gmail.com</div>
+                            <div class="doctor-detail">Rumah Sakit Telkom Medika</div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </aside>
+    </main>
 
-        <!-- Footer -->
-        <footer class="footer">
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-column">
                     <h3>Site Map</h3>
-                    <ul style="list-style: none;">
-                        <li><a href="link-to-faq.html" style="color: white; text-decoration: none;">FAQ</a></li>
-                        <li><a href="link-to-blog.html" style="color: white; text-decoration: none;">Syarat & Ketentuan</a></li>
-                        <li><a href="link-to-syarat.html" style="color: white; text-decoration: none;">Kebijakan Privasi</a></li>
+                    <ul>
+                        <li><a href="link-to-faq.html">FAQ</a></li>
+                        <li><a href="link-to-blog.html">Syarat & Ketentuan</a></li>
+                        <li><a href="link-to-syarat.html">Kebijakan Privasi</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-column">
                     <h3>Layanan Pengaduan Konsumen</h3>
                     <p>CS : 08123456789</p>
                     <p>
@@ -710,19 +834,19 @@ body {
                     </p>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-column">
                     <h3>Follow kami di:</h3>
-                    <div style="display: flex; gap: 15px; margin-top: 10px;">
-                        <a href="https://twitter.com" target="_blank" style="color: white;">
+                    <div class="social-links">
+                        <a href="https://twitter.com" target="_blank">
                             <img src="static/public/external/tq_m4i4qvnd---t2vk-1500w.png" alt="Twitter" width="24">
                         </a>
-                        <a href="https://instagram.com" target="_blank" style="color: white;">
+                        <a href="https://instagram.com" target="_blank">
                             <img src="static/public/external/tq_zvtxk_qcbb-rna-200h.png" alt="Instagram" width="24">
                         </a>
-                        <a href="mailto:someone@example.com" style="color: white;">
+                        <a href="mailto:someone@example.com">
                             <img src="static/public/external/mail1331-u6wd.svg" alt="Email" width="24">
                         </a>
-                        <a href="https://youtube.com" target="_blank" style="color: white;">
+                        <a href="https://youtube.com" target="_blank">
                             <img src="static/public/external/tq_qo2xpk73jd-2p3-1500w.png" alt="YouTube" width="24">
                         </a>
                     </div>
@@ -732,10 +856,10 @@ body {
             <div class="footer-bottom">
                 <p>©Apotek Jaya, 2025.</p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
-    <!-- Script Section with Fixes -->
+    <!-- Script Section -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
@@ -796,10 +920,6 @@ body {
                             popup: 'swal-custom-popup',
                             title: 'swal2-title',
                             htmlContainer: 'swal2-html-container'
-                        },
-                        didOpen: () => {
-                            const popup = Swal.getPopup();
-                            popup.style.backgroundColor = '#ffffff';
                         }
                     });
                     return;
@@ -818,10 +938,6 @@ body {
                             popup: 'swal-custom-popup',
                             title: 'swal2-title',
                             htmlContainer: 'swal2-html-container'
-                        },
-                        didOpen: () => {
-                            const popup = Swal.getPopup();
-                            popup.style.backgroundColor = '#ffffff';
                         }
                     });
                     return;
@@ -861,10 +977,6 @@ body {
                                     popup: 'swal-custom-popup',
                                     title: 'swal2-title',
                                     htmlContainer: 'swal2-html-container'
-                                },
-                                didOpen: () => {
-                                    const popup = Swal.getPopup();
-                                    popup.style.backgroundColor = '#ffffff';
                                 }
                             });
                         } else {
@@ -877,10 +989,6 @@ body {
                                     popup: 'swal-custom-popup',
                                     title: 'swal2-title',
                                     htmlContainer: 'swal2-html-container'
-                                },
-                                didOpen: () => {
-                                    const popup = Swal.getPopup();
-                                    popup.style.backgroundColor = '#ffffff';
                                 }
                             });
                         }
@@ -895,10 +1003,6 @@ body {
                                 popup: 'swal-custom-popup',
                                 title: 'swal2-title',
                                 htmlContainer: 'swal2-html-container'
-                            },
-                            didOpen: () => {
-                                const popup = Swal.getPopup();
-                                popup.style.backgroundColor = '#ffffff';
                             }
                         });
                     }
