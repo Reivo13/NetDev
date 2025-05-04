@@ -15,7 +15,7 @@ from django.shortcuts import render
 class ResepCreateView(LoginRequiredMixin, CreateView):
     model = ResepDokter
     fields = ['nama', 'telepon', 'email', 'foto_resep', 'catatan']
-    template_name = 'uploadresepapp/index.html'
+    template_name = 'uploadresepapp/base.html'
     success_url = reverse_lazy('homeuserapp:homeuser')
 
     def form_valid(self, form):

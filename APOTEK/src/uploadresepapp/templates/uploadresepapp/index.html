@@ -1,17 +1,9 @@
+    {% extends "uploadresepapp/base.html" %}
     {% load static %}
     
-    <!DOCTYPE html>
-    <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Upload Resep - Apotek Jaya</title>
+    {% block title %}Upload Resep - Apotek Jaya{% endblock %}
 
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'user_resep/css/global.css' %}" />
-        <link rel="stylesheet" href="{% static 'user_resep/css/styleguide.css' %}" />
-        <link rel="stylesheet" href="{% static 'user_resep/css/style.css' %}">
-       
+    {% block content %}     
        <style> 
         <style> 
             .user-form {
@@ -70,29 +62,9 @@
             </style>
             
         
-    </head>
     <body>
         <!-- STYLE KEDUA YANG DIATAS JANGAN DIHAPUS, WALAUPUN MERAH BIARIN -->
 
-        <header class="navbar">
-            <div class="navbar-container">
-                <div class="logo">
-                    <span class="logo-icon">💊</span>
-                    <span class="logo-text">Apotek Jaya</span>
-                </div>
-                <nav class="nav-menu">
-                    <a href="#" class="nav-link active">Resep Obat</a>
-                    <a href="#" class="nav-link">Riwayat Pembelian</a>
-                </nav>
-                <div class="search-bar">
-                    <input type="text" placeholder="Cari" class="search-input">
-                    <button class="search-button">
-                        <img src="img/search.png" alt="Search" class="search-icon">
-                    </button>
-                </div>
-                <button class="login-button">LOGIN</button>
-            </div>
-        </header>
 
         <main class="main-content">
             <section class="upload-section">
@@ -134,48 +106,6 @@
     </div>
 </form>
 
-                    
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-title">Site Map</h3>
-                    <ul class="footer-links">
-                        <li><a href="#" class="footer-link">FAQ</a></li>
-                        <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
-                        <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3 class="footer-title">Follow kami di:</h3>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><img src="img/twitter.png" alt="Twitter"></a>
-                        <a href="#" class="social-icon"><img src="img/instagram.png" alt="Instagram"></a>
-                        <a href="#" class="social-icon"><img src="img/mail.png" alt="Email"></a>
-                        <a href="#" class="social-icon"><img src="img/youtube.png" alt="YouTube"></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3 class="footer-title">Layanan Pengaduan Konsumen</h3>
-                    <p class="footer-text">
-                        <strong>PT Apotek Jaya Kurniawan</strong><br>
-                        Jl. Telekomunikasi No.1, Citeureup, Kec. Dayeuhkolot,<br>
-                        Kabupaten Bandung, Jawa Barat 40257
-                    </p>
-                    <p class="footer-text">CS : 08123456789</p>
-                </div>
-            </div>
-            
-            <div class="footer-copyright">
-                <p>© Apotek Jaya, 2025.</p>
-            </div>
-        </footer>
-
         <script>
             document.getElementById('prescription').addEventListener('change', function(e) {
                 const fileName = e.target.files[0] ? e.target.files[0].name : 'Belum ada file dipilih';
@@ -183,4 +113,4 @@
             });
         </script>
     </body>
-    </html>
+    {% endblock %}
