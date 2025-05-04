@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
 from django.http import JsonResponse
@@ -14,26 +14,14 @@ class LandingPageView(ListView):
         # Tambahkan filter/search jika diperlukan
         return DataObat.objects.all()
 
-@login_required
 def beli_obat(request, obat_id):
-    obat = get_object_or_404(DataObat, id=obat_id)
-    
     if request.method == 'POST':
-        if obat.stok > 0:
-            obat.stok -= 1
-            obat.save()
-            
-            Transaksi.objects.create(
-                user=request.user,
-                obat=obat,
-                jumlah=1,
-                total_harga=obat.harga
-            )
-            
-            return JsonResponse({
-                'success': True,
-                'new_stock': obat.stok,
-                'obat_id': obat.id
-            })
-    
-    return JsonResponse({'success': False, 'message': 'Metode tidak valid atau stok habis'})
+        obat = get_object_or_404(DataObat, pk=obat_id)
+        jumlah = int(request.POST.get('jumlah', 1))
+        
+        if obat.stok >= jumlah:
+            Transaksi.objects.create(obat=obat, jumlah=jumlah)
+            return redirect('daftar_obat')
+        else:
+            return HttpResponse("Stok tidak mencukupi", status=400)
+    return redirect('daftar_obat')

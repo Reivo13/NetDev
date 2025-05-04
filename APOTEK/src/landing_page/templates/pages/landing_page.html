@@ -366,27 +366,55 @@
             cursor: pointer;
         }
         
-        /* Promo Section */
+        /* Promo Section - Horizontal Scroll */
         .promo-section {
             padding: 20px;
-            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-            color: white;
             margin: 20px auto;
-            border-radius: 10px;
             max-width: 1200px;
-        }
-        
-        .promo-container {
-            background: rgba(255,255,255,0.2);
-            padding: 15px;
-            border-radius: 8px;
         }
         
         .promo-title {
             font-size: 1.3rem;
             margin-bottom: 15px;
+            color: #333;
             text-align: center;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .promo-scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 10px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #f348f3 #f5f5f5;
+        }
+        
+        .promo-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .promo-scroll-container::-webkit-scrollbar-track {
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        
+        .promo-scroll-container::-webkit-scrollbar-thumb {
+            background-color: #f348f3;
+            border-radius: 10px;
+        }
+        
+        .promo-item {
+            flex: 0 0 auto;
+            width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .promo-item img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
         
         /* Footer Styles */
@@ -455,6 +483,10 @@
             .sidebar-box {
                 flex-direction: column;
             }
+            
+            .promo-item {
+                width: 250px;
+            }
         }
     </style>
 
@@ -508,35 +540,31 @@ body {
             </div>
             
             <a href="/login" class="landingpage-text15">
-                <button class="action-btn">LOGIN</button>
+                <button class="action-btn">LOGOUT</button>
             </a>
         </header>
 
-        <!-- Promo Section -->
+        <!-- Promo Section - Horizontal Scroll -->
         <section class="promo-section">
-            <div class="promo-container">
-                <h2 class="promo-title">Promo Menarik</h2>
-                <div class="promo-content">
-                    <div class="promo-item">
-                        <h3 class="promo-item-title">Sokusi Sakil Maag & Kembung</h3>
-                        <p class="promo-item-subtitle">Segar di Mulut Nyaman di Perut</p>
-                        <p class="promo-item-brand">POLYSILANE</p>
-                        <p class="promo-item-desc">M. Lampan, M. P.<br>Somethicorni<br>Akupunktum Hydroxide<br>Maupunktum Hydroxide</p>
-                    </div>
-                    
-                    <div class="promo-item">
-                        <h3 class="promo-item-title">Sokusi Sakil Maag & Kembung</h3>
-                        <p class="promo-item-subtitle">Segar di Mulut Nyaman di Perut</p>
-                        <p class="promo-item-brand">POLYSILANE</p>
-                        <p class="promo-item-desc">Lavathuana<br>Akupunktum Hydroxide<br>Maupunktum Hydroxide</p>
-                    </div>
-                    
-                    <div class="promo-item">
-                        <h3 class="promo-item-title">Sokusi Sakil Maag & Kembung</h3>
-                        <p class="promo-item-subtitle">Segar di Mulut Nyaman di Perut</p>
-                        <p class="promo-item-brand">KIRTUR POLYSILANE</p>
-                        <p class="promo-item-desc">Lavathuana<br>Akupunktum Hydroxide<br>Maupunktum Hydroxide</p>
-                    </div>
+            <h2 class="promo-title">Promo Menarik</h2>
+            <div class="promo-scroll-container">
+                <div class="promo-item">
+                    <img src="static/public/external/wallpaperjett12299-mfm-400w.png" alt="Promo 1">
+                </div>
+                <div class="promo-item">
+                    <img src="static/public/external/wallpaperjett11251-wz64-400w.png" alt="Promo 2">
+                </div>
+                <div class="promo-item">
+                    <img src="static/public/external/wallpaperjett11251-qdpj-400w.png" alt="Promo 3">
+                </div>
+                <div class="promo-item">
+                    <img src="static/public/external/wallpaperjett11251-rwba-400w.png" alt="Promo 4">
+                </div>
+                <div class="promo-item">
+                    <img src="static/public/external/download (1).jpeg" alt="Promo 5">
+                </div>
+                <div class="promo-item">
+                    <img src="static/public/external/download.jpeg" alt="Promo 6">
                 </div>
             </div>
         </section>
@@ -567,12 +595,11 @@ body {
                                         {{ obat.stok }}
                                     </span>
                                 </div>
-                                <form class="beli-form" method="post" action="{% url 'beli_obat' obat.id %}">
+                                <form method="post" action="{% url 'beli_obat' obat.id %}">
                                     {% csrf_token %}
-                                    <input type="hidden" name="obat_id" value="{{ obat.id }}">
                                     <div class="quantity-selector">
                                         <button type="button" class="quantity-btn minus-btn">-</button>
-                                        <input type="number" name="quantity" class="quantity-input" value="1" min="1" max="{{ obat.stok }}">
+                                        <input type="number" name="jumlah" class="quantity-input" value="1" min="1" max="{{ obat.stok }}">
                                         <button type="button" class="quantity-btn plus-btn">+</button>
                                     </div>
                                     <button type="submit" class="action-btn" style="margin-top: 10px; width: 100%;">Beli</button>
@@ -672,16 +699,16 @@ body {
                     <h3>Follow kami di:</h3>
                     <div style="display: flex; gap: 15px; margin-top: 10px;">
                         <a href="https://twitter.com" target="_blank" style="color: white;">
-                            <img src="static/public/external/twiter1331-6x3.svg" alt="Twitter" width="24">
+                            <img src="static/public/external/tq_m4i4qvnd---t2vk-1500w.png" alt="Twitter" width="24">
                         </a>
                         <a href="https://instagram.com" target="_blank" style="color: white;">
-                            <img src="static/public/external/ig1331-0t4.svg" alt="Instagram" width="24">
+                            <img src="static/public/external/tq_zvtxk_qcbb-rna-200h.png" alt="Instagram" width="24">
                         </a>
                         <a href="mailto:someone@example.com" style="color: white;">
                             <img src="static/public/external/mail1331-u6wd.svg" alt="Email" width="24">
                         </a>
                         <a href="https://youtube.com" target="_blank" style="color: white;">
-                            <img src="static/public/external/youtube1331-7q1.svg" alt="YouTube" width="24">
+                            <img src="static/public/external/tq_qo2xpk73jd-2p3-1500w.png" alt="YouTube" width="24">
                         </a>
                     </div>
                 </div>

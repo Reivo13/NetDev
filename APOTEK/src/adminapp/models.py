@@ -34,14 +34,15 @@ class DataObat(models.Model):
         return reverse('adminapp:detail', kwargs={'slug': self.slug})
 
 class Transaksi(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    obat = models.ForeignKey(DataObat, on_delete=models.CASCADE)
-    jumlah = models.PositiveIntegerField(default=1)
-    total_harga = models.PositiveIntegerField()
+    obat = models.ForeignKey('DataObat', on_delete=models.CASCADE)
+    jumlah = models.IntegerField()
     tanggal = models.DateTimeField(auto_now_add=True)
     
-    def __str__(self):
-        return f"{self.user.username} - {self.obat.nama_obat} - {self.tanggal}"    
+    def save(self, *args, **kwargs):
+        # Kurangi stok obat saat transaksi disimpan
+        self.obat.stok -= self.jumlah
+        self.obat.save()
+        super().save(*args, **kwargs)
 
 def rl_pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
