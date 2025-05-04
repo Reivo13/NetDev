@@ -1,6 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm
+from django.http import HttpResponse
+
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from .forms import LoginForm
 
 def login_view(request):
     if request.method == 'POST':
@@ -13,12 +18,17 @@ def login_view(request):
             )
             if user is not None:
                 login(request, user)
-                return redirect('homeuser:index')  # sesuaikan dengan halaman setelah login
+                if user.is_superuser:
+                    return redirect('adminapp:list')
+                else:
+                    return redirect('homeuser:homeuser')
             else:
                 form.add_error(None, 'Username atau password salah')
     else:
         form = LoginForm()
-    return render(request, 'loginapp/login.html', {'form': form})
+    return render(request, 'loginapp/index.html', {'form': form})
+
+
 
 def logout_view(request):
     logout(request)
