@@ -250,6 +250,7 @@
 
         /* Medicine List Section */
         .medicine-section {
+            /*background: #666666;*/
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -270,14 +271,23 @@
             justify-content: flex-start;
         }
         
+        .medicine-row {
+            display: flex;
+            width: 100%;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
         .obat-card {
-            flex: 1 1 calc(25% - 25px);
-            min-width: calc(25% - 25px);
+            flex: 1;
+            min-width: calc(33.333% - 17px);
+            max-width: calc(33.333% - 17px);
             background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+            /*backdrop-filter: blur(5px);*/
         }
         
         .obat-card:hover {
@@ -423,6 +433,7 @@
 
         /* Filter Section */
         .filter-section {
+            /*background: rgba(255, 255, 255, 0.7);*/
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -456,6 +467,7 @@
 
         /* Doctor Section */
         .doctor-section {
+            /*background: rgba(255, 255, 255, 0.7);*/
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -522,7 +534,7 @@
             color: white;
             padding: 50px 30px;
             margin-top: 40px;
-            backdrop-filter: blur(5px);
+
         }
 
         .footer-container {
@@ -607,19 +619,7 @@
             }
             
             .obat-card {
-                flex: 1 1 calc(33.333% - 25px);
-                min-width: calc(33.333% - 25px);
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .obat-card {
-                flex: 1 1 calc(50% - 25px);
-                min-width: calc(50% - 25px);
-            }
-            
-            .promo-item {
-                width: 280px;
+                flex: 0 0 calc(50% - 25px);
             }
         }
         
@@ -646,13 +646,8 @@
             }
             
             .obat-card {
-                flex: 1 1 100%;
-                min-width: 100%;
+                flex: 0 0 100%;
                 max-width: 350px;
-            }
-            
-            .promo-item {
-                width: 240px;
             }
         }
         
@@ -663,39 +658,6 @@
             
             .footer-column {
                 min-width: 100%;
-            }
-            
-            .promo-item {
-                width: 200px;
-            }
-        }
-        
-        /* Zoom Responsive Adjustments */
-        @media (min-width: 1600px) {
-            .obat-card {
-                flex: 1 1 calc(20% - 25px);
-                min-width: calc(20% - 25px);
-            }
-            
-            .promo-item {
-                width: 360px;
-            }
-        }
-        
-        @media (min-width: 2000px) {
-            .obat-card {
-                flex: 1 1 calc(16.666% - 25px);
-                min-width: calc(16.666% - 25px);
-            }
-            
-            .promo-item {
-                width: 400px;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .promo-item {
-                width: 180px;
             }
         }
     </style>
