@@ -64,6 +64,7 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'akun', 'templates'),
             os.path.join(BASE_DIR, 'admin_resep', 'templates'),
             os.path.join(BASE_DIR, 'accounts', 'templates'),
+            os.path.join(BASE_DIR, 'accounts', 'templates', 'accounts'),
             os.path.join(BASE_DIR, 'loginapp', 'template', 'public'),
             os.path.join(BASE_DIR, 'static', 'login'),
         ],

@@ -101,6 +101,7 @@
             <h1>Apotek Jaya</h1>
             <form method="POST" action="{% url 'register' %}">
                 {% csrf_token %}
+                {{ form.as_p }}
                 <label for="username">Username</label>
                 <input type="text" name="username" placeholder="masukkan username" required />
 
