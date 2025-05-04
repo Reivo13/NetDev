@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'history',
     'admin_daftarobat',
     'invoice',
+    'admin_tambahobat',
+    'uploadresepapp',
     'landing_page',
 ]
 

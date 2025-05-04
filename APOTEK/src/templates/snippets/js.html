@@ -113,6 +113,25 @@
   </script>
 
 <script>
+  // Menambahkan event listener untuk membuka modal
+  document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.open-modal');
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Ambil URL gambar dari atribut data-img
+        const imageUrl = this.getAttribute('data-img');
+        
+        // Set gambar ke dalam modal
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = imageUrl;
+      });
+    });
+  });
+</script>
+
+
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('deleteModal');
     const modalText = document.getElementById('deleteText');
@@ -144,4 +163,8 @@
   });
   </script>
   
-  
+  <script>
+  document.getElementById('id_foto_resep').addEventListener('change', function(e) {
+    const fileName = e.target.files[0]?.name || 'Belum ada file dipilih';
+    document.querySelector('.file-name').textContent = fileName;
+});</script>

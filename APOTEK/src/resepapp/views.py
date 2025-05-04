@@ -7,24 +7,30 @@ from django.contrib import messages
 from .models import ResepDokter
 from django.shortcuts import render
 
-def homeuser_view(request):
+def homeuser_view( request):
     return render(request, 'resepapp/homeuser.html')
 
-class ResepListView(ListView):
+class ResepListView( LoginRequiredMixin,ListView):
     model = ResepDokter
     template_name = 'resepdokter_list.html'
 
-class ResepDetailView(DetailView):
+class ResepDetailView( LoginRequiredMixin,DetailView):
     model = ResepDokter
     template_name = 'resepdokter_detail.html'
 
-class ResepCreateView(CreateView):
+class ResepCreateView(LoginRequiredMixin, CreateView):
     model = ResepDokter
-    fields = '__all__'
-    template_name = 'form.html'
-    success_url = reverse_lazy('resepapp:list')
+    fields = ['nama', 'telepon', 'email', 'foto_resep', 'catatan']
+    template_name = 'resepapp/form.html'
+    success_url = reverse_lazy('homeuserapp:homeuser')
 
-class ResepUpdateView(UpdateView):
+    def form_valid(self, form):
+        form.instance.user = self.request.user  # Otomatis isi user
+        messages.success(self.request, 'Resep berhasil ditambahkan!')
+        return super().form_valid(form)
+
+
+class ResepUpdateView( LoginRequiredMixin,UpdateView):
     model = ResepDokter
     fields = '__all__'
     template_name = 'resepapp/detail_update.html'
@@ -33,7 +39,7 @@ class ResepUpdateView(UpdateView):
 class ResepDeleteView(LoginRequiredMixin, DeleteView):
     model = ResepDokter
     template_name = 'resepapp/resep_delete.html'  # Buat template ini
-    success_url = reverse_lazy('adminapp:list')   # Redirect ke daftar resep
+    success_url = reverse_lazy('resepapp:list')   # Redirect ke daftar resep
     login_url = "/login/"
 
     def delete(self, request, *args, **kwargs):

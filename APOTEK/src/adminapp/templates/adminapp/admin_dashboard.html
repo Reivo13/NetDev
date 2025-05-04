@@ -2,6 +2,17 @@
 {% load static %}
 {% load humanize %}
 {% block content %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.90">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'admin_daftarobat/css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'admin_daftarobat/css/styleguide.css' %}" />
+    <link rel="stylesheet" href="{% static 'admin_daftarobat/css/style.css' %}" />
+  </head>
 <body>
   <div class="daftar-obat-admin" data-model-id="171:494">
     <div class="div">
@@ -84,5 +95,7 @@
 
     </div>
   </div>
+  {% include 'snippets/js.html' %}
 </body>
+</html>
 {% endblock %}
