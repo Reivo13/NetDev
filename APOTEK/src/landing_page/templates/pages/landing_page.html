@@ -7,6 +7,11 @@
     <meta charset="utf-8">
     <meta property="twitter:card" content="summary_large_image">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Styles -->
     <style>
         .swal-custom-popup {
@@ -20,50 +25,7 @@
         .swal2-html-container {
             color: #555 !important;
         }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <style data-tag="reset-style-sheet">
-        html { line-height: 1.15; }
-        body { margin: 0; }
-        * { 
-            box-sizing: border-box; 
-            border-width: 0; 
-            border-style: solid; 
-            -webkit-font-smoothing: antialiased;
-        }
-        p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
-            margin: 0;
-            padding: 0;
-        }
-        button, input, optgroup, select, textarea {
-            font-family: inherit;
-            font-size: 100%;
-            line-height: 1.15;
-            margin: 0;
-        }
-    </style>
-
-    <style data-tag="default-style-sheet">
-        html {
-            font-family: Inter;
-            font-size: 16px;
-        }
-        body {
-            font-weight: 400;
-            font-style: normal;
-            text-decoration: none;
-            text-transform: none;
-            letter-spacing: normal;
-            line-height: 1.15;
-            color: var(--dl-color-theme-neutral-dark);
-            background: var(--dl-color-theme-neutral-light);
-            fill: var(--dl-color-theme-neutral-dark);
-        }
-    </style>
-
-    <!-- Main CSS -->
-    <style>
         /* Background utama */
         body {
             background-image: url('https://i.imgur.com/i9npULc.jpg');
@@ -71,171 +33,7 @@
             background-position: center;
             background-attachment: fixed;
             background-repeat: no-repeat;
-        }
-
-        /* Header Section */
-        .header-section {
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            font-size: 1.6rem;
-            font-weight: bold;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            font-size: 1.05rem;
-            transition: color 0.3s ease;
-            padding: 5px 0;
-            position: relative;
-        }
-        
-        .nav-links a:hover {
-            color:#ff3c5f;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #ff3c5f;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .search-bar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .search-input {
-            padding: 10px 18px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            min-width: 250px;
-            transition: all 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .search-input:focus {
-            border-color: #ff3c5f;
-            box-shadow: 0 0 0 3px rgba(243, 72, 243, 0.1);
-            outline: none;
-            background-color: white;
-        }
-        
-        .search-button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .search-button:hover {
-            transform: scale(1.1);
-        }
-
-        /* Promo Section */
-        .promo-section {
-            padding: 40px 30px;
-        }
-
-        .promo-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .promo-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #333;
-            text-align: center;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .promo-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 3px;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ff3c5f;
-        }
-        
-        .promo-scroll-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            padding: 15px 0;
-            scrollbar-width: thin;
-            scrollbar-color: #8f8d8e #f5f5f5;
-        }
-        
-        .promo-scroll-container::-webkit-scrollbar {
-            height: 8px;
-        }
-        
-        .promo-scroll-container::-webkit-scrollbar-track {
-            background: #f5f5f5;
-            border-radius: 10px;
-        }
-        
-        .promo-scroll-container::-webkit-scrollbar-thumb {
-            background-color: #ff3c5f;
-            border-radius: 10px;
-        }
-        
-        .promo-item {
-            flex: 0 0 auto;
-            width: 320px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .promo-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .promo-item img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
+            padding-bottom: 180px; /* Untuk footer */
         }
 
         /* Main Content Sections */
@@ -250,7 +48,6 @@
 
         /* Medicine List Section */
         .medicine-section {
-            /*background: #666666;*/
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -271,13 +68,6 @@
             justify-content: flex-start;
         }
         
-        .medicine-row {
-            display: flex;
-            width: 100%;
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-        
         .obat-card {
             flex: 1;
             min-width: calc(33.333% - 17px);
@@ -287,7 +77,6 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            /*backdrop-filter: blur(5px);*/
         }
         
         .obat-card:hover {
@@ -433,7 +222,6 @@
 
         /* Filter Section */
         .filter-section {
-            /*background: rgba(255, 255, 255, 0.7);*/
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -467,7 +255,6 @@
 
         /* Doctor Section */
         .doctor-section {
-            /*background: rgba(255, 255, 255, 0.7);*/
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -528,90 +315,79 @@
             line-height: 1.4;
         }
 
-        /* Footer Section */
-        .footer-section {
-            background-color: rgba(51, 51, 51, 0.9);
-            color: white;
-            padding: 50px 30px;
-            margin-top: 40px;
-
+        /* Promo Section */
+        .promo-section {
+            padding: 40px 30px;
         }
 
-        .footer-container {
+        .promo-container {
             max-width: 1400px;
             margin: 0 auto;
         }
         
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-        }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.3rem;
+        .promo-title {
+            font-size: 1.5rem;
             margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+            position: relative;
             padding-bottom: 10px;
-            border-bottom: 2px solid #ff3c5f;
         }
         
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
+        .promo-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff3c5f;
         }
         
-        .footer-column ul li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-column ul li a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: inline-block;
-        }
-        
-        .footer-column ul li a:hover {
-            color: #ff3c5f;
-            transform: translateX(5px);
-        }
-        
-        .footer-column p {
-            color: #ddd;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .social-links {
+        .promo-scroll-container {
             display: flex;
-            gap: 15px;
-            margin-top: 15px;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 15px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #8f8d8e #f5f5f5;
         }
         
-        .social-links a {
-            display: inline-block;
+        .promo-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .promo-scroll-container::-webkit-scrollbar-track {
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        
+        .promo-scroll-container::-webkit-scrollbar-thumb {
+            background-color: #ff3c5f;
+            border-radius: 10px;
+        }
+        
+        .promo-item {
+            flex: 0 0 auto;
+            width: 320px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
         
-        .social-links a:hover {
+        .promo-item:hover {
             transform: translateY(-5px);
         }
         
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(68, 68, 68, 0.7);
-            color: #aaa;
-            font-size: 0.9rem;
+        .promo-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
         }
-        
+
         /* Responsive Adjustments */
         @media (max-width: 1200px) {
             .content-section {
@@ -624,18 +400,6 @@
         }
         
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 20px;
-                padding: 20px;
-            }
-            
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
             .search-bar {
                 width: 100%;
                 justify-content: center;
@@ -655,41 +419,61 @@
             .promo-section, .content-section {
                 padding: 30px 15px;
             }
-            
-            .footer-column {
-                min-width: 100%;
-            }
         }
     </style>
 
     <!-- Font dan library lainnya -->
     <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header class="header-section">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#" style="text-decoration: none; color: inherit;">💊 <strong>Apotek Jaya</strong></a>
-            </div>
-            
-            <div class="nav-links">
-                <a href="#resep-obat">Resep Obat</a>
-                <a href="#riwayat">Riwayat Pembelian</a>
-            </div>
-            
-            <div class="search-bar">
-                <input type="text" placeholder="Cari..." class="search-input">
-                <button class="search-button">
-                    <img alt="Search Icon" src="{% static 'public/external/icon5421-zuwg.svg' %}" width="20">
+    <!-- Header Section - Diubah sesuai base.html -->
+    <header>
+        <nav id="navbar" class="border-bottom navbar navbar-expand-lg navbar-light bg-white shadow-sm py-1">
+            <div class="container">
+                <!-- Brand -->
+                <a class="navbar-brand d-flex align-items-center fs-3" href="#">
+                    <strong>💊Apotek Jaya</strong>
+                </a>
+
+                <!-- Toggler (mobile) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                    aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-3">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" href="#resep-obat">Resep Obat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" href="#riwayat">Riwayat Pembelian</a>
+                        </li>
+                    </ul>
+
+                    <!-- Search dan Login -->
+                    <div class="ms-auto d-flex align-items-center gap-2">
+                        <!-- Search Form -->
+                        <form class="position-relative me-2" style="width: 400px;">
+                            <input class="form-control rounded-pill px-3 fw-bold w-100" type="search" placeholder="Cari"
+                                aria-label="Search"
+                                style="padding-right: 2.5rem; height: 35px; border: 2px solid #999;">
+                            <button type="submit" class="btn position-absolute border-0 bg-transparent"
+                                style="top: 50%; right: 10px; transform: translateY(-50%);">
+                                <i class="fas fa-search text-dark"></i>
+                            </button>
+                        </form>
+
+                        <!-- Login Button -->
+                        <a href="/login" class="btn btn-sm text-white fw-bold px-3"
+                            style="background-color: #d4af37;">LOGOUT</a>
+                    </div>
+                </div>
             </div>
-            
-            <a href="/login" class="landingpage-text15">
-                <button class="action-btn">LOGOUT</button>
-            </a>
         </nav>
     </header>
 
@@ -822,56 +606,51 @@
         </aside>
     </main>
 
-    <!-- Footer Section -->
-    <footer class="footer-section">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Site Map</h3>
-                    <ul>
-                        <li><a href="link-to-faq.html">FAQ</a></li>
-                        <li><a href="link-to-blog.html">Syarat & Ketentuan</a></li>
-                        <li><a href="link-to-syarat.html">Kebijakan Privasi</a></li>
+    <!-- Footer Section - Diubah sesuai base.html -->
+    <footer class="fixed-bottom text-white pt-3" style="background-color: #444444; z-index: 1030;">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <!-- Kolom 1 -->
+                <div class="col-md-4 mb-2 text-start">
+                    <h6 class="fw-bold">Site Map</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="" class="text-white text-decoration-none">FAQ</a></li>
+                        <li><a href="" class="text-white text-decoration-none">Syarat & Ketentuan</a></li>
+                        <li><a href="" class="text-white text-decoration-none">Kebijakan Privasi</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Layanan Pengaduan Konsumen</h3>
-                    <p>CS : 08123456789</p>
-                    <p>
-                        <strong>PT Apotek Jaya Kurniawan</strong><br>
-                        Jl. Telekomunikasi No.1, Citeureup, Kec. Dayeuhkolot,
-                        Kabupaten Bandung, Jawa Barat 40257
-                    </p>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Follow kami di:</h3>
-                    <div class="social-links">
-                        <a href="https://twitter.com" target="_blank">
-                            <img src="static/public/external/tq_m4i4qvnd---t2vk-1500w.png" alt="Twitter" width="24">
-                        </a>
-                        <a href="https://instagram.com" target="_blank">
-                            <img src="static/public/external/tq_zvtxk_qcbb-rna-200h.png" alt="Instagram" width="24">
-                        </a>
-                        <a href="mailto:someone@example.com">
-                            <img src="static/public/external/mail1331-u6wd.svg" alt="Email" width="24">
-                        </a>
-                        <a href="https://youtube.com" target="_blank">
-                            <img src="static/public/external/tq_qo2xpk73jd-2p3-1500w.png" alt="YouTube" width="24">
-                        </a>
+
+                <!-- Kolom 2 -->
+                <div class="col-md-4 mb-2 text-center">
+                    <h6 class="fw-bold">Follow kami di:</h6>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-envelope-fill"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
+
+                <!-- Kolom 3 -->
+                <div class="col-md-4 mb-2 text-end">
+                    <h6 class="fw-bold">Layanan Pengaduan Konsumen</h6>
+                    <p class="mb-0"><strong>PT Apotek Jaya Kurniawan</strong></p>
+                    <p class="mb-0">Jl. Telekomunikasi No.1, Citeureup,<br> Kec. Dayeuhkolot, Kabupaten Bandung,
+                        Jawa Barat 40257</p>
+                    <p class="mb-0">CS : <strong>08123456789</strong></p>
+                </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>©Apotek Jaya, 2025.</p>
-            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="bg-secondary text-center py-1">
+            <small>© Apotek Jaya, 2025.</small>
         </div>
     </footer>
 
     <!-- Script Section -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // Quantity selector functionality
