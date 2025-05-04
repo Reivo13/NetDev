@@ -8,6 +8,21 @@
     <meta property="twitter:card" content="summary_large_image">
 
     <!-- Styles -->
+    <style>
+        .swal-custom-popup {
+            background-color: #fffdfd !important;
+            border-radius: 10px !important;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2) !important;
+        }
+        .swal2-title {
+            color: #333 !important;
+        }
+        .swal2-html-container {
+            color: #555 !important;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style data-tag="reset-style-sheet">
         html { line-height: 1.15; }
         body { margin: 0; }
@@ -572,45 +587,45 @@ body {
         <!-- Main Content -->
         <div class="content-wrapper">
             <div class="main-content">
-                <!-- Medicine Box -->
-                <div class="medicine-box">
-                    <h2>Daftar Obat</h2>
-                    <div class="medicine-list">
-                        {% for obat in obat_list %}
-                        <div class="obat-card">
-                            <div class="obat-image-container">
-                                {% if obat.foto %}
-                                <img src="{{ obat.foto.url }}" alt="{{ obat.nama_obat }}" class="obat-image">
-                                {% else %}
-                                <img src="{% static 'images/default-obat.png' %}" alt="No Image" class="obat-image">
-                                {% endif %}
-                            </div>
-                            <div class="obat-info">
-                                <h3 class="obat-nama">{{ obat.nama_obat }}</h3>
-                                <p class="obat-kategori">{{ obat.get_jenis_obat_display }}</p>
-                                <p class="obat-harga">Rp {{ obat.harga }}</p>
-                                <div class="stok-info">
-                                    <span>Stok:</span>
-                                    <span id="stok-{{ obat.id }}" class="{% if obat.stok <= 10 %}stok-sedikit{% else %}stok-banyak{% endif %}">
-                                        {{ obat.stok }}
-                                    </span>
-                                </div>
-                                <form method="post" action="{% url 'beli_obat' obat.id %}">
-                                    {% csrf_token %}
-                                    <div class="quantity-selector">
-                                        <button type="button" class="quantity-btn minus-btn">-</button>
-                                        <input type="number" name="jumlah" class="quantity-input" value="1" min="1" max="{{ obat.stok }}">
-                                        <button type="button" class="quantity-btn plus-btn">+</button>
-                                    </div>
-                                    <button type="submit" class="action-btn" style="margin-top: 10px; width: 100%;">Beli</button>
-                                </form>
-                            </div>
+     <!-- Medicine Box -->
+     <div class="medicine-box">
+        <h2>Daftar Obat</h2>
+        <div class="medicine-list">
+            {% for obat in obat_list %}
+            <div class="obat-card" data-id="{{ obat.id }}">
+                <div class="obat-image-container">
+                    {% if obat.foto %}
+                    <img src="{{ obat.foto.url }}" alt="{{ obat.nama_obat }}" class="obat-image">
+                    {% else %}
+                    <img src="{% static 'images/default-obat.png' %}" alt="No Image" class="obat-image">
+                    {% endif %}
+                </div>
+                <div class="obat-info">
+                    <h3 class="obat-nama">{{ obat.nama_obat }}</h3>
+                    <p class="obat-kategori">{{ obat.get_jenis_obat_display }}</p>
+                    <p class="obat-harga">Rp {{ obat.harga }}</p>
+                    <div class="stok-info">
+                        <span>Stok:</span>
+                        <span id="stok-{{ obat.id }}" class="{% if obat.stok <= 10 %}stok-sedikit{% else %}stok-banyak{% endif %}">
+                            {{ obat.stok }}
+                        </span>
+                    </div>
+                    <div class="form-beli">
+                        {% csrf_token %}
+                        <div class="quantity-selector">
+                            <button type="button" class="quantity-btn minus-btn">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="{{ obat.stok }}">
+                            <button type="button" class="quantity-btn plus-btn">+</button>
                         </div>
-                        {% empty %}
-                        <p>Tidak ada obat tersedia</p>
-                        {% endfor %}
+                        <button type="button" class="action-btn btn-beli" data-id="{{ obat.id }}">Beli</button>
                     </div>
                 </div>
+            </div>
+            {% empty %}
+            <p>Tidak ada obat tersedia</p>
+            {% endfor %}
+        </div>
+    </div>
                 
                 <!-- Sidebar Box -->
                 <div class="sidebar-box">
@@ -720,6 +735,9 @@ body {
         </footer>
     </div>
 
+    <!-- Script Section with Fixes -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // Quantity selector functionality
         document.querySelectorAll('.quantity-selector').forEach(selector => {
@@ -749,6 +767,142 @@ body {
                 } else if (value > max) {
                     quantityInput.value = max;
                 }
+            });
+        });
+
+        // AJAX purchase functionality
+        $(document).ready(function(){
+            $('.btn-beli').click(function(e){
+                e.preventDefault();
+                
+                var button = $(this);
+                var form = button.closest('.form-beli');
+                var obatId = button.data('id');
+                var jumlahInput = form.find('.quantity-input');
+                var stokDisplay = $('#stok-' + obatId);
+                
+                // Improved parsing and validation
+                var rawValue = jumlahInput.val().trim();
+                var jumlah = parseInt(rawValue, 10);
+                
+                if (isNaN(jumlah) || jumlah < 1) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Input tidak valid',
+                        text: 'Harap masukkan angka minimal 1',
+                        willClose: () => jumlahInput.focus(),
+                        background: '#ffffff',
+                        customClass: {
+                            popup: 'swal-custom-popup',
+                            title: 'swal2-title',
+                            htmlContainer: 'swal2-html-container'
+                        },
+                        didOpen: () => {
+                            const popup = Swal.getPopup();
+                            popup.style.backgroundColor = '#ffffff';
+                        }
+                    });
+                    return;
+                }
+                
+                // Get max stock from input attribute
+                var maxStok = parseInt(jumlahInput.attr('max'));
+                if (jumlah > maxStok) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Stok tidak mencukupi',
+                        text: 'Stok tersedia: ' + maxStok,
+                        willClose: () => jumlahInput.focus(),
+                        background: '#ffffff',
+                        customClass: {
+                            popup: 'swal-custom-popup',
+                            title: 'swal2-title',
+                            htmlContainer: 'swal2-html-container'
+                        },
+                        didOpen: () => {
+                            const popup = Swal.getPopup();
+                            popup.style.backgroundColor = '#ffffff';
+                        }
+                    });
+                    return;
+                }
+                
+                $.ajax({
+                    url: `/beli/${obatId}/`,
+                    type: "POST",
+                    data: {
+                        'jumlah': jumlah,
+                        'csrfmiddlewaretoken': form.find('input[name=csrfmiddlewaretoken]').val()
+                    },
+                    success: function(response){
+                        if (response.status === 'success') {
+                            // Update stock display
+                            stokDisplay.text(response.stok_terbaru);
+                            
+                            // Update stock class
+                            if (response.stok_terbaru <= 10) {
+                                stokDisplay.removeClass('stok-banyak').addClass('stok-sedikit');
+                            } else {
+                                stokDisplay.removeClass('stok-sedikit').addClass('stok-banyak');
+                            }
+                            
+                            // Update max attribute
+                            jumlahInput.attr('max', response.stok_terbaru);
+                            
+                            // Show success popup with white background
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Berhasil',
+                                text: 'Pembelian berhasil!',
+                                timer: 2000,
+                                showConfirmButton: false,
+                                background: '#ffffff',
+                                customClass: {
+                                    popup: 'swal-custom-popup',
+                                    title: 'swal2-title',
+                                    htmlContainer: 'swal2-html-container'
+                                },
+                                didOpen: () => {
+                                    const popup = Swal.getPopup();
+                                    popup.style.backgroundColor = '#ffffff';
+                                }
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message || 'Terjadi kesalahan',
+                                background: '#ffffff',
+                                customClass: {
+                                    popup: 'swal-custom-popup',
+                                    title: 'swal2-title',
+                                    htmlContainer: 'swal2-html-container'
+                                },
+                                didOpen: () => {
+                                    const popup = Swal.getPopup();
+                                    popup.style.backgroundColor = '#ffffff';
+                                }
+                            });
+                        }
+                    },
+                    error: function(xhr) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error ' + xhr.status,
+                            text: xhr.responseJSON?.message || 'Terjadi kesalahan server',
+                            background: '#ffffff',
+                            customClass: {
+                                popup: 'swal-custom-popup',
+                                title: 'swal2-title',
+                                htmlContainer: 'swal2-html-container'
+                            },
+                            didOpen: () => {
+                                const popup = Swal.getPopup();
+                                popup.style.backgroundColor = '#ffffff';
+                            }
+                        });
+                    }
+                });
             });
         });
     </script>
