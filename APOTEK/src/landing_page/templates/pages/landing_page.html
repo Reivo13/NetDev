@@ -26,16 +26,29 @@
             color: #555 !important;
         }
 
-        /* Background utama */
-        body {
-            background-image: url('https://i.imgur.com/i9npULc.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            padding-bottom: 180px; /* Untuk footer */
-        }
+    /* Background utama */
+    body {
+        background-image: url('https://i.imgur.com/i9npULc.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        position: relative;
+        padding-bottom: 180px; /* Sesuaikan dengan tinggi footer */
+        margin: 0;
+    }
 
+    /* Footer fixed */
+    footer {
+        background-color: #444444;
+        color: white;
+        padding-top: 20px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: 1000;
+    }
         /* Main Content Sections */
         .content-section {
             padding: 40px 30px;
@@ -605,9 +618,13 @@
             </section>
         </aside>
     </main>
+    <main>
+        {% block content %}
+        <!-- Isi konten tiap halaman -->
+        {% endblock %}
+    </main>
+    <footer class="text-white pt-3" style="background-color: #444444; margin-top: 50px;">
 
-    <!-- Footer Section - Diubah sesuai base.html -->
-    <footer class="fixed-bottom text-white pt-3" style="background-color: #444444; z-index: 1030;">
         <div class="container">
             <div class="row d-flex justify-content-between">
                 <!-- Kolom 1 -->
@@ -647,6 +664,7 @@
             <small>© Apotek Jaya, 2025.</small>
         </div>
     </footer>
+
 
     <!-- Script Section -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
