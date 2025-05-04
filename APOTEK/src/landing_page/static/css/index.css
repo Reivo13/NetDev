@@ -1,0 +1,2345 @@
+.landingpage-container1 {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+   
+  .landingpage-landingpage {
+    gap: 23px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: center;
+    flex-shrink: 0;
+    background-size: cover;
+    justify-content: center;
+    background-image: url("/static/public/external/tq_0q0gze4xes-p2ri-1500w.png");
+  }
+   
+  .landingpage-nav {
+    gap: 225px;
+    width: 1920px;
+    height: 94px;
+    display: flex;
+    padding: 23px 180px 23px 171px;
+    overflow: hidden;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    border-width: 0 0 1px;
+    background-color: rgba(248, 248, 248, 1);
+  }
+   
+  .landingpage-magnetonavbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   
+  .landingpage-logo {
+    width: 303px;
+    height: 40px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text10 {
+    top: 10px;
+    left: -0.1650390625px;
+    color: rgba(51, 51, 51, 1);
+    width: 295px;
+    height: auto;
+    position: absolute;
+    font-size: 36px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 20px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-list {
+    gap: 32px;
+    display: flex;
+    padding: 8px 32px 8px 40px;
+    align-items: center;
+  }
+   
+  .landingpage-component3 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+   
+  .landingpage-text11 {
+    color: rgba(51, 51, 51, 1);
+    height: auto;
+    font-size: 16px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 20px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-component6 {
+    gap: -1.4210854715202004e-14px;
+    width: 150.27000427246094px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text12 {
+    color: rgba(51, 51, 51, 1);
+    height: auto;
+    font-size: 16px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 20px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+
+  .landingpage-searchbar {
+    gap: 4px;
+    width: 400px;
+    height: 40px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 28px;
+  }
+  
+   
+  .landingpage-statelayer1 {
+    gap: 128px;
+    width: 400px;
+    height: 40px;
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-content {
+    gap: 10px;
+    width: 197px;
+    height: 32px;
+    display: flex;
+    padding: 0 0 0 22px;
+    position: relative;
+    align-self: stretch;
+    align-items: center;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-supportingtext {
+    top: 10.5px;
+    left: 22px;
+    width: 25px;
+    height: 11px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text13 {
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Bold;
+    text-align: left;
+    font-family: Montserrat;
+    font-weight: 700;
+    line-height: 10.680000305175781px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-trailing-elements {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: flex-end;
+  }
+   
+  .landingpage-frame1sttrailingicon {
+    gap: 10px;
+    top: 0px;
+    left: 0px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+   
+  .landingpage-container2 {
+    gap: 10px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    border-radius: 100px;
+    justify-content: center;
+  }
+   
+  .landingpage-statelayer2 {
+    gap: 10px;
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+   
+  .landingpage-icon {
+    flex: 1;
+  width: 0px;
+  height: 24px;
+  margin-right: -200px;
+  }
+   
+  .landingpage-component5 {
+    height: 32px;
+    display: flex;
+    padding: 8px 8px 8.050000190734863px;
+    position: relative;
+    align-items: center;
+    flex-shrink: 0;
+    
+    justify-content: center;
+    
+  }
+   
+  .landingpage-rectangle1 {
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 32px;
+    position: absolute;
+    border-radius: 4px;
+  }
+   
+  .landingpage-rectangle2 {
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 32px;
+    z-index: 1;
+    position: absolute;
+  }
+   
+  .landingpage-rectangle3 {
+    top: -8px;
+    left: 0px;
+    width: 60px;
+    height: 48px;
+    z-index: 2;
+    position: absolute;
+  }
+   
+  .landingpage-text14 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    z-index: 3;
+    font-size: 14px;
+    font-style: Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-background1 {
+    width: 1920px;
+    height: 307px;
+    display: flex;
+    padding: 0 16px 17px;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+   
+  .landingpage-container3 {
+    gap: 24px;
+    top: 0px;
+    left: 152px;
+    width: 1607px;
+    display: flex;
+    padding: 17px 0 28px;
+    position: absolute;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+   
+  .landingpage-gradient-background1 {
+    width: 1504px;
+    height: 44px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 4px;
+  }
+   
+  .landingpage-text15 {
+    left: 0.5px;
+    color: rgba(51, 51, 51, 1);
+    width: 528px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-gradient-background2 {
+    width: 374px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-wallpaperjett11 {
+    top: 0px;
+    left: 0.5px;
+    width: 373px;
+    height: 194px;
+    position: absolute;
+  }
+   
+  .landingpage-gradient-background3 {
+    width: 374px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-wallpaperjett12 {
+    top: 0px;
+    left: 0.5px;
+    width: 373px;
+    height: 194px;
+    position: absolute;
+  }
+   
+  .landingpage-gradient-background4 {
+    width: 374px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-wallpaperjett13 {
+    top: 0px;
+    left: 0.5px;
+    width: 373px;
+    height: 194px;
+    position: absolute;
+  }
+   
+  .landingpage-gradient-background5 {
+    width: 374px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-wallpaperjett14 {
+    top: 0px;
+    left: 0.5px;
+    width: 373px;
+    height: 194px;
+    position: absolute;
+  }
+   
+  .landingpage-arrowrightcircle {
+    top: 152px;
+    left: 1750px;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+  }
+   
+  .landingpage-arrowleftcircle {
+    top: 152px;
+    left: 127px;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+  }
+   
+  .landingpage-obatcard {
+    gap: 10px;
+    width: 1176px;
+    height: 851px;
+    display: flex;
+    background: linear-gradient(180deg, rgba(102, 102, 102, 0.25) 0%, rgba(50, 60, 71, 0.25) 100%);
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 26px;
+    flex-direction: column;
+    justify-content: center;
+  }
+   
+  .landingpage-container4 {
+    gap: 27px;
+    display: flex;
+    padding: 20px 19px 28px 27px;
+    flex-wrap: wrap;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-daftar-obat1 {
+    width: 1100px;
+    height: 44px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 4px;
+  }
+   
+  .landingpage-text16 {
+    left: 22px;
+    color: rgba(51, 51, 51, 1);
+    width: 486px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-card-obat10 {
+    width: 202px;
+    height: 362px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 26px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-nama-obat10 {
+    top: 220px;
+    left: 22px;
+    width: 158px;
+    height: 122px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text17 {
+    top: 10px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text18 {
+    top: 56px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-component210 {
+    gap: 7px;
+    top: 92px;
+    left: 108px;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    padding: 0 12px;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    padding-right: 0 12px;
+    justify-content: center;
+    background-color: rgba(224, 0, 77, 1);
+  }
+   
+  .landingpage-text19 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    z-index: 1;
+    font-size: 14px;
+    font-style: Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-gambar-obat10 {
+    top: 17px;
+    left: 16px;
+    width: 169px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-image5990592132025111249110 {
+    top: -11px;
+    left: -42px;
+    width: 254px;
+    height: 254px;
+    position: absolute;
+  }
+   
+  .landingpage-card-obat11 {
+    width: 202px;
+    height: 362px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 26px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-nama-obat11 {
+    top: 220px;
+    left: 22px;
+    width: 158px;
+    height: 122px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text20 {
+    top: 10px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text21 {
+    top: 56px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-component211 {
+    gap: 7px;
+    top: 92px;
+    left: 108px;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    padding: 0 12px;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    justify-content: center;
+    background-color: rgba(224, 0, 77, 1);
+  }
+   
+  .landingpage-text22 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    z-index: 1;
+    font-size: 14px;
+    font-style: Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-gambar-obat11 {
+    top: 17px;
+    left: 16px;
+    width: 169px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-image5990592132025111249111 {
+    top: 2px;
+    left: 2.5px;
+    width: 166px;
+    height: 191px;
+    position: absolute;
+  }
+   
+  .landingpage-card-obat12 {
+    width: 202px;
+    height: 362px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 26px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-nama-obat12 {
+    top: 220px;
+    left: 22px;
+    width: 158px;
+    height: 122px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text23 {
+    top: 10px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text24 {
+    top: 56px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-component212 {
+    gap: 7px;
+    top: 92px;
+    left: 108px;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    padding: 0 12px;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    justify-content: center;
+    background-color: rgba(224, 0, 77, 1);
+  }
+   
+  .landingpage-text25 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    z-index: 1;
+    font-size: 14px;
+    font-style: Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-gambar-obat12 {
+    top: 17px;
+    left: 16px;
+    width: 169px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-image5990592132025111249112 {
+    top: -30px;
+    left: -42.5px;
+    width: 254px;
+    height: 254px;
+    position: absolute;
+  }
+   
+  .landingpage-card-obat13 {
+    width: 202px;
+    height: 362px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 26px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-nama-obat13 {
+    top: 220px;
+    left: 22px;
+    width: 158px;
+    height: 122px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text26 {
+    top: 10px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text27 {
+    top: 56px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-component213 {
+    gap: 7px;
+    top: 92px;
+    left: 108px;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    padding: 0 12px;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    justify-content: center;
+    background-color: rgba(224, 0, 77, 1);
+  }
+   
+  .landingpage-text28 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    z-index: 1;
+    font-size: 14px;
+    font-style: Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-gambar-obat13 {
+    top: 17px;
+    left: 16px;
+    width: 169px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-image5990592132025111249113 {
+    top: -11px;
+    left: -42px;
+    width: 254px;
+    height: 254px;
+    position: absolute;
+  }
+   
+  .landingpage-card-obat14 {
+    width: 202px;
+    height: 362px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 26px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-nama-obat14 {
+    top: 220px;
+    left: 22px;
+    width: 158px;
+    height: 122px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text29 {
+    top: 10px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text30 {
+    top: 56px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-component214 {
+    gap: 7px;
+    top: 92px;
+    left: 108px;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    padding: 0 12px;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    justify-content: center;
+    background-color: rgba(224, 0, 77, 1);
+  }
+   
+  .landingpage-text31 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    z-index: 1;
+    font-size: 14px;
+    font-style: Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-gambar-obat14 {
+    top: 17px;
+    left: 16px;
+    width: 169px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-image5990592132025111249114 {
+    top: -11px;
+    left: -42px;
+    width: 254px;
+    height: 254px;
+    position: absolute;
+  }
+   
+  .landingpage-card-obat15 {
+    width: 202px;
+    height: 362px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 26px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-nama-obat15 {
+    top: 220px;
+    left: 22px;
+    width: 158px;
+    height: 122px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text32 {
+    top: 10px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text33 {
+    top: 56px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-component215 {
+    gap: 7px;
+    top: 92px;
+    left: 108px;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    padding: 0 12px;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    justify-content: center;
+    background-color: rgba(224, 0, 77, 1);
+  }
+   
+  .landingpage-text34 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    z-index: 1;
+    font-size: 14px;
+    font-style: Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-gambar-obat15 {
+    top: 17px;
+    left: 16px;
+    width: 169px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-image5990592132025111249115 {
+    top: -11px;
+    left: -42px;
+    width: 254px;
+    height: 254px;
+    position: absolute;
+  }
+   
+  .landingpage-card-obat16 {
+    width: 202px;
+    height: 362px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 26px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-nama-obat16 {
+    top: 220px;
+    left: 22px;
+    width: 158px;
+    height: 122px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text35 {
+    top: 10px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text36 {
+    top: 56px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-component216 {
+    gap: 7px;
+    top: 92px;
+    left: 108px;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    padding: 0 12px;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    justify-content: center;
+    background-color: rgba(224, 0, 77, 1);
+  }
+   
+  .landingpage-text37 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    z-index: 1;
+    font-size: 14px;
+    font-style: Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-gambar-obat16 {
+    top: 17px;
+    left: 16px;
+    width: 169px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-image5990592132025111249116 {
+    top: -11px;
+    left: -42px;
+    width: 254px;
+    height: 254px;
+    position: absolute;
+  }
+   
+  .landingpage-card-obat17 {
+    width: 202px;
+    height: 362px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 26px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-nama-obat17 {
+    top: 220px;
+    left: 22px;
+    width: 158px;
+    height: 122px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text38 {
+    top: 10px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text39 {
+    top: 56px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-component217 {
+    gap: 7px;
+    top: 92px;
+    left: 108px;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    padding: 0 12px;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    justify-content: center;
+    background-color: rgba(224, 0, 77, 1);
+  }
+   
+  .landingpage-text40 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    z-index: 1;
+    font-size: 14px;
+    font-style: Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-gambar-obat17 {
+    top: 17px;
+    left: 16px;
+    width: 169px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-image5990592132025111249117 {
+    top: -11px;
+    left: -42px;
+    width: 254px;
+    height: 254px;
+    position: absolute;
+  }
+   
+  .landingpage-card-obat18 {
+    width: 202px;
+    height: 362px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 26px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-nama-obat18 {
+    top: 220px;
+    left: 22px;
+    width: 158px;
+    height: 122px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text41 {
+    top: 10px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text42 {
+    top: 56px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-component218 {
+    gap: 7px;
+    top: 92px;
+    left: 108px;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    padding: 0 12px;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    justify-content: center;
+    background-color: rgba(224, 0, 77, 1);
+  }
+   
+  .landingpage-text43 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    z-index: 1;
+    font-size: 14px;
+    font-style: Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-gambar-obat18 {
+    top: 17px;
+    left: 16px;
+    width: 169px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-image5990592132025111249118 {
+    top: -11px;
+    left: -42px;
+    width: 254px;
+    height: 254px;
+    position: absolute;
+  }
+   
+  .landingpage-card-obat19 {
+    width: 202px;
+    height: 362px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 26px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-nama-obat19 {
+    top: 220px;
+    left: 22px;
+    width: 158px;
+    height: 122px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-text44 {
+    top: 10px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text45 {
+    top: 56px;
+    color: rgba(0, 0, 0, 1);
+    width: 158px;
+    height: auto;
+    position: absolute;
+    font-size: 13px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-component219 {
+    gap: 7px;
+    top: 92px;
+    left: 108px;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    padding: 0 12px;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    justify-content: center;
+    background-color: rgba(224, 0, 77, 1);
+  }
+   
+  .landingpage-text46 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    z-index: 1;
+    font-size: 14px;
+    font-style: Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-gambar-obat19 {
+    top: 17px;
+    left: 16px;
+    width: 169px;
+    height: 194px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(236, 235, 235, 1) 50%, rgba(221, 221, 221, 1) 50%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: rgba(228, 228, 229, 1);
+  }
+   
+  .landingpage-image5990592132025111249119 {
+    top: -11px;
+    left: -42px;
+    width: 254px;
+    height: 254px;
+    position: absolute;
+  }
+   
+  .landingpage-frame14 {
+    gap: 20px;
+    width: 378px;
+    height: 851px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+   
+  .landingpage-background2 {
+    gap: 0px;
+    width: 354px;
+    height: 336px;
+    margin-bottom: 520px;
+    display: flex;
+    background: linear-gradient(180deg, rgba(102, 102, 102, 0.25) 0%, rgba(50, 60, 71, 0.25) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    
+    flex-shrink: 0;
+    border-radius: 26px;
+    flex-direction: column;
+    align-items: center;
+  
+    margin-left: 10px;
+    padding-right: -20px;
+  
+  }
+
+   
+  .landingpage-container5 {
+    gap: 30px;
+    display: flex;
+    padding: 15px 19px 28px 27px;
+    flex-wrap: wrap;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-shrink: 0;
+    margin-left: -20px; 
+    margin-right: 8px;
+  }
+   
+  .landingpage-daftar-obat2 {
+    width: 304px;
+    height: 44px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 4px;
+    text-align: right;
+  }
+   
+  .landingpage-text47 {
+    top: -0.5px;
+    color: rgba(51, 51, 51, 1);
+    width: 304px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+    margin-left: 30px;
+    margin-top: 20px;
+  }
+
+   
+  .landingpage-frame11641 {
+    gap: 27px;
+    display: flex;
+    align-items: flex-start;
+  }
+   
+  .landingpage-image1 {
+    width: 57px;
+    height: 57px;
+    border-radius: 17px;
+  }
+   
+  .landingpage-text48 {
+    color: rgba(0, 0, 0, 1);
+    width: 209px;
+    height: auto;
+    font-size: 15px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-frame11651 {
+    gap: 27px;
+    display: flex;
+    align-items: flex-start;
+  }
+   
+  .landingpage-image2 {
+    width: 57px;
+    height: 57px;
+    border-radius: 17px;
+  }
+   
+  .landingpage-text49 {
+    color: rgba(0, 0, 0, 1);
+    width: 209px;
+    height: auto;
+    font-size: 15px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-frame11661 {
+    gap: 27px;
+    display: flex;
+    align-items: flex-start;
+  }
+   
+  .landingpage-image3 {
+    width: 57px;
+    height: 57px;
+    border-radius: 17px;
+  }
+   
+  .landingpage-text50 {
+    color: rgba(0, 0, 0, 1);
+    width: 209px;
+    height: auto;
+    font-size: 15px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-background3 {
+    gap: 10px;
+    width: 354px;
+    height: 495px;
+    display: flex;
+    background: linear-gradient(180deg, rgba(102, 102, 102, 0.3199999928474426) 0%, rgba(50, 60, 71, 0.3199999928474426) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 26px;
+    flex-direction: column;
+    justify-content: center;
+  }
+   
+  .landingpage-container6 {
+    gap: 27px;
+    display: flex;
+    padding: 15px 19px 28px 27px;
+    flex-wrap: wrap;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+   
+  .landingpage-daftar-obat3 {
+    width: 304px;
+    height: 44px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 4px;
+  }
+   
+  .landingpage-text51 {
+    color: rgba(51, 51, 51, 1);
+    right: -15px;
+    width: 304px;
+    bottom: 5px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-frame11642 {
+    gap: 21px;
+    width: 304px;
+    height: 90px;
+    display: flex;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background-color: rgba(185, 185, 185, 0.6100000143051147);
+  }
+   
+  .landingpage-image4 {
+    top: 0px;
+    left: 0px;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    border-radius: 100px;
+  }
+   
+  .landingpage-text52 {
+    top: 9px;
+    left: 103.5px;
+    color: rgba(51, 51, 51, 1);
+    width: 194px;
+    height: auto;
+    position: absolute;
+    font-size: 15px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text53 {
+    top: 40px;
+    left: 103.5px;
+    color: rgba(0, 0, 0, 1);
+    width: 194px;
+    height: auto;
+    position: absolute;
+    font-size: 12px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text54 {
+    top: 62px;
+    left: 103.5px;
+    color: rgba(0, 0, 0, 1);
+    width: 194px;
+    height: auto;
+    position: absolute;
+    font-size: 12px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-frame11652 {
+    gap: 21px;
+    width: 304px;
+    height: 90px;
+    display: flex;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background-color: rgba(185, 185, 185, 0.6100000143051147);
+  }
+   
+  .landingpage-image5 {
+    top: 0px;
+    left: 0px;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    border-radius: 100px;
+  }
+   
+  .landingpage-text55 {
+    top: 9px;
+    left: 103.5px;
+    color: rgba(51, 51, 51, 1);
+    width: 194px;
+    height: auto;
+    position: absolute;
+    font-size: 15px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text56 {
+    top: 40px;
+    left: 103.5px;
+    color: rgba(0, 0, 0, 1);
+    width: 194px;
+    height: auto;
+    position: absolute;
+    font-size: 12px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text57 {
+    top: 62px;
+    left: 103.5px;
+    color: rgba(0, 0, 0, 1);
+    width: 194px;
+    height: auto;
+    position: absolute;
+    font-size: 12px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-frame11662 {
+    gap: 21px;
+    width: 304px;
+    height: 90px;
+    display: flex;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background-color: rgba(185, 185, 185, 0.6100000143051147);
+  }
+   
+  .landingpage-image6 {
+    top: 0px;
+    left: 0px;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    border-radius: 100px;
+  }
+   
+  .landingpage-text58 {
+    top: 9px;
+    left: 103.5px;
+    color: rgba(51, 51, 51, 1);
+    width: 194px;
+    height: auto;
+    position: absolute;
+    font-size: 15px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text59 {
+    top: 40px;
+    left: 103.5px;
+    color: rgba(0, 0, 0, 1);
+    width: 194px;
+    height: auto;
+    position: absolute;
+    font-size: 12px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text60 {
+    top: 62px;
+    left: 103.5px;
+    color: rgba(0, 0, 0, 1);
+    width: 194px;
+    height: auto;
+    position: absolute;
+    font-size: 12px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-frame1167 {
+    gap: 21px;
+    width: 304px;
+    height: 90px;
+    display: flex;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background-color: rgba(185, 185, 185, 0.6100000143051147);
+  }
+   
+  .landingpage-image7 {
+    top: 0px;
+    left: 0px;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    border-radius: 100px;
+  }
+   
+  .landingpage-text61 {
+    top: 9px;
+    left: 103.5px;
+    color: rgba(51, 51, 51, 1);
+    width: 194px;
+    height: auto;
+    position: absolute;
+    font-size: 15px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text62 {
+    top: 40px;
+    left: 103.5px;
+    color: rgba(0, 0, 0, 1);
+    width: 194px;
+    height: auto;
+    position: absolute;
+    font-size: 12px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text63 {
+    top: 62px;
+    left: 103.5px;
+    color: rgba(0, 0, 0, 1);
+    width: 194px;
+    height: auto;
+    position: absolute;
+    font-size: 12px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-hdbasefooter-footer {
+    gap: -2.2737367544323206e-13px;
+    width: 1920px;
+    height: 271px;
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+    flex-direction: column;
+  }
+   
+  .landingpage-background4 {
+    width: 1920px;
+    height: 217px;
+    display: flex;
+    position: relative;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background-color: rgba(68, 68, 68, 1);
+  }
+   
+  .landingpage-group12 {
+    top: 49px;
+    left: 188px;
+    width: 127.19656372070312px;
+    height: 110px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+   
+  .landingpage-text64 {
+    color: rgba(255, 255, 255, 1);
+    width: 70px;
+    height: auto;
+    position: absolute;
+    font-size: 16px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text65 {
+    top: 32.5px;
+    color: rgba(255, 255, 255, 1);
+    width: 27px;
+    height: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text66 {
+    top: 63px;
+    color: rgba(255, 255, 255, 1);
+    width: 127px;
+    height: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text67 {
+    top: 93px;
+    color: rgba(255, 255, 255, 1);
+    width: 120px;
+    height: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+
+
+  
+
+  .landingpage-group13 {
+    top: 51px;
+    left: 1466px;
+    width: 325px;
+    height: 127px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    pointer-events: none;
+  }
+   
+  .landingpage-text68 {
+    color: rgba(255, 255, 255, 1);
+    width: 250px;
+    height: auto;
+    position: absolute;
+    font-size: 16px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text69 {
+    top: 108px;
+    color: rgba(255, 255, 255, 1);
+    width: 242px;
+    height: auto;
+    position: absolute;
+    font-size: 16px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text70 {
+    top: 37px;
+    color: rgba(255, 255, 255, 1);
+    width: 325px;
+    height: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 16.100000381469727px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-text71 {
+    font-weight: 700;
+    top: 37px;
+    width: 350px;
+  }
+   
+  .landingpage-frame1 {
+    gap: 20px;
+    top: 57px;
+    left: 879px;
+    width: 155px;
+    height: 102px;
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+   
+  .landingpage-text73 {
+    color: rgba(255, 255, 255, 1);
+    width: 120px;
+    height: auto;
+    font-size: 16px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+   
+  .landingpage-twiter {
+    width: 22.65999984741211px;
+    height: 20px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background-size: cover;
+    background-image: url("/static/public/external/tq_m4i4qvnd---t2vk-1500w.png");
+  }
+   
+  .landingpage-ig {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background-size: cover;
+    background-image: url("/static/public/external/tq_zvtxk_qcbb-rna-200h.png");
+  }
+   
+  .landingpage-mail {
+    width: 25px;
+    height: 26px;
+  }
+   
+  .landingpage-youtube {
+    width: 27.049999237060547px;
+    height: 20px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background-size: cover;
+    background-image: url("/static/public/external/tq_qo2xpk73jd-2p3-1500w.png");
+  }
+   
+  .landingpage-background5 {
+    gap: -121px;
+    display: flex;
+    padding: 20px 0;
+    align-self: stretch;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    background-color: rgba(132, 132, 132, 1);
+  }
+   
+  .landingpage-text74 {
+    color: rgba(255, 255, 255, 1);
+    width: 170px;
+    height: auto;
+    font-size: 16px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 18.399999618530273px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  

@@ -17,8 +17,9 @@ urlpatterns = [
     path('history/', include('history.urls', namespace='history')),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('uploadresep/',include('uploadresepapp.urls'), name='uploadresepapp'),
-    path('', lambda request: redirect('homeuser/')),
+    #path('', lambda request: redirect('homeuser/')),
     path('invoice/', include('invoice.urls')),
+    path('', include('landing_page.urls')),
 ]
 
 if settings.DEBUG:
