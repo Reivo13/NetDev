@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="hero-bg">
+
+    <div style="width: 100%; background-color: #e1e1e1; padding: 30px 0; text-align: center;">
+        <h1 style="font-size: 30px; margin: 0; font-weight: bold;">Riwayat Pembelian</h1>
+    </div>
+
+    <div class="div">
+        <h1 style="padding-top: 30px; margin-left: 300px; font-size: 20px; font-weight: bold;">Order :</h1>
+    </div>
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <style>
+                .card-hover-effect {
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+                .card-hover-effect:hover {
+                    transform: translateY(-5px) scale(1.02);
+                    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+                }
+                </style>
+                
+            {% for item in riwayat %}
+            {% with pembelian=item.pembelian invoice=item.invoice %}
+            <div class="col-md-6 mx-auto">
+                <div class="card card-hover-effect p-4 w-100" style="background-color: #e1e1e1; border-radius: 15px; border: none; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    <div class="d-flex flex-column flex-md-row gap-3">
+                        <!-- Gambar -->
+                        <div style="border-radius: 6px; width: 100px; height: 100px; overflow: hidden; flex-shrink: 0;">
+                            <img src="{% static 'assets/obat.png' %}" alt="Gambar Obat" class="w-100 h-100" style="object-fit: cover;">
+                        </div>
+                        
+                        <!-- Keterangan Nama/Harga/Keterangan Obat -->
+                        <div class="flex-grow-1">
+                            <h5 class="fw-bold mb-2">{{ pembelian.nama_obat }}</h5>
+                            <p class="mb-1" style="font-weight: bold;"><strong>Harga : </strong>{{ pembelian.harga }}</p>
+                            <p class="mb-1" style="font-weight: bold;">{{ pembelian.keterangan }}</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Bawah (Jumlah, Total, Tombol) -->
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong>Jumlah :</strong> {{ pembelian.jumlah }}</p>
+                            <p class="fw-bold"><strong>Total Pesanan :</strong> Rp. {{ pembelian.total }}</p>
+                        </div>
+                        <div class="mt-auto text-end">
+                            <button type="button" class="btn btn-sm fw-bold text-white px-3"
+                            style="background-color: #E0004D; border-radius: 8px;" data-toggle="modal"
+                            data-target="#invoiceModal{{ pembelian.id }}">
+                            Lihat Invoice
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal untuk Invoice -->
+        <div class="modal fade" id="invoiceModal{{ pembelian.id }}" tabindex="-1" role="dialog" aria-labelledby="invoiceModalLabel{{ pembelian.id }}" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content invoice-modal-style p-4 rounded-3">
+                    <style>
+                        .invoice-modal-style {
+                            font-family: 'Segoe UI', sans-serif;
+                            background-color: #fff;
+                            border-radius: 16px;
+                            font-size: 14px;
+                            color: #333;
+                        }
+                        .invoice-modal-style .invoice-header {
+                            background-color: #f5f9ff;
+                            border-radius: 12px;
+                            padding: 24px;
+                            margin-bottom: 24px;
+                                display: flex;
+                                justify-content: space-between;
+                            }
+                            .invoice-modal-style .fw-bold {
+                                font-weight: 600;
+                            }
+                            .invoice-modal-style .text-muted {
+                                color: #6c757d;
+                                font-size: 13px;
+                            }
+                            .invoice-modal-style .invoice-table-header,
+                            .invoice-modal-style .invoice-item {
+                                display: flex;
+                                padding: 10px 0;
+                            }
+                            .invoice-modal-style .invoice-table-header {
+                                font-weight: 600;
+                                border-bottom: 1px solid #ccc;
+                            }
+                            .invoice-modal-style .invoice-item {
+                                border-bottom: 1px solid #eee;
+                            }
+                            .invoice-modal-style .invoice-table-header div,
+                            .invoice-modal-style .invoice-item div {
+                                flex: 1;
+                                text-align: center;
+                            }
+                            .invoice-modal-style .invoice-item div:first-child,
+                            .invoice-modal-style .invoice-table-header div:first-child {
+                                text-align: left;
+                            }
+                            .invoice-modal-style .total-box {
+                                background-color: #f1f4fa;
+                                padding: 16px 24px;
+                                border-radius: 12px;
+                                text-align: right;
+                                margin-top: 32px;
+                            }
+                            .invoice-modal-style .total-box .label {
+                                font-size: 13px;
+                                color: #777;
+                            }
+                            .invoice-modal-style .total-box .value {
+                                font-size: 20px;
+                                font-weight: bold;
+                            }
+                            .invoice-modal-style .footer {
+                                margin-top: 48px;
+                                font-size: 13px;
+                            }
+                            .invoice-modal-style .footer a {
+                                color: #007bff;
+                                text-decoration: none;
+                            }
+                            .invoice-modal-style .footer a:hover {
+                                text-decoration: underline;
+                            }
+                            .invoice-close-btn {
+                                background-color: #E0004D !important;
+                                color: white !important;
+                                border: none !important;
+                                padding: 8px 20px;
+                                border-radius: 8px;
+                                transition: background-color 0.3s ease;
+                                font-weight: bold;
+                            }
+                            .invoice-close-btn:hover {
+                                background-color: #204d74 !important;
+                            }
+                        </style>
+
+<div class="modal-body">
+    <!-- Header -->
+    <div class="invoice-header">
+        <div>
+            <h4>Invoice</h4>
+            <div class="text-muted">Billed To: {{ invoice.nama_pemesan }}</div>
+            <div class="text-muted">Kontak: {{ invoice.kontak_pemesan }}</div>
+        </div>
+        <div class="text-end">
+            <div class="text-muted">Invoice No.</div>
+            <div class="fw-bold">{{ invoice.invoice_number }}</div>
+            <div class="text-muted mt-3">Tanggal Beli</div>
+            <div>{{ invoice.waktu_beli }}</div>
+            <div class="text-muted mt-2">Waktu Pembayaran</div>
+            <div>{{ invoice.waktu_bayar }}</div>
+        </div>
+    </div>
+    
+    <!-- Items -->
+    <div class="section-header">Produk</div>
+    <div class="invoice-table-header">
+        <div>Item</div>
+        <div>Qty.</div>
+        <div>Harga</div>
+        <div>Total</div>
+    </div>
+    <div class="invoice-item">
+        <div>{{ pembelian.nama_obat }}</div>
+        <div>{{ pembelian.jumlah }}</div>
+        <div>Rp {{ pembelian.harga }}</div>
+        <div>Rp {{ pembelian.total }}</div>
+    </div>
+    
+    <!-- Total -->
+    <div class="total-box">
+        <div class="label">Total (Rupiah)</div>
+        <div class="value">Rp {{ pembelian.total }}</div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer mt-5">
+        <div class="fw-bold">Apotek Jaya</div>
+        <div>Jl. Telekomunikasi No.1, Citeureup, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257</div>
+        <div><a href="mailto:ApotekJaya@gmail.com">ApotekJaya@gmail.com</a></div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary invoice-close-btn" data-dismiss="modal">Tutup</button>
+</div>
+</div>
+</div>
+</div>
+{% endwith %}
+{% endfor %}
+</div>
+</div>
+</div>
+
+{% endblock %}
