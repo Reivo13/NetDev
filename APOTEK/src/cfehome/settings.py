@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'daftarobat',
     'resepapp',
     'homeuserapp',
-    'history',
+    'riwayat',
     'admin_daftarobat',
     'invoice',
     'admin_tambahobat',
