@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import render
 
 
@@ -6,7 +5,6 @@ def landing_page(request):
     items = range(10)  # Ini list angka dari 0-9
     return render(request, 'pages/landing_page.html', {'items': items})
 
-=======
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
@@ -66,4 +64,3 @@ def beli_obat(request, obat_id):
             'status': 'error',
             'message': str(e)
         }, status=500)
->>>>>>> origin/testing2

@@ -10,6 +10,9 @@ from django.contrib.auth.models import User
 class CustomLoginView(LoginView):
     template_name = 'login.html'
 
+def landing_page(request):
+    return render(request, 'landing_page.html')
+
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -20,8 +23,10 @@ def register(request):
         if password1 == password2:
             if User.objects.filter(username=username).exists():
                 messages.error(request, 'Username sudah digunakan.')
+                return render(request, 'register.html')
             elif User.objects.filter(email=email).exists():
                 messages.error(request, 'Email sudah digunakan.')
+                return render(request, 'register.html')
             else:
                 user = User.objects.create_user(username=username, email=email, password=password1)
                 user.save()
@@ -29,25 +34,26 @@ def register(request):
                 return redirect('login')
         else:
             messages.error(request, 'Password tidak cocok.')
+            return render(request, 'register.html')
 
     return render(request, 'register.html')
 
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+
 def login_view(request):
     if request.method == 'POST':
-        email = request.POST['email']
+        username = request.POST['username']
         password = request.POST['password']
-        try:
-            username = User.objects.get(email=email).username
-        except User.DoesNotExist:
-            messages.error(request, 'Email tidak ditemukan.')
-            return redirect('login')
 
         user = authenticate(request, username=username, password=password)
+        
         if user is not None:
             login(request, user)
             messages.success(request, f'Selamat datang, {user.username}!')
-            return redirect('home')
+            return redirect('landing_page')
         else:
-            messages.error(request, 'Password salah.')
+            messages.error(request, 'Email atau password salah.')
 
     return render(request, 'login.html')
+

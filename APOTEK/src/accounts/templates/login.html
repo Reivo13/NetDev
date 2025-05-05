@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,10 +21,10 @@
         }
 
         .login-box {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             width: 400px;
             max-width: 90%;
         }
@@ -33,6 +33,7 @@
             text-align: center;
             margin-bottom: 30px;
             font-size: 24px;
+            font-weight: bold;
         }
 
         .login-box h1::before {
@@ -41,11 +42,12 @@
 
         label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 14px;
         }
 
-        input[type="email"],
+        input[type="text"],
         input[type="password"] {
             width: 100%;
             padding: 10px;
@@ -62,27 +64,24 @@
 
         .login-btn,
         .register-btn {
-            width: 48%;
+            width: 45%;
             padding: 10px;
             border: none;
             border-radius: 8px;
             font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
         }
 
         .login-btn {
             background-color: #ffc107;
-            color: black;
-            font-weight: bold;
+            color: #000;
         }
 
         .register-btn {
             background-color: #b2e0f7;
             color: #002a4d;
-            font-weight: bold;
         }
 
         .login-btn:hover {
@@ -90,7 +89,13 @@
         }
 
         .register-btn:hover {
-            background-color: #8ecae6;
+            background-color: #90d0ef;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -98,21 +103,22 @@
     <div class="login-container">
         <div class="login-box">
             <h1>Apotek Jaya</h1>
-            <form method="POST" action="{% url 'login' %}">
+            <form method="POST">
                 {% csrf_token %}
-                <label for="email">Email</label>
-                <input type="text" name="email" placeholder="masukkan email" required />
+                <label for="email">email</label>
+                <input type="text" id="email" name="username" placeholder="masukkan email" required>
 
                 <label for="password">Password</label>
-                <input type="password" name="password" placeholder="masukkan password" required />
+                <input type="password" id="password" name="password" placeholder="masukkan password" required>
 
                 <div class="button-group">
                     <button type="submit" class="login-btn">Login</button>
                     <a href="{% url 'register' %}" class="register-btn">Register</a>
                 </div>
+
                 {% if messages %}
                     {% for message in messages %}
-                        <p style="color: red;">{{ message }}</p>
+                        <p class="error-message">{{ message }}</p>
                     {% endfor %}
                 {% endif %}
             </form>
