@@ -10,10 +10,24 @@
             margin: 0;
             display: flex;
             flex-direction: column;
+            padding: 0;
+        }
+        
+        nav.navbar {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1030;
+            height: 94px;
+            display: flex;
+            align-items: center;
         }
 
         main {
             flex: 1 0 auto;
+            padding-top: 94px;
             padding-bottom: 150px; /* sesuaikan dengan tinggi footer */
         }
 
@@ -123,7 +137,7 @@
     style="background-image: url('{% static 'assets/back.png' %}'); background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-position: center;">
 
     <!-- Navigation Bar -->
-    <nav id="navbar" class="border-bottom navbar navbar-expand-lg navbar-light bg-white shadow-sm py-1">
+    <nav id="navbar" class="border-bottom navbar navbar-expand-lg navbar-light bg-white shadow-sm p-1">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center fs-3" href="#"><strong>💊Apotek Jaya</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
@@ -151,93 +165,113 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content py-5">
-        <style>
-            .user-form {
-                max-width: 600px;
-                margin: auto;
-                background: #f0f0f0;
-                padding: 30px;
-                border-radius: 16px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-    
-            .form-group {
-                margin-bottom: 20px;
-            }
-    
-            .form-label {
-                display: block;
-                font-weight: bold;
-                margin-bottom: 8px;
-            }
-    
-            .form-group input,
-            .form-group textarea,
-            .form-group select {
-                width: 100%;
-                padding: 12px;
-                border: 1px solid #ccc;
-                border-radius: 8px;
-                font-size: 16px;
-            }
-    
-            input[type="file"] {
-                background-color: #ffffff;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 8px;
-                font-size: 14px;
-            }
-    
-            .upload-button {
-                background-color: #e91e63;
-                color: white;
-                padding: 12px 24px;
-                font-size: 16px;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                width: 100%;
-            }
-    
-            .upload-button:hover {
-                background-color: #d81b60;
-            }
-        </style>
-    
-        <section class="upload-section">
-            <h1 class="text-center title">Upload Resep</h1>
-            <div class="form-container">
-                <h2 class="form-subtitle text-center">Silahkan masukkan data diri anda</h2>
-                <form method="POST" enctype="multipart/form-data" class="user-form">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label class="form-label">Nama Lengkap <span class="required">*</span></label>
-                        {{ form.nama }}
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Email</label>
-                        {{ form.email }}
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Nomor Telepon <span class="required">*</span></label>
-                        {{ form.telepon }}
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Keluhan <span class="required">*</span></label>
-                        {{ form.catatan }}
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Upload Resep<span class="required">*</span></label>
-                        {{ form.foto_resep }}
-                    </div>
-                    <button type="submit" class="upload-button">Upload</button>
-                </form>
+<!-- Main Content -->
+<!-- Main Content -->
+<main class="main-content py-5">
+    <style>
+        .upload-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .form-group input[type="file"] {
+            background-color: #fff;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .upload-button {
+            background-color: #e91e63;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .upload-button:hover {
+            background-color: #d81b60;
+        }
+
+        .required {
+            color: red;
+        }
+    </style>
+
+    <section class="upload-section">
+        <h1 class="title">Upload Resep</h1>
+        <h2 class="form-subtitle">Silahkan masukkan data diri anda</h2>
+        <form method="POST" enctype="multipart/form-data" class="form-container">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="form-label">Nama Lengkap <span class="required">*</span></label>
+                {{ form.nama }}
             </div>
-        </section>
-    </main>
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label class="form-label">Nomor Telepon <span class="required">*</span></label>
+                {{ form.telepon }}
+            </div>
+            <div class="form-group">
+                <label class="form-label">Keluhan <span class="required">*</span></label>
+                {{ form.catatan }}
+            </div>
+            <div class="form-group">
+                <label class="form-label">Upload Resep <span class="required">*</span></label>
+                {{ form.foto_resep }}
+            </div>
+            <button type="submit" class="upload-button">Upload</button>
+        </form>
+    </section>
+</main>
+
+
 
 <!-- Footer -->
 <footer class="text-white pt-3" style="background-color: #444444;">
