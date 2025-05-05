@@ -97,24 +97,39 @@
 <body>
     <div class="login-container">
         <div class="login-box">
-            <h1>Apotek Jaya</h1>
-            <form method="POST" action="{% url 'login' %}">
-                {% csrf_token %}
-                <label for="email">Email</label>
-                <input type="text" name="email" placeholder="masukkan email" required />
-
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="masukkan password" required />
-
-                <div class="button-group">
-                    <button type="submit" class="login-btn">Login</button>
-                    <a href="{% url 'register' %}" class="register-btn">Register</a>
-                </div>
-                {% if messages %}
-                    {% for message in messages %}
-                        <p style="color: red;">{{ message }}</p>
-                    {% endfor %}
-                {% endif %}
+          <h1>Apotek Jaya</h1>
+          <form method="POST">
+            {% csrf_token %}
+            <div class="login-page-frame2">
+              <span class="login-page-text2">Email</span>
+              <div class="login-page-input-container">
+                <span class="login-page-text3">masukkan email</span>
+                <input type="text" name="username" placeholder="masukkan username" required><br>
+              </div>
+            </div>
+            <div class="login-page-frame3">
+              <span class="login-page-text4">Password</span>
+              <div class="login-page-input-container">
+                <span class="login-page-text5">masukkan password</span>
+                <input type="password" name="password" placeholder="masukkan password" required><br>
+              </div>
+            </div>
+            <div class="login-page-frame4">
+              <button type="submit" class="masuk">Login</button>
+            </div>
+          </form>
+          <div class="login-page-frame5"><span class="login-page-text7">Register</span>
+            <a href="{% url 'register' %}"></a>
+            <button type="button" class="daftar">Belum punya akun?</button>
+          </div>
+          {% if messages %}
+          {% for message in messages %}
+          <p style="color: red;">{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      
             </form>
         </div>
     </div>

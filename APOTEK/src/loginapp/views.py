@@ -21,12 +21,12 @@ def login_view(request):
                 if user.is_superuser:
                     return redirect('adminapp:list')
                 else:
-                    return redirect('homeuser:homeuser')
+                    return redirect('homeuserapp:homeuser')
             else:
                 form.add_error(None, 'Username atau password salah')
     else:
         form = LoginForm()
-    return render(request, 'loginapp/index.html', {'form': form})
+    return render(request, 'loginapp/login.html', {'form': form})
 
 
 
