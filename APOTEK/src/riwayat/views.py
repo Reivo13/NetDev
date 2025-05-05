@@ -1,26 +1,12 @@
 from django.shortcuts import render
-from .models import Pembelian
+from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import RiwayatPembelian
 
-def riwayat(request):
-    data = Pembelian.objects.prefetch_related('invoices').all()
+class RiwayatPembelianView(LoginRequiredMixin, ListView):
+    model = RiwayatPembelian
+    template_name = 'riwayat_pembelian.html'
+    context_object_name = 'riwayat_list'
 
-    riwayat = []
-    for pembelian in data:
-        invoice = pembelian.invoices.first()
-        if invoice:
-            riwayat.append({
-                'pembelian': pembelian,
-                'invoice': invoice,
-            })
-
-    return render(request, 'riwayat_pembelian.html', {'riwayat': riwayat})
-
-def faq(request):
-    return render(request, 'footer/template/faq/faq.html')
-
-def syarat(request):
-    return render(request, 'footer/template/S&K/syarat.html')
-
-def kebijakan(request):
-    return render(request, 'footer/template/privasi/kebijakan.html')
-
+    def get_queryset(self):
+        return RiwayatPembelian.objects.filter(pembeli=self.request.user).order_by('-tanggal_bayar')

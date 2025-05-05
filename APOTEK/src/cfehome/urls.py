@@ -18,7 +18,6 @@ urlpatterns = [
     path('uploadresep/',include('uploadresepapp.urls'), name='uploadresepapp'),
     path('riwayat/',include('riwayat.urls'), name='riwayat'),
     #path('', lambda request: redirect('homeuser/')),
-    path('invoice/', include('invoice.urls')),
     path('', include('landing_page.urls')),
 ]
 

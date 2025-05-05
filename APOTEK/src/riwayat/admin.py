@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Pembelian, Invoice, ItemInvoice
+from .models import RiwayatPembelian
 
-admin.site.register(Pembelian)
-admin.site.register(Invoice)
-admin.site.register(ItemInvoice)
+
+admin.site.register(RiwayatPembelian)

@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from adminapp.models import DataObat, Transaksi  # Impor dari adminapp
 from django.core.exceptions import ValidationError
+from riwayat.models import RiwayatPembelian 
 
 class LandingPageView(ListView):
     model = DataObat
@@ -22,6 +23,15 @@ def beli_obat(request, obat_id):
             jumlah=jumlah
         )
         transaksi.save()
+        
+        RiwayatPembelian.objects.create(
+            pembeli=request.user,
+            kontak_pembeli=request.user.email,  # atau ganti dengan profil/kontak user lainnya
+            nama_obat=obat.nama_obat,
+            harga_obat=obat.harga,
+            jumlah_beli=jumlah,
+            total_harga=obat.harga * jumlah,
+        )
         
         return JsonResponse({
             'status': 'success',
