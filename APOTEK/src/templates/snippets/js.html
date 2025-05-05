@@ -1,3 +1,4 @@
+{% load static %}
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -81,3 +82,89 @@
   });
 </script>
 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.close');
+  
+    document.querySelectorAll('.open-modal').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const imgSrc = this.getAttribute('data-img');
+        modalImg.src = imgSrc;
+        modal.style.display = 'block';
+      });
+    });
+  
+    closeBtn.onclick = function () {
+      modal.style.display = 'none';
+      modalImg.src = ''; // clear image
+    };
+  
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+        modalImg.src = '';
+      }
+    };
+  });
+  </script>
+
+<script>
+  // Menambahkan event listener untuk membuka modal
+  document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.open-modal');
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Ambil URL gambar dari atribut data-img
+        const imageUrl = this.getAttribute('data-img');
+        
+        // Set gambar ke dalam modal
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = imageUrl;
+      });
+    });
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('deleteModal');
+    const modalText = document.getElementById('deleteText');
+    const deleteForm = document.getElementById('deleteForm');
+    const closeBtn = document.querySelector('.close');
+    const cancelBtn = document.getElementById('cancelDelete');
+  
+    document.querySelectorAll('.btn-delete').forEach(button => {
+      button.addEventListener('click', function () {
+        const nama = this.getAttribute('data-nama');
+        const url = this.getAttribute('data-url');
+        modalText.textContent = `Apakah kamu yakin ingin menghapus resep atas nama ${nama}?`;
+        deleteForm.action = url;
+        modal.style.display = 'block';
+      });
+    });
+  
+    closeBtn.onclick = cancelBtn.onclick = function () {
+      modal.style.display = 'none';
+      deleteForm.action = '';
+    };
+  
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+        deleteForm.action = '';
+      }
+    };
+  });
+  </script>
+  
+  <script>
+  document.getElementById('id_foto_resep').addEventListener('change', function(e) {
+    const fileName = e.target.files[0]?.name || 'Belum ada file dipilih';
+    document.querySelector('.file-name').textContent = fileName;
+});</script>

@@ -4,6 +4,7 @@ from django.contrib.auth.views import LoginView
 
 
 app_name = 'homeuserapp'
+
 urlpatterns = [
     path('', homeuser_view, name='homeuser'),
 ]

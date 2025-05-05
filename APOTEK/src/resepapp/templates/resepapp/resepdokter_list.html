@@ -1,132 +1,132 @@
-{% load static %}
-
 
 <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resep Dokter - Apotek Jaya</title>
-  <link rel="stylesheet" href="{% static 'css/resepapp.css' %}">
-</head>
-<body>
-  <header class="top-header">
-    <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
-    <div class="logo">
-      <span class="pill">💊</span>
-      <strong>Apotek Jaya</strong>
-    </div>
-  </header>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.90">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'admin_resep/css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'admin_resep/css/styleguide.css' %}" />
+    <link rel="stylesheet" href="{% static 'admin_resep/css/style.css' %}" />
+  </head>
 
-  <div class="wrapper">
-    <aside id="sidebar" class="sidebar">
-      <a href="#">Home</a>
-      <a href="#">Lihat Obat</a>
-      <a href="#">Resep Obat</a>
-      <a href="#">Riwayat Obat</a>
-    </aside>
+  <body>
+    <div class="resep-admin">
+      <div class="nav">
+        <div class="magneto-navbar">
+          <div class="logo">
+            <a href="{% url 'homeuserapp:homeuser' %}">
+                <div class="text-wrapper">💊 Apotek Jaya</div>
+            </a>
+        </div>
+        
+          <div class="list">
+            <div class="component">
+              <a href="{% url 'resepapp:list' %}">
+                  <div class="text-wrapper-2">Resep Obat</div>
+              </a>
+          </div>
+          <div class="component-false">
+              <a href="{% url 'adminapp:list' %}">
+                  <div class="text-wrapper-2">Daftar Obat</div>
+              </a>
+          </div>
+          </div>
+        </div>
+        <div class="component-2">
+          <a href="{% url 'logout' %}">
+              <div class="text">LOGOUT</div>
+          </a>
+      </div>
 
-    <main class="content">
-      <div class="top-bar">
-        <h2>RESEP DOKTER</h2>
-        <div class="top-buttons">
-          <button class="btn blue">+ Resep</button>
-          <button class="btn">Pengaturan Obat Racik</button>
-          <button class="btn">Embalase</button>
+        <div class="text-wrapper-3">Resep Obat</div>
+        <div class="frame">
+          <div class="frame-2">
+        
+
+            <div class="frame-5">
+              <div class="frame-4"><div class="table-head">Nama Lengkap</div></div>
+              {% for obj in object_list  %}
+              <div class="div-wrapper"><div class="table-body">{{ obj.nama }}</div></div>
+              {% endfor %}
+            </div>
+
+            <div class="frame-6">
+              <div class="frame-4"><div class="table-head">Email Address</div></div>
+              {% for obj in object_list %}
+              <div class="div-wrapper"><div class="table-body">{{ obj.email }}</div></div>
+              {% endfor %}
+            </div>
+
+            <div class="frame-7">
+              <div class="frame-4"><div class="table-head">No Telepon</div></div>
+              {% for obj in object_list %}
+              <div class="div-wrapper"><div class="table-body">{{ obj.telepon }}</div></div>
+              {% endfor %}
+            </div>
+
+            <div class="frame-8">
+              <div class="frame-4"><div class="table-head">Keluhan</div></div>
+              {% for obj in object_list %}
+              <div class="div-wrapper"><div class="table-body">{{ obj.catatan }}</div></div>
+              {% endfor %}
+            </div>
+
+            <div class="frame-9">
+              <div class="frame-4">
+                <div class="table-head">File Resep</div>
+              </div>
+            
+              {% for obj in object_list %}
+              <div class="div-wrapper">
+                <div class="table-body-2">
+                  <!-- Tombol untuk membuka modal -->
+                  <button type="button" class="btn btn-primary open-modal" data-img="{{ obj.foto_resep.url }}" data-toggle="modal" data-target="#fotoModal">Lihat</button>
+                </div>
+              </div>
+            {% endfor %}
+            
+            <!-- Modal Template -->
+            <div class="modal fade" id="fotoModal" tabindex="-1" role="dialog" aria-labelledby="fotoModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="fotoModalLabel">Foto Resep</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Menampilkan gambar resep -->
+                    <img id="modalImage" src="" alt="Foto Resep" class="img-fluid">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          
+            </div>
+
+            <div class="frame-10">
+              <div class="frame-4"><div class="table-head">Hapus</div></div>
+              {% for obj in object_list %}
+              <div class="div-wrapper">
+                <div class="action-buttons">
+                  <a href="{% url 'resepapp:resep_delete' obj.slug %}" title="Delete">
+                    🗑️
+                  </a>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            
+          </div>
         </div>
       </div>
-
-      <div class="filter-bar">
-        <span>Menampilkan: 1 - 7 dari 7</span>
-        <label>Tampilan:
-          <select>
-            <option>10</option>
-            <option selected>50</option>
-            <option>100</option>
-          </select> Hasil
-        </label>
-      </div>
-
-      <table class="resep-table">
-        <thead>
-          <tr>
-            <th>TANGGAL</th>
-            <th>RESEP</th>
-            <th>GRAND TOTAL</th>
-            <th>NAMA PELANGGAN</th>
-            <th>STATUS</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>3 Desember 2020<br><small>16:31</small></td>
-            <td><strong>Elizabeth - Stephanie</strong></td>
-            <td>59,990</td>
-            <td>Elizabeth</td>
-            <td><span class="status sukses">Sukses</span></td>
-          </tr>
-          <tr>
-            <td>3 Desember 2020<br><small>13:05</small></td>
-            <td><strong>Jake - Stephanie</strong></td>
-            <td>69,230</td>
-            <td>Jake</td>
-            <td><span class="status sukses">Sukses</span></td>
-          </tr>
-          <tr>
-            <td>3 Desember 2020<br><small>12:52</small></td>
-            <td><strong>Harris - Anissa</strong></td>
-            <td>193,750</td>
-            <td>Harris</td>
-            <td><span class="status sukses">Sukses</span></td>
-          </tr>
-          <tr>
-            <td>3 Desember 2020<br><small>12:51</small></td>
-            <td><strong>Ann - Widi</strong></td>
-            <td>165,600</td>
-            <td>Ann</td>
-            <td><span class="status sukses">Sukses</span></td>
-          </tr>
-          <tr>
-            <td>3 Desember 2020<br><small>12:49</small></td>
-            <td><strong>Jacob - Burhan</strong></td>
-            <td>101,050</td>
-            <td>Jacob</td>
-            <td><span class="status sukses">Sukses</span></td>
-          </tr>
-          <tr>
-            <td>3 Desember 2020<br><small>12:48</small></td>
-            <td><strong>Maria - Anissa</strong></td>
-            <td>70,000</td>
-            <td>Maria</td>
-            <td><span class="status sukses">Sukses</span></td>
-          </tr>
-          <tr>
-            <td>3 Desember 2020<br><small>12:47</small></td>
-            <td><strong>Aurel - Tata</strong></td>
-            <td>562,890</td>
-            <td>Aurel</td>
-            <td><span class="status sukses">Sukses</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
-  </div>
-
-  <script src="{% static 'js/resepapp.js' %}"></script>
-</body>
-</html>
-
-<!-- Modal Upload -->
-<div id="uploadModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h3>Upload Resep Dokter</h3>
-      <form id="uploadForm">
-        <label for="fileUpload">Pilih Gambar Resep:</label><br><br>
-        <input type="file" id="fileUpload" accept="image/*" required /><br><br>
-        <button type="submit" class="btn blue">Upload</button>
-        <button type="button" class="btn" onclick="closeModal()">Batal</button>
-      </form>
     </div>
-  </div>
-  
+    {% include 'snippets/js.html' %}
+  </body>
+</html>

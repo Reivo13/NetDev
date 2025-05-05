@@ -13,6 +13,6 @@ urlpatterns = [
     path('', DashboardView.as_view(), name='list'),
     path('create/', DataObatCreateView.as_view(), name='create'),
     path('<slug:slug>/', DataObatDetailView.as_view(), name='detail'),  # untuk halaman detail (opsional)
-    path('<slug:slug>/update/', DataObatUpdateView.as_view(), name='obat_update'),  # ✅ ini penting untuk update
-    path('<slug:slug>/delete/', DataObatDeleteView.as_view(), name='obat_delete'),
+    path('<slug:slug>/update/', DataObatUpdateView.as_view(), name='update'),  # ✅ ini penting untuk update
+    path('<slug:slug>/delete/', DataObatDeleteView.as_view(), name='delete'),
 ]

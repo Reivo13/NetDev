@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'homeuserapp',
     'loginapp',
     'regisapp',
-    'history',
+    'riwayat',
+    'admin_tambahobat',
+    'uploadresepapp',
+    'landing_page',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +64,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            os.path.join(BASE_DIR, 'src', 'akun', 'templates'),
+            os.path.join(BASE_DIR, 'src', 'admin_resep', 'templates'),  # Tambahkan ini
+            os.path.join(BASE_DIR, 'src', 'landing_page', 'templates'),
+            os.path.join(BASE_DIR,'templates'),
             os.path.join(BASE_DIR, 'akun', 'templates'),
             os.path.join(BASE_DIR, 'admin_resep', 'templates'),
             os.path.join(BASE_DIR, 'accounts', 'templates'),
@@ -131,5 +138,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/homeuser/'
-
+LOGOUT_REDIRECT_URL = '/login/'
