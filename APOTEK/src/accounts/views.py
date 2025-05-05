@@ -51,9 +51,12 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.success(request, f'Selamat datang, {user.username}!')
-            return redirect('landing_page')
+
+            # Redirect ke 'next' jika tersedia
+            next_url = request.POST.get('next')
+            return redirect(next_url) if next_url else redirect('landing_page')
         else:
-            messages.error(request, 'Email atau password salah.')
+            messages.error(request, 'Username atau password salah.')
 
     return render(request, 'login.html')
 

@@ -105,23 +105,26 @@
             <h1>Apotek Jaya</h1>
             <form method="POST">
                 {% csrf_token %}
-                <label for="email">email</label>
-                <input type="text" id="email" name="username" placeholder="masukkan email" required>
-
+                <input type="hidden" name="next" value="{{ request.GET.next }}">
+            
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="masukkan username" required>
+            
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="masukkan password" required>
-
+            
                 <div class="button-group">
                     <button type="submit" class="login-btn">Login</button>
                     <a href="{% url 'register' %}" class="register-btn">Register</a>
                 </div>
-
+            
                 {% if messages %}
                     {% for message in messages %}
                         <p class="error-message">{{ message }}</p>
                     {% endfor %}
                 {% endif %}
             </form>
+            
         </div>
     </div>
 </body>
