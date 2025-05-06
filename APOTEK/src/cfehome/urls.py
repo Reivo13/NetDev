@@ -25,6 +25,7 @@ urlpatterns = [
     path('uploadresep/',include('uploadresepapp.urls'), name='uploadresepapp'),
     path('riwayat/',include('riwayat.urls'), name='riwayat'),
     path('landing_page/', include('landing_page.urls'), name='landing_page'),
+    path('accounts/profile/', lambda request: redirect('/adminapp/'), name='profile_redirect'),
     #path('', lambda request: redirect('homeuser/')),
     path('', include('landing_page.urls')),
     # path('login/', include('accounts.urls', namespace='login')),

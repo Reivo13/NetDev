@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 
 def landing_page(request):
-    items = range(10)  # Ini list angka dari 0-9
-    return render(request, 'pages/landing_page.html', {'items': items})
+    obat_list = DataObat.objects.all()  # Ambil semua data obat
+    return render(request, 'pages/landing_page.html', {'obat_list': obat_list})
 
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required

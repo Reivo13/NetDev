@@ -138,5 +138,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'landing_page:landing_page'
-LOGOUT_REDIRECT_URL = 'landing_page:landing_page'
+#LOGIN_REDIRECT_URL = 'landing_page:landing_page'
+#LOGOUT_REDIRECT_URL = 'landing_page:landing_page'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
