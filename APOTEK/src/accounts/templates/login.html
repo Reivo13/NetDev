@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url("{% static 'assets/public/external/tq_4xwmdcvtdd-o2h-2000w1.png' %}") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .login-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            max-width: 90%;
+        }
+
+        .login-box h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .login-box h1::before {
+            content: "💊 ";
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .login-btn,
+        .register-btn {
+            width: 45%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .login-btn {
+            background-color: #ffc107;
+            color: #000;
+        }
+
+        .register-btn {
+            background-color: #b2e0f7;
+            color: #002a4d;
+        }
+
+        .login-btn:hover {
+            background-color: #e0a800;
+        }
+
+        .register-btn:hover {
+            background-color: #90d0ef;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Apotek Jaya</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.GET.next }}">
+            
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="masukkan username" required>
+            
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="masukkan password" required>
+            
+                <div class="button-group">
+                    <button type="submit" class="login-btn">Login</button>
+                    <a href="{% url 'register' %}" class="register-btn">Register</a>
+                </div>
+            
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="error-message">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>
