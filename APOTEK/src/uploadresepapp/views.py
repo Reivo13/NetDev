@@ -16,7 +16,7 @@ class ResepCreateView(LoginRequiredMixin, CreateView):
     model = ResepDokter
     fields = ['nama', 'telepon', 'email', 'foto_resep', 'catatan']
     template_name = 'uploadresepapp/base.html'
-    success_url = reverse_lazy('homeuserapp:homeuser')
+    success_url = '/#'
 
     def form_valid(self, form):
         form.instance.user = self.request.user  # Otomatis isi user
