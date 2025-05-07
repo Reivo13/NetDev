@@ -27,8 +27,11 @@
         }
 
     /* Background utama */
+
+
+
     body {
-        background-image: url('https://i.imgur.com/i9npULc.jpg');
+        background-image: url('https://i.postimg.cc/0NMxBn6d/Screenshot-2025-05-06-164537.png');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -562,21 +565,21 @@
         <!-- Sidebar Section -->
         <aside class="sidebar-section">
             <!-- Filter Section -->
-            <section class="filter-section">
-                <h3>Filter</h3>
-                <div class="filter-option">
-                    <img src="static/public/external/image1652-uyhq-200h.png" alt="Tablet dan Kapsul" width="30">
-                    <span>Obat Tablet dan Kapsul</span>
-                </div>
-                <div class="filter-option">
-                    <img src="static/public/external/image1662-zzcp-200h.png" alt="Obat Cair" width="30">
-                    <span>Obat Cair</span>
-                </div>
-                <div class="filter-option">
-                    <img src="static/public/external/image1662-kb9-200h.png" alt="Obat Salep" width="30">
-                    <span>Obat Salep</span>
-                </div>
-            </section>
+<section class="filter-section">
+    <h3>Filter</h3>
+    <a href="?kategori=tablet_kapsul" class="filter-option">
+        <img src="{% static 'public/external/image1652-uyhq-200h.png' %}" alt="Tablet dan Kapsul" width="30">
+        <span>Obat Tablet dan Kapsul</span>
+    </a>
+    <a href="?kategori=obat_cair" class="filter-option">
+        <img src="{% static 'public/external/image1662-zzcp-200h.png' %}" alt="Obat Cair" width="30">
+        <span>Obat Cair</span>
+    </a>
+    <a href="?kategori=salep" class="filter-option">
+        <img src="{% static 'public/external/image1662-kb9-200h.png' %}" alt="Obat Salep" width="30">
+        <span>Obat Salep</span>
+    </a>
+</section>
             
             <!-- Doctor Section -->
             <section class="doctor-section">

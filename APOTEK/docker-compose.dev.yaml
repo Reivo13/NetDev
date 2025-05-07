@@ -13,7 +13,7 @@ services:
     image: redis
     restart: always
     ports:
-      - 6379:6379
+      - 6387:6379
     volumes:
       - redis_data:/data
     entrypoint: redis-server --appendonly yes

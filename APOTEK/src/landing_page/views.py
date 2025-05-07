@@ -1,16 +1,17 @@
 from django.shortcuts import render
-
-
-def landing_page(request):
-    obat_list = DataObat.objects.all()  # Ambil semua data obat
-    return render(request, 'pages/landing_page.html', {'obat_list': obat_list})
-
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from adminapp.models import DataObat, Transaksi  # Impor dari adminapp
 from django.core.exceptions import ValidationError
 from riwayat.models import RiwayatPembelian 
+from daftarobat.models import Obat
+
+def landing_page(request):
+    obat_list = DataObat.objects.all()  # Ambil semua data obat
+    return render(request, 'pages/landing_page.html', {'obat_list': obat_list})
+
+
 
 class LandingPageView(ListView):
     model = DataObat
