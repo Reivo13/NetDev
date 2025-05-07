@@ -564,22 +564,44 @@
 
         <!-- Sidebar Section -->
         <aside class="sidebar-section">
-            <!-- Filter Section -->
+           <!-- Filter Section -->
 <section class="filter-section">
     <h3>Filter</h3>
-    <a href="?kategori=tablet_kapsul" class="filter-option">
-        <img src="{% static 'public/external/image1652-uyhq-200h.png' %}" alt="Tablet dan Kapsul" width="30">
-        <span>Obat Tablet dan Kapsul</span>
-    </a>
-    <a href="?kategori=obat_cair" class="filter-option">
-        <img src="{% static 'public/external/image1662-zzcp-200h.png' %}" alt="Obat Cair" width="30">
-        <span>Obat Cair</span>
-    </a>
-    <a href="?kategori=salep" class="filter-option">
-        <img src="{% static 'public/external/image1662-kb9-200h.png' %}" alt="Obat Salep" width="30">
-        <span>Obat Salep</span>
-    </a>
-</section>
+    <!-- Tampilkan Semua -->
+    <section class="filter-section">
+        <h3>Filter</h3>
+        
+        <!-- Semua Obat -->
+        <a href="?" class="filter-option {% if not kategori_terpilih %}active{% endif %}">
+            <span>tanpa filter</span>
+        </a>
+    
+        <!-- Obat Tablet -->
+        <a href="?kategori=tablet" class="filter-option {% if kategori_terpilih == 'tablet' %}active{% endif %}">
+            <img src="{% static 'public/external/image1652-uyhq-200h.png' %}" alt="Tablet" width="30">
+            <span>Obat Tablet</span>
+        </a>
+    
+        <!-- Obat Kapsul -->
+        <a href="?kategori=kapsul" class="filter-option {% if kategori_terpilih == 'kapsul' %}active{% endif %}">
+            <img src="{% static 'public/external/image1652-uyhq-200h.png' %}" alt="Kapsul" width="30">
+            <span>Obat Kapsul</span>
+        </a>
+    
+        <!-- Obat Sirup -->
+        <a href="?kategori=sirup" class="filter-option {% if kategori_terpilih == 'sirup' %}active{% endif %}">
+            <img src="{% static 'public/external/image1662-zzcp-200h.png' %}" alt="Obat Cair" width="30">
+            <span>Obat Cair</span>
+        </a>
+    
+        <!-- Obat Salep -->
+        <a href="?kategori=salep" class="filter-option {% if kategori_terpilih == 'salep' %}active{% endif %}">
+            <img src="{% static 'public/external/image1662-kb9-200h.png' %}" alt="Obat Salep" width="30">
+            <span>Obat Salep</span>
+        </a>
+    </section>
+    
+
             
             <!-- Doctor Section -->
             <section class="doctor-section">
