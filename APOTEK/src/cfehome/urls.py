@@ -4,6 +4,10 @@ from django.shortcuts import redirect
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.views import LoginView
+from accounts import views
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -15,10 +19,21 @@ urlpatterns = [
     path('resepapp/', include('resepapp.urls', namespace="resepapp")),
     path('obat/', include('daftarobat.urls')),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    #path('logindjanggo/', LoginView.as_view(template_name='login.html'), name='login'),
+    path('login/', include('loginapp.urls'), name='login'),
+    #path('login/', LoginView.as_view(template_name='login.html'), name='login'),
+    path('register/', views.register, name='register'),
     path('uploadresep/',include('uploadresepapp.urls'), name='uploadresepapp'),
     path('riwayat/',include('riwayat.urls'), name='riwayat'),
+    path('landing_page/', include('landing_page.urls'), name='landing_page'),
+    path('accounts/profile/', lambda request: redirect('/adminapp/'), name='profile_redirect'),
     #path('', lambda request: redirect('homeuser/')),
     path('', include('landing_page.urls')),
+    # path('login/', include('accounts.urls', namespace='login')),
+
+
+    # Redirect dari URL utama (/) ke /homeuser/
+    path('', lambda request: redirect('landing_page/'), name='landing_page'),
 ]
 
 if settings.DEBUG:

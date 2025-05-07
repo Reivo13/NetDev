@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
@@ -5,10 +6,30 @@ from adminapp.models import DataObat, Transaksi  # Impor dari adminapp
 from django.core.exceptions import ValidationError
 from riwayat.models import RiwayatPembelian 
 
+
+def landing_page(request):
+    obat_list = DataObat.objects.all()  # Ambil semua data obat
+    return render(request, 'pages/landing_page.html', {'obat_list': obat_list})
+
+
 class LandingPageView(ListView):
     model = DataObat
     template_name = 'pages/landing_page.html'
     context_object_name = 'obat_list'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        kategori = self.request.GET.get('kategori')
+
+        if kategori in ['tablet', 'kapsul', 'sirup', 'salep']:
+            return queryset.filter(jenis_obat=kategori)
+        return queryset  # tanpa filter jika kategori tidak ada atau tidak valid
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['kategori_terpilih'] = self.request.GET.get('kategori')
+        return context
+
 
 @login_required
 def beli_obat(request, obat_id):

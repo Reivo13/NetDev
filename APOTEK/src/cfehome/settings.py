@@ -18,7 +18,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY', default='django-insecure-sad9nbu^y)_=vv
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG', cast=bool, default=True)
-
+DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 # Setup ALLOWED_HOSTS from environment variable if available
@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'daftarobat',
     'resepapp',
     'homeuserapp',
+    'loginapp',
+    'regisapp',
     'riwayat',
-    'admin_daftarobat',
-    'invoice',
     'admin_tambahobat',
     'uploadresepapp',
     'landing_page',
@@ -68,6 +68,12 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'src', 'admin_resep', 'templates'),  # Tambahkan ini
             os.path.join(BASE_DIR, 'src', 'landing_page', 'templates'),
             os.path.join(BASE_DIR,'templates'),
+            os.path.join(BASE_DIR, 'akun', 'templates'),
+            os.path.join(BASE_DIR, 'admin_resep', 'templates'),
+            os.path.join(BASE_DIR, 'accounts', 'templates'),
+            os.path.join(BASE_DIR, 'accounts', 'templates', 'accounts'),
+            os.path.join(BASE_DIR, 'loginapp', 'template', 'public'),
+            os.path.join(BASE_DIR, 'static', 'login'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -119,6 +125,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'accounts','static'),
+    os.path.join(BASE_DIR, 'loginapp', 'template', 'public'),
     os.path.join(BASE_DIR, 'static'),
 ]
 
@@ -131,4 +139,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGOUT_REDIRECT_URL = '/login/'
+#LOGIN_REDIRECT_URL = 'landing_page:landing_page'
+#LOGOUT_REDIRECT_URL = 'landing_page:landing_page'
+#LOGIN_REDIRECT_URL = '/'
+#LOGOUT_REDIRECT_URL = '/'
