@@ -1,4 +1,3 @@
-
 .daftar-obat-admin {
   display: flex;
   flex-direction: row;
@@ -13,6 +12,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
 }
 
 .daftar-obat-admin .div {
@@ -26,10 +26,10 @@ body {
 .daftar-obat-admin .nav {
   display: flex;
   width: 1453px;
-  height: 70px; /* Mengurangi tinggi navbar */
+  height: 70px;
   align-items: center;
   gap: 540px;
-  padding: 10px 50px; /* Mengurangi padding agar navbar tidak terlalu tinggi */
+  padding: 10px 50px;
   position: absolute;
   top: 0;
   left: -7px;
@@ -60,7 +60,7 @@ body {
   position: absolute;
   width: 295px;
   height: 32px;
-  top: 10px; /* Adjusted to align the text properly */
+  top: 10px;
   left: 0;
   font-family: "Inter-SemiBold", Helvetica;
   font-weight: 600;
@@ -80,12 +80,41 @@ body {
 }
 
 .daftar-obat-admin .component {
-  display: flex;  /* Mengganti inline-flex menjadi flex untuk pengaturan yang lebih fleksibel */
+  flex-direction: column;
+  align-items: flex-start;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.daftar-obat-admin .text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.daftar-obat-admin .component-false {
   align-items: center;
-  justify-content: flex-end;  /* Menyesuaikan ke kanan */
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.daftar-obat-admin .component-2 {
+  height: 32px;
+  align-items: center;
+  justify-content: flex-end;
   padding: 8px 16px;
   background-color: #ff3c5f;
   border-radius: 8px;
+  display: flex;
   position: absolute;
   right: 80px;  
   top: 18px;
@@ -93,7 +122,7 @@ body {
 
 .daftar-obat-admin .rectangle {
   position: absolute;
-  width: 108px;
+  width: 76px;
   height: 32px;
   top: 0;
   left: 0;
@@ -101,18 +130,18 @@ body {
 }
 
 .daftar-obat-admin .rectangle-2 {
-  width: 76px;  /* Menyesuaikan lebar sesuai kebutuhan */
   height: 32px;
   top: 0;
   position: absolute;
+  width: 76px;
   left: 0;
 }
 
-.daftar-obat-admin .rectangle-2 {
-  width: 108px;
+.daftar-obat-admin .rectangle-3 {
   height: 48px;
   top: -8px;
   position: absolute;
+  width: 76px;
   left: 0;
 }
 
@@ -128,7 +157,7 @@ body {
   line-height: 16.1px;
   white-space: nowrap;
   display: flex;
-  justify-content: flex-end; /* Menggeser ke kanan */
+  justify-content: flex-end;
   width: 100%;
 }
 .daftar-obat-admin .component-3 {
@@ -210,23 +239,26 @@ body {
 }
 
 .daftar-obat-admin .frame-wrapper {
-  position: absolute;
+  position: relative;
   width: 976px;
   height: 806px;
-  top: 266px;
-  left: 472px;
+  margin: 0 auto;
   background-color: #ffffff;
   border: 1px solid;
   border-color: #000000;
+  overflow-x: auto;
 }
 
 .daftar-obat-admin .frame-2 {
   display: flex;
-  width: 976px;
-  height: 806px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   align-items: flex-start;
   padding: 10px;
-  position: relative;
+  box-sizing: border-box;
 }
 
 .daftar-obat-admin .frame-3 {
@@ -322,6 +354,7 @@ body {
   width: 284px;
   height: 796px;
   margin-bottom: -10.00px;
+  left: -80px;
 }
 
 .daftar-obat-admin .table-head-wrapper {
@@ -333,19 +366,8 @@ body {
   padding: 10px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: -50px;
   background-color: #eaeaea;
-}
-
-.daftar-obat-admin .table-head {
-  font-family: "Poppins-Regular", Helvetica;
-  font-size: 14px;
-  letter-spacing: 0.14px;
-  line-height: normal;
-  position: relative;
-  width: fit-content;
-  font-weight: 400;
-  color: #000000;
 }
 
 .daftar-obat-admin .table-body-wrapper {
@@ -357,7 +379,7 @@ body {
   height: 155px;
   position: absolute;
   top: 69px;
-  left: 0;
+  left: -50px;
 }
 
 .daftar-obat-admin .table-body {
@@ -372,40 +394,17 @@ body {
   color: #000000;
 }
 
-.daftar-obat-admin .frame-8 {
-  display: flex;
-  width: 284px;
-  height: 155px;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  position: absolute;
-  top: 249px;
-  left: 0;
-}
-
-.daftar-obat-admin .frame-9 {
-  display: flex;
-  width: 284px;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  height: 155px;
-  position: absolute;
-  top: 429px;
-  left: 0;
-}
-
+.daftar-obat-admin .frame-8,
+.daftar-obat-admin .frame-9,
 .daftar-obat-admin .frame-10 {
   display: flex;
   width: 284px;
-  height: 155px;
   align-items: center;
   gap: 10px;
   padding: 10px;
+  height: 155px;
   position: absolute;
-  top: 609px;
-  left: 0;
+  left: -80px;
 }
 
 .daftar-obat-admin .table-body-2 {
@@ -424,6 +423,7 @@ body {
   width: 160px;
   height: 796px;
   margin-bottom: -10.00px;
+  left: -100px;
 }
 
 .daftar-obat-admin .frame-12 {
@@ -436,7 +436,7 @@ body {
   padding: 10px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100px;
   background-color: #eaeaea;
 }
 
@@ -450,35 +450,11 @@ body {
   height: 155px;
   position: absolute;
   top: 69px;
-  left: 0;
+  left: -100px;
 }
 
-.daftar-obat-admin .frame-14 {
-  display: flex;
-  width: 160px;
-  height: 155px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  position: absolute;
-  top: 249px;
-  left: 0;
-}
-
-.daftar-obat-admin .frame-15 {
-  display: flex;
-  width: 160px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  height: 155px;
-  position: absolute;
-  top: 429px;
-  left: 0;
-}
-
+.daftar-obat-admin .frame-14,
+.daftar-obat-admin .frame-15,
 .daftar-obat-admin .frame-16 {
   display: flex;
   width: 160px;
@@ -488,8 +464,18 @@ body {
   gap: 10px;
   padding: 10px;
   position: absolute;
-  top: 609px;
-  left: 0;
+  left: -100px;
+}
+
+.daftar-obat-admin .table-body-2 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins-Regular", Helvetica;
+  font-weight: 400;
+  color: #323c47;
+  font-size: 13px;
+  letter-spacing: 0.13px;
+  line-height: normal;
 }
 
 .daftar-obat-admin .frame-17 {
@@ -497,6 +483,7 @@ body {
   width: 128px;
   height: 796px;
   margin-bottom: -10.00px;
+  left: -100px; /* Geser keseluruhan frame ke kiri */
 }
 
 .daftar-obat-admin .frame-18 {
@@ -508,7 +495,7 @@ body {
   padding: 10px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100px; /* Geser header ke kiri */
   background-color: #eaeaea;
 }
 
@@ -521,50 +508,40 @@ body {
   height: 155px;
   position: absolute;
   top: 69px;
-  left: 0;
+  left: -100px; /* Geser body harga ke kiri */
 }
 
-.daftar-obat-admin .frame-20 {
-  display: flex;
-  width: 128px;
-  height: 155px;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  position: absolute;
-  top: 249px;
-  left: 0;
-}
-
-.daftar-obat-admin .frame-21 {
-  display: flex;
-  width: 128px;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  height: 155px;
-  position: absolute;
-  top: 429px;
-  left: 0;
-}
-
+.daftar-obat-admin .frame-20,
+.daftar-obat-admin .frame-21,
 .daftar-obat-admin .frame-22 {
   display: flex;
-  width: 118px;
+  width: 128px;
   height: 155px;
   align-items: center;
   gap: 10px;
   padding: 10px;
   position: absolute;
-  top: 609px;
-  left: 10px;
+  left: -100px; /* Geser frame-framenya ke kiri */
 }
+
+.daftar-obat-admin .table-body-2 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins-Regular", Helvetica;
+  font-weight: 400;
+  color: #323c47;
+  font-size: 13px;
+  letter-spacing: 0.13px;
+  line-height: normal;
+}
+
 
 .daftar-obat-admin .frame-23 {
   position: relative;
   width: 124px;
   height: 796px;
   margin-bottom: -10.00px;
+  left: -100px; /* Geser keseluruhan frame ke kiri */
 }
 
 .daftar-obat-admin .frame-24 {
@@ -577,7 +554,7 @@ body {
   padding: 10px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100px; /* Geser header ke kiri */
   background-color: #eaeaea;
 }
 
@@ -591,35 +568,11 @@ body {
   height: 155px;
   position: absolute;
   top: 69px;
-  left: 0;
+  left: -100px; /* Geser body stok ke kiri */
 }
 
-.daftar-obat-admin .frame-26 {
-  display: flex;
-  width: 124px;
-  height: 155px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  position: absolute;
-  top: 249px;
-  left: 0;
-}
-
-.daftar-obat-admin .frame-27 {
-  display: flex;
-  width: 124px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  height: 155px;
-  position: absolute;
-  top: 429px;
-  left: 0;
-}
-
+.daftar-obat-admin .frame-26,
+.daftar-obat-admin .frame-27,
 .daftar-obat-admin .frame-28 {
   display: flex;
   width: 124px;
@@ -629,17 +582,29 @@ body {
   gap: 10px;
   padding: 10px;
   position: absolute;
-  top: 609px;
-  left: 0;
+  left: -100px; /* Geser frame-framenya ke kiri */
 }
+
+.daftar-obat-admin .table-body-2 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins-Regular", Helvetica;
+  font-weight: 400;
+  color: #323c47;
+  font-size: 13px;
+  letter-spacing: 0.13px;
+  line-height: normal;
+}
+
 
 .daftar-obat-admin .frame-29 {
   display: flex;
-    flex-direction: column;
-    width: 79px;
-    align-items: flex-end;
-    gap: 8px;
-    position: relative;
+  flex-direction: column;
+  width: 79px;
+  align-items: flex-end;
+  gap: 8px;
+  position: relative;
+  left: -100px;
 }
 
 .daftar-obat-admin .frame-30 {
@@ -647,20 +612,16 @@ body {
   display: flex;
   height: 44px;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: #eaeaea;
 }
 
 .daftar-obat-admin .img {
   width: 79px;
   height: 155px;
-  position: absolute;
-  top: 69px;
-  left: 0;
+  margin-top: 8px;
 }
 
 .daftar-obat-admin .frame-31 {
@@ -687,24 +648,6 @@ body {
   left: 4px;
 }
 
-<<<<<<< HEAD
-.daftar-obat-admin .nav {
-  display: flex;
-  width: 1927px;
-  height: 94px;
-  width: 1927px;
-  height: 94px;
-  align-items: center;
-  gap: 981px;
-  padding: 23px 109px 23px 53px;
-  position: absolute;
-  top: 0;
-  left: -7px;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-color: #000000;
-  box-shadow: 0px 4px 4px #00000040;
-=======
 .row-obat {
   display: flex;
   gap: 16px;
@@ -726,13 +669,13 @@ body {
 
 .frame-wrapper {
   width: 100%;
-  overflow-x: auto; /* Aktifkan scroll horizontal jika diperlukan */
+  overflow-x: auto;
 }
 
 .row-obat {
   display: flex;
   width: 100%;
-  min-width: 800px; /* Lebar minimum untuk mencegah wrap */
+  min-width: 800px;
 }
 
 .header {
@@ -746,7 +689,7 @@ body {
 .table-head, .table-body {
   flex: 1;
   padding: 12px;
-  min-width: 120px; 
+  min-width: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -759,7 +702,6 @@ body {
   border-radius: 4px;
 }
 
-/* Style untuk tombol action */
 .table-body a {
   margin: 0 5px;
   text-decoration: none;
@@ -773,21 +715,19 @@ body {
 
 .daftar-obat-admin .div-wrapper {
   display: flex;
-  align-items: center;     /* agar ikon tetap sejajar vertikal */
-  justify-content: center; /* posisikan tombol ke tengah horizontal */
-  height: 100%;            /* sesuaikan tinggi dengan baris lain */
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
-.daftar-obat-admin {
 
+.daftar-obat-admin {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
- 
   overflow: auto;
   zoom: 90%;
 }
-
 
 .daftar-obat-admin .div {
   background-color: #ffffff;
@@ -797,23 +737,6 @@ body {
   position: relative;
 }
 
-.daftar-obat-admin .nav {
-  display: flex;
-    width: 1453px;
-    height: 70px; /* Mengurangi tinggi navbar */
-    align-items: center;
-    gap: 540px;
-    padding: 10px 50px; /* Mengurangi padding agar navbar tidak terlalu tinggi */
-    position: absolute;
-    top: 0;
-    left: -7px;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-color: #000000;
-    box-shadow: 0px 4px 4px #00000040;
->>>>>>> 9087b2b01bc0aea58079bae2d9600913edc86df5
-}
-
 .daftar-obat-admin .magneto-navbar {
   display: inline-flex;
   align-items: center;
@@ -821,13 +744,11 @@ body {
   position: relative;
   flex: 0 0 auto;
 }
-
 .daftar-obat-admin .logo {
   position: relative;
   width: 303px;
   height: 40px;
   overflow: hidden;
-<<<<<<< HEAD
 }
 
 .daftar-obat-admin .text-wrapper-2 {
@@ -835,17 +756,6 @@ body {
   width: 295px;
   height: 32px;
   top: 3px;
-=======
-  display: flex;
-  align-items: flex-start;
-}
-
-.daftar-obat-admin .text-wrapper {
-  position: absolute;
-  width: 295px;
-  height: 32px;
-  top: 10px; /* Adjusted to align the text properly */
->>>>>>> 9087b2b01bc0aea58079bae2d9600913edc86df5
   left: 0;
   font-family: "Inter-SemiBold", Helvetica;
   font-weight: 600;
@@ -853,6 +763,22 @@ body {
   font-size: 36px;
   letter-spacing: 0;
   line-height: 20px;
+}
+
+.daftar-obat-admin .text-wrapper {
+  position: absolute;
+  width: 295px;
+  height: 32px;
+  top: 10px;
+  left: 0;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: 20px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .daftar-obat-admin .list {
@@ -863,27 +789,23 @@ body {
   position: relative;
   flex: 0 0 auto;
 }
-
-<<<<<<< HEAD
 .daftar-obat-admin .component-2 {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-=======
-.daftar-obat-admin .component {
-  flex-direction: column;
-  align-items: flex-start;
-  display: inline-flex;
->>>>>>> 9087b2b01bc0aea58079bae2d9600913edc86df5
   position: relative;
   flex: 0 0 auto;
 }
 
-<<<<<<< HEAD
-.daftar-obat-admin .text-wrapper-3 {
-=======
+.daftar-obat-admin .component {
+  flex-direction: column;
+  align-items: flex-start;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+}
+
 .daftar-obat-admin .text-wrapper-2 {
->>>>>>> 9087b2b01bc0aea58079bae2d9600913edc86df5
   position: relative;
   width: fit-content;
   margin-top: -1.00px;
@@ -897,32 +819,23 @@ body {
 }
 
 .daftar-obat-admin .component-false {
-<<<<<<< HEAD
-  display: inline-flex;
-  align-items: center;
-=======
   align-items: center;
   display: inline-flex;
->>>>>>> 9087b2b01bc0aea58079bae2d9600913edc86df5
   position: relative;
   flex: 0 0 auto;
 }
 
-<<<<<<< HEAD
-.daftar-obat-admin .component-3 {
-  display: inline-flex;
-=======
 .daftar-obat-admin .component-2 {
   height: 32px;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 8px 16px;
-    background-color: #ff3c5f;
-    border-radius: 8px;
-    display: flex;
-    position: absolute;
-    right: 80px;  
-    top: 18px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px 16px;
+  background-color: #ff3c5f;
+  border-radius: 8px;
+  display: flex;
+  position: absolute;
+  right: 80px;
+  top: 18px;
 }
 
 .daftar-obat-admin .rectangle {
@@ -981,25 +894,12 @@ body {
   text-decoration: none;
   border: none;
 }
-
 .daftar-obat-admin .component-4 {
   display: inline-flex;
->>>>>>> 9087b2b01bc0aea58079bae2d9600913edc86df5
   height: 32px;
   align-items: center;
   justify-content: center;
   padding: 8px 8px 8.05px;
-<<<<<<< HEAD
-  position: relative;
-  flex: 0 0 auto;
-  margin-right: -16.00px;
-  background-color: #ff3c5f;
-  border-radius: 8px;
-}
-
-.daftar-obat-admin .rectangle-3 {
-  width: 76px;
-=======
   position: absolute;
   top: 221px;
   left: 1100px;
@@ -1007,9 +907,8 @@ body {
   border-radius: 8px;
 }
 
-.daftar-obat-admin .rectangle-4 {
-  width: 108px;
->>>>>>> 9087b2b01bc0aea58079bae2d9600913edc86df5
+.daftar-obat-admin .rectangle-3 {
+  width: 76px;
   height: 32px;
   top: 0;
   border-radius: 4px;
@@ -1017,33 +916,29 @@ body {
   left: 0;
 }
 
-<<<<<<< HEAD
 .daftar-obat-admin .rectangle-4 {
   width: 76px;
-=======
-.daftar-obat-admin .rectangle-5 {
-  width: 108px;
->>>>>>> 9087b2b01bc0aea58079bae2d9600913edc86df5
   height: 32px;
   top: 0;
   position: absolute;
   left: 0;
 }
 
-<<<<<<< HEAD
 .daftar-obat-admin .rectangle-5 {
-  width: 76px;
-=======
+  width: 108px;
+  height: 32px;
+  top: 0;
+  position: absolute;
+  left: 0;
+}
+
 .daftar-obat-admin .rectangle-6 {
   width: 108px;
->>>>>>> 9087b2b01bc0aea58079bae2d9600913edc86df5
   height: 48px;
   top: -8px;
   position: absolute;
   left: 0;
 }
-<<<<<<< HEAD
-=======
 
 .daftar-obat-admin .frame {
   display: inline-flex;
@@ -1497,7 +1392,7 @@ body {
   position: relative;
   width: 79px;
   height: 796px;
-  margin-bottom: -10.00px;
+  margin-bottom: -100px;
 }
 
 .daftar-obat-admin .frame-30 {
@@ -1566,13 +1461,13 @@ body {
 
 .frame-wrapper {
   width: 100%;
-  overflow-x: auto; /* Aktifkan scroll horizontal jika diperlukan */
+  overflow-x: auto;
 }
 
 .row-obat {
   display: flex;
   width: 100%;
-  min-width: 800px; /* Lebar minimum untuk mencegah wrap */
+  min-width: 800px;
 }
 
 .header {
@@ -1599,7 +1494,6 @@ body {
   border-radius: 4px;
 }
 
-/* Style untuk tombol action */
 .table-body a {
   margin: 0 5px;
   text-decoration: none;
@@ -1610,4 +1504,3 @@ body {
 .table-body a:hover {
   color: #007bff;
 }
->>>>>>> 9087b2b01bc0aea58079bae2d9600913edc86df5
