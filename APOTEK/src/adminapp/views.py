@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import TemplateView,ListView, DetailView, CreateView, UpdateView,DeleteView
 from .models import DataObat
 from resepapp.models import ResepDokter
@@ -8,13 +8,20 @@ from django.shortcuts import redirect
 from django.contrib import messages 
 
 
-class DataObatListView(LoginRequiredMixin, ListView):
+class StaffRequiredMixin(UserPassesTestMixin):
+    login_url = "/login/"
+
+    def test_func(self):
+        user = self.request.user
+        return user.is_active and (user.is_staff or user.is_superuser)
+
+class DataObatListView(LoginRequiredMixin, StaffRequiredMixin, ListView):
     model = DataObat
     template_name = 'adminapp/admin_dashboard.html'
     login_url = "/login/"
 
 
-class DataObatDetailView(LoginRequiredMixin, DetailView):
+class DataObatDetailView(LoginRequiredMixin, StaffRequiredMixin, DetailView):
     model = DataObat
     template_name = 'adminapp/admin_dashboard.html'
     login_url = "/login/"
@@ -24,7 +31,7 @@ class DataObatDetailView(LoginRequiredMixin, DetailView):
         messages.success(self.request, f"Obat '{self.object.nama_obat}' berhasil diupdate.")
         return redirect('adminapp:list')
 
-class DataObatCreateView(LoginRequiredMixin, CreateView):
+class DataObatCreateView(LoginRequiredMixin, StaffRequiredMixin, CreateView):
     form_class = DataObatCreateForm
     template_name = 'adminapp/form.html'
     login_url = "/login/"
@@ -49,7 +56,7 @@ class DataObatCreateView(LoginRequiredMixin, CreateView):
         return context
     
 
-class DataObatUpdateView(LoginRequiredMixin, UpdateView):
+class DataObatUpdateView(LoginRequiredMixin, StaffRequiredMixin, UpdateView):
     model = DataObat
     form_class = DataObatCreateForm
     template_name = 'adminapp/detail-update.html'
@@ -67,7 +74,7 @@ class DataObatUpdateView(LoginRequiredMixin, UpdateView):
         return redirect('adminapp:list')
 
 
-class DataObatDeleteView(LoginRequiredMixin, DeleteView):
+class DataObatDeleteView(LoginRequiredMixin, StaffRequiredMixin, DeleteView):
     model = DataObat
     template_name = 'adminapp/obat_delete.html'
     success_url = reverse_lazy('adminapp:list')
@@ -82,7 +89,7 @@ class DataObatDeleteView(LoginRequiredMixin, DeleteView):
         return super().delete(request, *args, **kwargs)
     
 
-class DashboardView(LoginRequiredMixin, TemplateView):
+class DashboardView(LoginRequiredMixin, StaffRequiredMixin, TemplateView):
     template_name = 'adminapp/admin_dashboard.html'
     login_url = "/login/"
 

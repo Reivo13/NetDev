@@ -125,6 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'accounts','static'),
     os.path.join(BASE_DIR, 'loginapp', 'template', 'public'),
 ]
@@ -140,3 +141,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'landing_page:landing_page'
 LOGOUT_REDIRECT_URL = 'landing_page:landing_page'
+
+# Set the login URL for LoginRequiredMixin redirects
+LOGIN_URL = '/login/'

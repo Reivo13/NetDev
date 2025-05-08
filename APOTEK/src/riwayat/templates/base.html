@@ -33,7 +33,7 @@
         <nav id="navbar" class="border-bottom navbar navbar-expand-lg navbar-light bg-white shadow-sm py-1">
             <div class="container">
                 <!-- Brand -->
-                <a class="navbar-brand d-flex align-items-center fs-3" href="#">
+                <a class="navbar-brand d-flex align-items-center fs-3" href="{% url 'landing_page:landing_page' %}">
                     <strong>💊Apotek Jaya</strong>
                 </a>
 
@@ -47,10 +47,10 @@
                 <div class="collapse navbar-collapse" id="navbarMain">
                     <ul class="navbar-nav ms-3">
                         <li class="nav-item">
-                            <a class="nav-link fw-bold text-dark" href="resepapp/">Resep Obat</a>
+                            <a class="nav-link fw-bold text-dark" href="{% url 'uploadresepapp:create' %}">Resep Obat</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold text-dark" href="riwayat/">Riwayat Pembelian</a>
+                            <a class="nav-link fw-bold text-dark" href="{% url 'riwayat:riwayat_pembelian' %}">Riwayat Pembelian</a>
                         </li>
                     </ul>
 
@@ -59,8 +59,8 @@
                         <!-- Search Form -->
 
                         <!-- Login Button -->
-                        <a href="homeuserapp/" class="btn btn-sm text-white fw-bold px-3"
-                            style="background-color: #d4af37;">LOGIN</a>
+                        <a href="{% url 'logout' %}" class="btn btn-sm text-white fw-bold px-3"
+                                style="background-color: #d4af37;">LOGOUT</a>
                     </div>
                 </div>
             </div>

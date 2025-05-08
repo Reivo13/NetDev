@@ -11,6 +11,8 @@ from accounts import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('landing_page/', include('landing_page.urls', namespace='landing_page')),
+    path('homeuser/', lambda request: redirect('/landing_page/', permanent=False)),
     path('homeuser/', include('homeuserapp.urls', namespace="homeuserapp")),
     path('admin_resep/', include('admin_resep.urls')),
     path('admin_daftarobat/', include('admin_daftarobat.urls')),
@@ -25,13 +27,17 @@ urlpatterns = [
     path('uploadresep/',include('uploadresepapp.urls'), name='uploadresepapp'),
     path('riwayat/',include('riwayat.urls'), name='riwayat'),
     path('landing_page/', include('landing_page.urls'), name='landing_page'),
+    path('', lambda request: redirect('/landing_page/', permanent=False)),
     #path('', lambda request: redirect('homeuser/')),
-    path('', include('landing_page.urls')),
+    # Remove duplicate include to avoid conflicts
+    # path('', include('landing_page.urls')),
     # path('login/', include('accounts.urls', namespace='login')),
 
 
     # Redirect dari URL utama (/) ke /homeuser/
-    path('', lambda request: redirect('landing_page/'), name='landing_page'),
+    # path('', include('landing_page.urls')),
+    # Remove the redirect to 'landing_page/' to avoid double redirect
+    # path('', lambda request: redirect('landing_page/'), name='landing_page'),
 ]
 
 if settings.DEBUG:

@@ -18,10 +18,11 @@ def login_view(request):
             )
             if user is not None:
                 login(request, user)
+                # Always redirect to root URL '/' after login for normal users
                 if user.is_superuser:
                     return redirect('adminapp:list')
                 else:
-                    return redirect('homeuserapp:homeuser')
+                    return redirect('/')
             else:
                 form.add_error(None, 'Username atau password salah')
     else:
@@ -32,4 +33,4 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('loginapp:login')
+    return redirect('/')

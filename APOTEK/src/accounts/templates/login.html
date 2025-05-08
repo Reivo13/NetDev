@@ -99,33 +99,43 @@
         }
     </style>
 </head>
-<body>
-    <div class="login-container">
-        <div class="login-box">
-            <h1>Apotek Jaya</h1>
-            <form method="POST">
-                {% csrf_token %}
-                <input type="hidden" name="next" value="{{ request.GET.next }}">
-            
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="masukkan username" required>
-            
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="masukkan password" required>
-            
-                <div class="button-group">
-                    <button type="submit" class="login-btn">Login</button>
-                    <a href="{% url 'register' %}" class="register-btn">Register</a>
-                </div>
-            
-                {% if messages %}
-                    {% for message in messages %}
-                        <p class="error-message">{{ message }}</p>
-                    {% endfor %}
-                {% endif %}
-            </form>
-            
+    <body>
+        <button type="button" onclick="goBack()" aria-label="Back" 
+            style="position: fixed; top: 20px; left: 20px; background: none; border: none; color: #000; font-size: 1.8rem; cursor: pointer; z-index: 1000; padding: 5px 10px; border-radius: 4px; background-color: rgba(255,255,255,0.8); box-shadow: 0 0 5px rgba(0,0,0,0.2);">
+            <i class="bi bi-arrow-left"></i>
+        </button>
+        <div class="login-container">
+            <div class="login-box">
+                <h1>Apotek Jaya</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    <!-- Removed hidden next input to prevent redirect to unwanted URLs -->
+                    <!-- <input type="hidden" name="next" value="{{ request.GET.next }}"> -->
+                
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="masukkan username" required>
+                
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="masukkan password" required>
+                
+                    <div class="button-group">
+                        <button type="submit" class="login-btn">Login</button>
+                        <a href="{% url 'register' %}" class="register-btn">Register</a>
+                    </div>
+                    <script>
+                        function goBack() {
+                            window.location.href = "/";
+                        }
+                    </script>
+                
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class="error-message">{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </form>
+                
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

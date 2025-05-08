@@ -447,7 +447,7 @@
         <nav id="navbar" class="border-bottom navbar navbar-expand-lg navbar-light bg-white shadow-sm py-1">
             <div class="container">
                 <!-- Brand -->
-                <a class="navbar-brand d-flex align-items-center fs-3" href="#">
+                <a class="navbar-brand d-flex align-items-center fs-3" href="{% url 'landing_page:landing_page' %}">
                     <strong>💊Apotek Jaya</strong>
                 </a>
 
@@ -461,11 +461,16 @@
                 <div class="collapse navbar-collapse" id="navbarMain">
                     <ul class="navbar-nav ms-3">
                         <li class="nav-item">
-                            <a class="nav-link fw-bold text-dark" href="uploadresep/">Resep Obat</a>
+                            <a class="nav-link fw-bold text-dark" href="{% url 'uploadresepapp:create' %}">Resep Obat</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold text-dark" href="riwayat/">Riwayat Pembelian</a>
+                            <a class="nav-link fw-bold text-dark" href="{% url 'riwayat:riwayat_pembelian' %}">Riwayat Pembelian</a>
                         </li>
+                        {% if user.is_superuser %}
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" href="{% url 'adminapp:list' %}">Admin</a>
+                        </li>
+                        {% endif %}
                     </ul>
 
                     <!-- Search dan Login -->
@@ -482,8 +487,13 @@
                         </form>
 
                         <!-- Login Button -->
-                        <a href="/login" class="btn btn-sm text-white fw-bold px-3"
-                            style="background-color: #d4af37;">LOGOUT</a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'logout' %}" class="btn btn-sm text-white fw-bold px-3"
+                                style="background-color: #d4af37;">LOGOUT</a>
+                        {% else %}
+                            <a href="{% url 'login' %}" class="btn btn-sm text-white fw-bold px-3"
+                                style="background-color: #d4af37;">LOGIN</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -496,22 +506,22 @@
             <h2 class="promo-title">Promo Menarik</h2>
             <div class="promo-scroll-container">
                 <div class="promo-item">
-                    <img src="static/public/external/wallpaperjett12299-mfm-400w.png" alt="Promo 1">
+                    <img src="{% static 'public/external/wallpaperjett12299-mfm-400w.png' %}" alt="Promo 1">
                 </div>
                 <div class="promo-item">
-                    <img src="static/public/external/wallpaperjett11251-wz64-400w.png" alt="Promo 2">
+                    <img src="{% static 'public/external/wallpaperjett11251-wz64-400w.png' %}" alt="Promo 2">
                 </div>
                 <div class="promo-item">
-                    <img src="static/public/external/wallpaperjett11251-qdpj-400w.png" alt="Promo 3">
+                    <img src="{% static 'public/external/wallpaperjett11251-qdpj-400w.png' %}" alt="Promo 3">
                 </div>
                 <div class="promo-item">
-                    <img src="static/public/external/wallpaperjett11251-rwba-400w.png" alt="Promo 4">
+                    <img src="{% static 'public/external/wallpaperjett11251-rwba-400w.png' %}" alt="Promo 4">
                 </div>
                 <div class="promo-item">
-                    <img src="static/public/external/download (1).jpeg" alt="Promo 5">
+                    <img src="{% static 'public/external/download (1).jpeg' %}" alt="Promo 5">
                 </div>
                 <div class="promo-item">
-                    <img src="static/public/external/download.jpeg" alt="Promo 6">
+                    <img src="{% static 'public/external/download.jpeg' %}" alt="Promo 6">
                 </div>
             </div>
         </div>
@@ -565,15 +575,15 @@
             <section class="filter-section">
                 <h3>Filter</h3>
                 <div class="filter-option">
-                    <img src="static/public/external/image1652-uyhq-200h.png" alt="Tablet dan Kapsul" width="30">
+                    <img src="{% static 'public/external/image1652-uyhq-200h.png' %}" alt="Tablet dan Kapsul" width="30">
                     <span>Obat Tablet dan Kapsul</span>
                 </div>
                 <div class="filter-option">
-                    <img src="static/public/external/image1662-zzcp-200h.png" alt="Obat Cair" width="30">
+                    <img src="{% static 'public/external/image1662-zzcp-200h.png' %}" alt="Obat Cair" width="30">
                     <span>Obat Cair</span>
                 </div>
                 <div class="filter-option">
-                    <img src="static/public/external/image1662-kb9-200h.png" alt="Obat Salep" width="30">
+                    <img src="{% static 'public/external/image1662-kb9-200h.png' %}" alt="Obat Salep" width="30">
                     <span>Obat Salep</span>
                 </div>
             </section>
@@ -583,7 +593,7 @@
                 <h3>Kontak Dokter</h3>
                 <div class="doctor-list">
                     <div class="doctor-item">
-                        <img src="static/public/external/image5394-97nh-200h.png" alt="DR. Mesty Ariyotedjo">
+                        <img src="{% static 'public/external/image5394-97nh-200h.png' %}" alt="DR. Mesty Ariyotedjo">
                         <div class="doctor-info">
                             <div class="doctor-name">DR. Mesty Ariyotedjo</div>
                             <div class="doctor-detail">mestyariyotedjo@gmail.com</div>
@@ -591,7 +601,7 @@
                         </div>
                     </div>
                     <div class="doctor-item">
-                        <img src="static/public/external/image5424-uh5-200h.png" alt="DR. Mesty Ariyotedjo">
+                        <img src="{% static 'public/external/image5424-uh5-200h.png' %}" alt="DR. Mesty Ariyotedjo">
                         <div class="doctor-info">
                             <div class="doctor-name">DR. Mesty Ariyotedjo</div>
                             <div class="doctor-detail">mestyariyotedjo@gmail.com</div>
@@ -599,7 +609,7 @@
                         </div>
                     </div>
                     <div class="doctor-item">
-                        <img src="static/public/external/image5424-0hd-200h.png" alt="DR. Mesty Ariyotedjo">
+                        <img src="{% static 'public/external/image5424-0hd-200h.png' %}" alt="DR. Mesty Ariyotedjo">
                         <div class="doctor-info">
                             <div class="doctor-name">DR. Mesty Ariyotedjo</div>
                             <div class="doctor-detail">mestyariyotedjo@gmail.com</div>
@@ -607,7 +617,7 @@
                         </div>
                     </div>
                     <div class="doctor-item">
-                        <img src="static/public/external/image5424-hs08-200h.png" alt="DR. Mesty Ariyotedjo">
+                        <img src="{% static 'public/external/image5424-hs08-200h.png' %}" alt="DR. Mesty Ariyotedjo">
                         <div class="doctor-info">
                             <div class="doctor-name">DR. Mesty Ariyotedjo</div>
                             <div class="doctor-detail">mestyariyotedjo@gmail.com</div>
@@ -752,7 +762,7 @@
                 }
                 
                 $.ajax({
-                    url: `/beli/${obatId}/`,
+                    url: `/landing_page/beli/${obatId}/`,
                     type: "POST",
                     data: {
                         'jumlah': jumlah,
