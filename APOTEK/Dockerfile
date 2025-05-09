@@ -5,6 +5,7 @@ WORKDIR /app
 
 # Copy source code
 COPY ./src /app
+COPY ./src/requirements.txt /app/
 
 # Install system dependencies
 ENV DEBIAN_FRONTEND=noninteractive
@@ -12,7 +13,6 @@ RUN apt-get update && \
     apt-get install -y \
     locales \
     libmemcached-dev \
-    libpq-dev \
     libjpeg-dev \
     zlib1g-dev \
     build-essential \
