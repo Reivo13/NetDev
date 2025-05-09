@@ -2,10 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm
 from django.http import HttpResponse
-
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
-from .forms import LoginForm
+from django.urls import reverse
 
 def login_view(request):
     if request.method == 'POST':
@@ -29,8 +26,6 @@ def login_view(request):
         form = LoginForm()
     return render(request, 'loginapp/login.html', {'form': form})
 
-
-
 def logout_view(request):
     logout(request)
-    return redirect('/')
+    return redirect(reverse('landing_page:landing_page'))

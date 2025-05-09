@@ -1,0 +1,13 @@
+.resep-admin .magneto-navbar {
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+.resep-admin .component-2 {
+  position: relative !important;
+  margin-left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  justify-content: center !important;
+}

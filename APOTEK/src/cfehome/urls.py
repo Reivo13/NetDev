@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LoginView
 from accounts import views
+from loginapp.views import logout_view
 
 
 
@@ -20,7 +21,7 @@ urlpatterns = [
     path('adminapp/', include('adminapp.urls', namespace="adminapp")),
     path('resepapp/', include('resepapp.urls', namespace="resepapp")),
     path('obat/', include('daftarobat.urls')),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('logout/', logout_view, name='logout'),
     path('logindjanggo/', LoginView.as_view(template_name='login.html'), name='login'),
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('register/', views.register, name='register'),
