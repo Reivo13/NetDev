@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
     <style>
+<<<<<<< HEAD
+=======
+        /* [TIDAK DIUBAH] Pertahankan semua CSS yang ada */
+>>>>>>> main
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -92,14 +96,28 @@
             background-color: #90d0ef;
         }
 
+<<<<<<< HEAD
         .error-message {
             color: red;
             text-align: center;
             margin-top: 15px;
+=======
+        /* [TAMBAHAN] Style untuk error message */
+        .error-message {
+            color: #d32f2f;
+            background-color: #fde0e0;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid #f5c6cb;
+            font-size: 14px;
+>>>>>>> main
         }
     </style>
 </head>
 <body>
+<<<<<<< HEAD
     <div class="login-container">
         <div class="login-box">
             <h1>Apotek Jaya</h1>
@@ -107,6 +125,28 @@
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ request.GET.next }}">
             
+=======
+    <button type="button" onclick="goBack()" aria-label="Back" 
+        style="position: fixed; top: 20px; left: 20px; background: none; border: none; color: #000; font-size: 1.8rem; cursor: pointer; z-index: 1000; padding: 5px 10px; border-radius: 4px; background-color: rgba(255,255,255,0.8); box-shadow: 0 0 5px rgba(0,0,0,0.2);">
+        <i class="bi bi-arrow-left"></i>
+    </button>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Apotek Jaya</h1>
+            
+            <!-- [TAMBAHAN] Tempat menampilkan pesan error -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="error-message">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            
+            <form method="POST">
+                {% csrf_token %}
+                
+>>>>>>> main
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="masukkan username" required>
             
@@ -117,6 +157,7 @@
                     <button type="submit" class="login-btn">Login</button>
                     <a href="{% url 'register' %}" class="register-btn">Register</a>
                 </div>
+<<<<<<< HEAD
             
                 {% if messages %}
                     {% for message in messages %}
@@ -129,3 +170,16 @@
     </div>
 </body>
 </html>
+=======
+            </form>
+            
+            <script>
+                function goBack() {
+                    window.location.href = "/";
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
+>>>>>>> main

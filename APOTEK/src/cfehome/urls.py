@@ -1,29 +1,46 @@
-"""cfehome URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
+from django.urls import path, include
+from django.shortcuts import redirect
 from django.conf import settings
-from django.urls import path, re_path , include
-from adminapp.views import DataObatListView,DataObatDetailView
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
+from django.contrib.auth.views import LoginView
+from accounts import views
+from loginapp.views import logout_view
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('homeuser/', include('homeuserapp.urls')),
-    path('admin/', admin.site.urls),
-    path('adminapp/',include('adminapp.urls',namespace= "adminapp")),
-    path('resepapp/',include('resepapp.urls',namespace= "resepapp")),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('landing_page/', include('landing_page.urls', namespace='landing_page')),
+    path('homeuser/', lambda request: redirect('/landing_page/', permanent=False)),
+    path('homeuser/', include('homeuserapp.urls', namespace="homeuserapp")),
+    path('admin_resep/', include('admin_resep.urls')),
+    path('admin_daftarobat/', include('admin_daftarobat.urls')),
+    path('admin_tambahobat/', include('admin_tambahobat.urls')),
+    path('adminapp/', include('adminapp.urls', namespace="adminapp")),
+    path('resepapp/', include('resepapp.urls', namespace="resepapp")),
+    path('obat/', include('daftarobat.urls')),
+    path('logout/', logout_view, name='logout'),
+    path('logindjanggo/', LoginView.as_view(template_name='login.html'), name='login'),
+    path('login/', LoginView.as_view(template_name='login.html'), name='login'),
+    path('register/', views.register, name='register'),
+    path('uploadresep/',include('uploadresepapp.urls'), name='uploadresepapp'),
+    path('riwayat/',include('riwayat.urls'), name='riwayat'),
+    path('landing_page/', include('landing_page.urls'), name='landing_page'),
+    path('', lambda request: redirect('/landing_page/', permanent=False)),
+    #path('', lambda request: redirect('homeuser/')),
+    # Remove duplicate include to avoid conflicts
+    # path('', include('landing_page.urls')),
+    # path('login/', include('accounts.urls', namespace='login')),
+
+
+    # Redirect dari URL utama (/) ke /homeuser/
+    # path('', include('landing_page.urls')),
+    # Remove the redirect to 'landing_page/' to avoid double redirect
+    # path('', lambda request: redirect('landing_page/'), name='landing_page'),
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

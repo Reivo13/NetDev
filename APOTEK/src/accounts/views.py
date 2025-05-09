@@ -20,6 +20,7 @@ def register(request):
         password1 = request.POST['password1']
         password2 = request.POST['password2']
 
+<<<<<<< HEAD
         if password1 == password2:
             if User.objects.filter(username=username).exists():
                 messages.error(request, 'Username sudah digunakan.')
@@ -35,6 +36,35 @@ def register(request):
         else:
             messages.error(request, 'Password tidak cocok.')
             return render(request, 'register.html')
+=======
+        # Cek kecocokan password
+        if password1 != password2:
+            messages.error(request, 'Password tidak cocok.')
+            return render(request, 'register.html', {
+                'username': username,
+                'email': email
+            })
+
+        # Cek username sudah ada
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'Username sudah digunakan.')
+            return render(request, 'register.html', {
+                'email': email
+            })
+
+        # Cek email sudah ada
+        if User.objects.filter(email=email).exists():
+            messages.error(request, 'Email sudah digunakan.')
+            return render(request, 'register.html', {
+                'username': username
+            })
+
+        # Buat user baru
+        user = User.objects.create_user(username=username, email=email, password=password1)
+        user.save()
+        messages.success(request, 'Registrasi berhasil! Silakan login.')
+        return redirect('login')
+>>>>>>> main
 
     return render(request, 'register.html')
 
@@ -42,6 +72,15 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
 def login_view(request):
+<<<<<<< HEAD
+=======
+    # Clear existing messages to prevent duplicates
+    storage = messages.get_messages(request)
+    for _ in storage:
+        pass
+    storage.used = True
+
+>>>>>>> main
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -51,6 +90,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.success(request, f'Selamat datang, {user.username}!')
+<<<<<<< HEAD
 
             # Redirect ke 'next' jika tersedia
             next_url = request.POST.get('next')
@@ -58,5 +98,11 @@ def login_view(request):
         else:
             messages.error(request, 'Username atau password salah.')
 
+=======
+            return redirect('landing_page')
+        else:
+            messages.error(request, 'Username atau password salah.')
+    
+>>>>>>> main
     return render(request, 'login.html')
 
