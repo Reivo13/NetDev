@@ -1,11 +1,14 @@
 from django.shortcuts import render
 
-
 from adminapp.models import DataObat
 
 def landing_page(request):
-    obat_list = DataObat.objects.all()
-    return render(request, 'pages/landing_page.html', {'obat_list': obat_list})
+    jenis_filter = request.GET.get('jenis', None)
+    if jenis_filter:
+        obat_list = DataObat.objects.filter(jenis_obat=jenis_filter)
+    else:
+        obat_list = DataObat.objects.all()
+    return render(request, 'pages/landing_page.html', {'obat_list': obat_list, 'jenis_filter': jenis_filter})
 
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required

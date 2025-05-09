@@ -28,7 +28,7 @@
 
     /* Background utama */
     body {
-        background-image: url('https://i.imgur.com/i9npULc.jpg');
+        background-image: url('{% static 'public/external/backgrounds.png' %}');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -233,38 +233,45 @@
             gap: 30px;
         }
 
-        /* Filter Section */
-        .filter-section {
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            backdrop-filter: blur(50px);
-        }
-        
-        .filter-section h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            color: #333;
-            padding-bottom: 12px;
-        }
-        
-        .filter-option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 18px;
-            padding: 12px;
-            background: rgba(249, 249, 249, 0.7);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            backdrop-filter: blur(2px);
-        }
-        
-        .filter-option:hover {
-            background-color: rgba(238, 238, 238, 0.8);
-            transform: translateX(5px);
-        }
+    /* Filter Section */
+    .filter-section {
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        backdrop-filter: blur(50px);
+    }
+    
+    .filter-section h3 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        color: #333;
+        padding-bottom: 12px;
+    }
+    
+    .filter-option {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        padding: 12px;
+        background: rgba(249, 249, 249, 0.7);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        backdrop-filter: blur(2px);
+        color: black;
+        text-decoration: none;
+    }
+    
+    .filter-option:hover, .active-filter {
+        background-color: rgba(238, 238, 238, 0.8);
+        transform: translateX(5px);
+    }
+    
+    .active-filter {
+        font-weight: 700;
+        border-left: 4px solid #ff3c5f;
+    }
 
         /* Doctor Section */
         .doctor-section {
@@ -475,16 +482,18 @@
 
                     <!-- Search dan Login -->
                     <div class="ms-auto d-flex align-items-center gap-2">
-                        <!-- Search Form -->
-                        <form class="position-relative me-2" style="width: 400px;">
-                            <input class="form-control rounded-pill px-3 fw-bold w-100" type="search" placeholder="Cari"
-                                aria-label="Search"
-                                style="padding-right: 2.5rem; height: 35px; border: 2px solid #999;">
-                            <button type="submit" class="btn position-absolute border-0 bg-transparent"
-                                style="top: 50%; right: 10px; transform: translateY(-50%);">
-                                <i class="fas fa-search text-dark"></i>
-                            </button>
-                        </form>
+                    <!-- Search Form -->
+-                    <form class="position-relative me-2" style="width: 400px;">
+-                        <input class="form-control rounded-pill px-3 fw-bold w-100" type="search" placeholder="Cari"
+-                            aria-label="Search"
+-                            style="padding-right: 2.5rem; height: 35px; border: 2px solid #999;">
+-                        <button type="submit" class="btn position-absolute border-0 bg-transparent"
+-                            style="top: 50%; right: 10px; transform: translateY(-50%);">
+-                            <i class="fas fa-search text-dark"></i>
+-                        </button>
+-                    </form>
++                    <!-- Search form completely removed as per user request -->
++                    <!-- Search form removed as per user request -->
 
                         <!-- Login Button -->
                         {% if user.is_authenticated %}
@@ -574,18 +583,25 @@
             <!-- Filter Section -->
             <section class="filter-section">
                 <h3>Filter</h3>
-                <div class="filter-option">
-                    <img src="{% static 'public/external/image1652-uyhq-200h.png' %}" alt="Tablet dan Kapsul" width="30">
-                    <span>Obat Tablet dan Kapsul</span>
-                </div>
-                <div class="filter-option">
-                    <img src="{% static 'public/external/image1662-zzcp-200h.png' %}" alt="Obat Cair" width="30">
-                    <span>Obat Cair</span>
-                </div>
-                <div class="filter-option">
-                    <img src="{% static 'public/external/image1662-kb9-200h.png' %}" alt="Obat Salep" width="30">
+                <a href="{% url 'landing_page:landing_page' %}" class="filter-option">
+                    <span>Hapus Filter</span>
+                </a>
+                <a href="?jenis=tablet" class="filter-option">
+                    <img src="{% static 'public/external/image1652-uyhq-200h.png' %}" alt="Tablet" width="30">
+                    <span>Obat Tablet</span>
+                </a>
+                <a href="?jenis=kapsul" class="filter-option">
+                    <img src="{% static 'public/external/image1652-uyhq-200h.png' %}" alt="Kapsul" width="30">
+                    <span>Obat Kapsul</span>
+                </a>
+                <a href="?jenis=sirup" class="filter-option">
+                    <img src="{% static 'public/external/image1662-zzcp-200h.png' %}" alt="Sirup" width="30">
+                    <span>Obat Sirup</span>
+                </a>
+                <a href="?jenis=salep" class="filter-option">
+                    <img src="{% static 'public/external/image1662-kb9-200h.png' %}" alt="Salep" width="30">
                     <span>Obat Salep</span>
-                </div>
+                </a>
             </section>
             
             <!-- Doctor Section -->
