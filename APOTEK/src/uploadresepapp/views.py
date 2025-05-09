@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ResepForm
 from .models import Resep
-
-from django.views.generic import DeleteView ,ListView, DetailView, CreateView, UpdateView
-
+from django.views.generic import DeleteView, ListView, DetailView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib import messages
@@ -19,8 +17,11 @@ class ResepCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('homeuserapp:homeuser')
 
     def form_valid(self, form):
-        form.instance.user = self.request.user  # Otomatis isi user
-        messages.success(self.request, 'Resep berhasil ditambahkan!')
-        return super().form_valid(form)
-
-
+        try:
+            form.instance.user = self.request.user
+            response = super().form_valid(form)
+            messages.success(self.request, 'Resep berhasil diupload!')
+            return response
+        except Exception as e:
+            messages.error(self.request, f'Gagal mengupload resep: {str(e)}')
+            return self.form_invalid(form)

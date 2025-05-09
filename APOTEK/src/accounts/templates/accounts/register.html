@@ -93,26 +93,59 @@
         .login-btn:hover {
             background-color: #e0a800;
         }
+
+        /* Style untuk pesan notifikasi */
+        .notification {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .error {
+            color: #d32f2f;
+            background-color: #fde0e0;
+            border: 1px solid #f5c6cb;
+        }
+
+        .success {
+            color: #388e3c;
+            background-color: #e8f5e9;
+            border: 1px solid #c3e6cb;
+        }
     </style>
 </head>
 <body>
     <div class="register-container">
         <div class="register-box">
             <h1>Apotek Jaya</h1>
+            
+            <!-- Menampilkan pesan notifikasi -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="notification {% if message.tags %}{{ message.tags }}{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
             <form method="POST" action="{% url 'register' %}">
                 {% csrf_token %}
-                {{ form.as_p }}
+                
                 <label for="username">Username</label>
-                <input type="text" name="username" placeholder="masukkan username" required />
+                <input type="text" id="username" name="username" placeholder="masukkan username" 
+                       value="{{ request.POST.username }}" required />
 
                 <label for="email">Email</label>
-                <input type="email" name="email" placeholder="masukkan email" required />
+                <input type="email" id="email" name="email" placeholder="masukkan email" 
+                       value="{{ request.POST.email }}" required />
 
                 <label for="password1">Password</label>
-                <input type="password" name="password1" placeholder="masukkan password" required />
+                <input type="password" id="password1" name="password1" placeholder="masukkan password" required />
 
                 <label for="password2">Konfirmasi Password</label>
-                <input type="password" name="password2" placeholder="masukkan password" required />
+                <input type="password" id="password2" name="password2" placeholder="masukkan password" required />
 
                 <div class="button-group">
                     <button type="submit" class="register-btn">Register</button>
